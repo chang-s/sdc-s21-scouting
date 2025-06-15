@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getRankIcon(rank) {
     const icons = {
-      Gold: "https://static.wikia.nocookie.net/leagueoflegends/images/3/3d/Season_2023_-_Gold.png",
-      Platinum: "https://static.wikia.nocookie.net/leagueoflegends/images/c/cb/Season_2023_-_Platinum.png",
-      Emerald: "https://static.wikia.nocookie.net/leagueoflegends/images/b/bb/Season_2023_-_Emerald.png",
-      Diamond: "https://static.wikia.nocookie.net/leagueoflegends/images/f/f5/Season_2023_-_Diamond.png",
-      Master: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4b/Season_2023_-_Master.png",
-      Grandmaster: "https://static.wikia.nocookie.net/leagueoflegends/images/1/1f/Season_2023_-_Grandmaster.png",
-      Challenger: "https://static.wikia.nocookie.net/leagueoflegends/images/7/72/Season_2023_-_Challenger.png"
+      Gold: "https://static.wikia.nocookie.net/leagueoflegends/images/7/78/Season_2023_-_Gold.png",
+      Platinum: "https://static.wikia.nocookie.net/leagueoflegends/images/b/bd/Season_2023_-_Platinum.png",
+      Emerald: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4b/Season_2023_-_Emerald.png",
+      Diamond: "https://static.wikia.nocookie.net/leagueoflegends/images/3/37/Season_2023_-_Diamond.png/",
+      Master: "https://static.wikia.nocookie.net/leagueoflegends/images/d/d5/Season_2023_-_Master.png",
+      Grandmaster: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Season_2023_-_Grandmaster.png",
+      Challenger: "https://static.wikia.nocookie.net/leagueoflegends/images/1/14/Season_2023_-_Challenger.png"
     };
     return icons[rank] || "";
   }
