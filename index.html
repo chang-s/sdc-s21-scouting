@@ -15,15 +15,19 @@
       <div class="bg-white p-4 rounded-lg shadow-md max-w-2xl mx-auto">
         
         <!-- Multi op.gg Button (goes ABOVE checkboxes) -->
-        <div class="text-center my-8">
-          <p class="text-lg font-semibold text-purple-700 bg-purple-100 px-4 py-2 rounded-full inline-block shadow-md border-l-4 border-purple-400 mb-3 animate-pulse">
+        <div class="text-center my-6">
+          <p class="text-base text-gray-600 mb-2">
             View all selected players on op.gg
           </p>
-          <br />
-          <button id="generateBtn" class="bg-gradient-to-r from-green-400 via-purple-400 to-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-xl transform hover:scale-105 transition-all duration-300 ring-2 ring-purple-300 hover:ring-4">
+          <button
+            id="generateBtn"
+            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-600 disabled:shadow-none disabled:transform-none"
+            disabled
+          >
             Generate Multi op.gg
           </button>
         </div>
+
         
         <!-- Checkboxes go here -->
         <div id="checkboxContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2"></div>
