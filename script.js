@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <button class="mb-2 text-sm text-white bg-pink-500 hover:bg-pink-600 px-3 py-1 rounded transition">View op.gg</button>
             </a>
 
+            <p><strong>Rank:</strong> ${rankIcon ? `<img src="${rankIcon}" class="w-6 inline ml-1" />` : ""} ${player.rank}</p>
             <p><strong>Roles:</strong> ${player.roles.join(", ")}</p>
             <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
             <p><strong>Top Champions:</strong> ${player.topChampions.join(", ")}</p>
