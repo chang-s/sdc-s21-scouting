@@ -112,70 +112,80 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function renderCheckboxes() {
-    checkboxContainer.innerHTML = "";
-    playerData.forEach(player => {
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.id = `cb-${player.name}`;
-      checkbox.value = player.name;
-      checkbox.classList.add("mr-2");
+    function renderCheckboxes() {
+        checkboxContainer.innerHTML = "";
+        playerData.forEach(player => {
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = `cb-${player.name}`;
+            checkbox.value = player.name;
+            checkbox.classList.add("mr-2");
 
-      const label = document.createElement("label");
-      label.htmlFor = `cb-${player.name}`;
-      label.textContent = player.name;
+            const label = document.createElement("label");
+            label.htmlFor = `cb-${player.name}`;
+            label.textContent = player.name;
 
-      const wrapper = document.createElement("div");
-      wrapper.classList.add("flex", "items-center");
-      wrapper.appendChild(checkbox);
-      wrapper.appendChild(label);
+            const wrapper = document.createElement("div");
+            wrapper.classList.add("flex", "items-center");
+            wrapper.appendChild(checkbox);
+            wrapper.appendChild(label);
 
-      checkboxContainer.appendChild(wrapper);
+            checkboxContainer.appendChild(wrapper);
 
-      checkbox.addEventListener("change", () => {
-        updateVisibleCards();
-        updateMultiOpggLink();
-      });
-    });
-  }
-
-  function updateVisibleCards() {
-    const checkedValues = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value.toLowerCase());
-    document.querySelectorAll(".player-card").forEach(card => {
-      const name = card.dataset.name;
-      card.style.display = checkedValues.length === 0 || checkedValues.includes(name) ? "block" : "none";
-    });
-  }
-
-  function updateMultiOpggLink() {
-    const checked = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
-    if (checked.length >= 2) {
-      const encoded = checked.map(name => encodeURIComponent(name)).join("%2C");
-      const url = `https://op.gg/lol/multisearch/na?summoners=${encoded}`;
-      multiOpggBtn.href = url;
-      multiOpggBtn.classList.remove("opacity-50", "pointer-events-none");
-    } else {
-      multiOpggBtn.href = "#";
-      multiOpggBtn.classList.add("opacity-50", "pointer-events-none");
+            checkbox.addEventListener("change", () => {
+                updateVisibleCards();
+                updateMultiOpggLink();
+            });
+        });
     }
-  }
 
-  window.toggleStats = function(button, type) {
-    const statDiv = button.nextElementSibling;
-    const isHidden = statDiv.classList.contains("hidden");
-    statDiv.classList.toggle("hidden");
-    button.textContent = isHidden
-      ? `Hide ${type === 'champ' ? 'Champ' : 'Game'} Stats ▲`
-      : `Show ${type === 'champ' ? 'Champ' : 'Game'} Stats ▼`;
-  };
+    function updateVisibleCards() {
+        const checkedValues = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
 
-  searchBar.addEventListener("input", () => {
-    const query = searchBar.value.toLowerCase();
-    document.querySelectorAll(".player-card").forEach(card => {
-      const name = card.dataset.name;
-      card.style.display = name.includes(query) ? "block" : "none";
+        document.querySelectorAll(".player-card").forEach(card => {
+            const name = card.dataset.name;
+            card.style.display = checkedValues.length === 0 || checkedValues.includes(name) ? "block" : "none";
+        });
+
+        const multiOpggLink = document.getElementById("multiOpggLink");
+        if (checkedValues.length >= 2) {
+            const encodedSummoners = checkedValues.map(name => encodeURIComponent(name)).join("%2C");
+            multiOpggLink.href = `https://op.gg/lol/multisearch/na?summoners=${encodedSummoners}`;
+            multiOpggLink.classList.remove("hidden");
+        } else {
+            multiOpggLink.classList.add("hidden");
+        }
+    }
+
+    function updateMultiOpggLink() {
+        const checked = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
+        if (checked.length >= 2) {
+        const encoded = checked.map(name => encodeURIComponent(name)).join("%2C");
+        const url = `https://op.gg/lol/multisearch/na?summoners=${encoded}`;
+        multiOpggBtn.href = url;
+        multiOpggBtn.classList.remove("opacity-50", "pointer-events-none");
+        } else {
+        multiOpggBtn.href = "#";
+        multiOpggBtn.classList.add("opacity-50", "pointer-events-none");
+        }
+    }
+
+    window.toggleStats = function(button, type) {
+        const statDiv = button.nextElementSibling;
+        const isHidden = statDiv.classList.contains("hidden");
+        statDiv.classList.toggle("hidden");
+        button.textContent = isHidden
+        ? `Hide ${type === 'champ' ? 'Champ' : 'Game'} Stats ▲`
+        : `Show ${type === 'champ' ? 'Champ' : 'Game'} Stats ▼`;
+    ;
+
+    searchBar.addEventListener("input", () => {
+        const query = searchBar.value.toLowerCase();
+        document.querySelectorAll(".player-card").forEach(card => {
+        const name = card.dataset.name;
+        card.style.display = name.includes(query) ? "block" : "none";
+        });
     });
-  });
 
-  fetchPlayers();
+    fetchPlayers();
 });
