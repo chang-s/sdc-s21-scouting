@@ -26,10 +26,7 @@ function fetchData() {
     .then(data => {
       playerData = data.map(p => ({
         ...p,
-        roles: (p.roles || "")
-          .replace(/\\/g, "") // remove stray backslashes
-          .split(",")
-          .map(r => r.trim())
+        roles: p.roles ? p.roles.split(",").map(r => r.trim()) : []
       }));
       renderCheckboxes();
       renderPlayerCards();
