@@ -97,34 +97,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function renderCheckboxes() {
-        const selectedTeam = teamFilter.value;
+    function renderPlayerButtons() {
+        const selectedTeam = document.getElementById("teamFilter").value;
         checkboxContainer.innerHTML = "";
-        
+
+        if (selectedTeam === "All") return;
+
+        const selectedPlayerNames = Array.from(checkboxContainer.querySelectorAll(".selected-pill"))
+        .map(el => el.dataset.name);
+
         playerData
         .filter(player => player.team === selectedTeam)
         .forEach(player => {
-            const checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.id = `cb-${player.name}`;
-            checkbox.value = player.name;
-            checkbox.classList.add("mr-2");
+            const btn = document.createElement("button");
+            btn.dataset.name = player.name;
+            btn.className =
+            "player-pill px-4 py-1 rounded-full text-sm font-semibold transition border border-gray-300 " +
+            "hover:bg-purple-100 hover:text-purple-800 mb-1 mr-2";
 
-            const label = document.createElement("label");
-            label.htmlFor = `cb-${player.name}`;
-            label.textContent = player.name;
+            btn.innerHTML = player.name;
 
-            const wrapper = document.createElement("div");
-            wrapper.classList.add("flex", "items-center");
-            wrapper.appendChild(checkbox);
-            wrapper.appendChild(label);
+            btn.addEventListener("click", () => {
+            btn.classList.toggle("selected-pill");
+            btn.classList.toggle("bg-purple-500");
+            btn.classList.toggle("text-white");
+            btn.classList.toggle("border-gray-300");
+            btn.classList.toggle("border-purple-500");
 
-            checkboxContainer.appendChild(wrapper);
+            if (btn.classList.contains("selected-pill")) {
+                btn.innerHTML = `✅ ${player.name}`;
+            } else {
+                btn.innerHTML = player.name;
+            }
 
-            checkbox.addEventListener("change", () => {
-                updateVisibleCards();
-                updateGenerateBtnState();
+            updateVisibleCards();
+            updateGenerateBtnState();
             });
+
+            checkboxContainer.appendChild(btn);
         });
     }
 
@@ -144,17 +154,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateGenerateBtnState() {
-        const checked = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
-        if (checked.length === 0) {
+        const selected = Array.from(checkboxContainer.querySelectorAll(".selected-pill"));
+
+        if (selected.length === 0) {
             generateBtn.disabled = true;
-            generateBtn.classList.remove("bg-gradient-to-r", "from-purple-500", "to-pink-500", "ring-2", "ring-purple-300", "hover:ring-4", "hover:scale-105");
-            generateBtn.classList.add("bg-gray-200", "text-gray-500", "cursor-not-allowed");
+            generateBtn.classList.remove(
+                "bg-gradient-to-r",
+                "from-purple-500",
+                "to-pink-500",
+                "ring-2",
+                "ring-purple-300",
+                "hover:ring-4",
+                "hover:scale-105"
+            );
+            generateBtn.classList.add(
+                "bg-gray-200",
+                "text-gray-500",
+                "cursor-not-allowed"
+            );
         } else {
             generateBtn.disabled = false;
-            generateBtn.classList.add("bg-gradient-to-r", "from-purple-500", "to-pink-500", "ring-2", "ring-purple-300", "hover:ring-4", "hover:scale-105");
-            generateBtn.classList.remove("bg-gray-200", "text-gray-500", "cursor-not-allowed");
+            generateBtn.classList.add(
+                "bg-gradient-to-r",
+                "from-purple-500",
+                "to-pink-500",
+                "ring-2",
+                "ring-purple-300",
+                "hover:ring-4",
+                "hover:scale-105"
+            );
+            generateBtn.classList.remove(
+                "bg-gray-200",
+                "text-gray-500",
+                "cursor-not-allowed"
+            );
         }
     }
+
 
     function toggleStats(button, type) {
         const statDiv = button.nextElementSibling;
@@ -164,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     generateBtn.addEventListener("click", () => {
-        const selected = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
+        const selected = Array.from(document.querySelectorAll(".selected-pill")).map(el => el.dataset.name);
         if (selected.length === 0) return;
 
         const encodedNames = selected.map(name => encodeURIComponent(name)).join(",");
@@ -203,6 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const teamFilter = document.getElementById("teamFilter");
     teamFilter.addEventListener("change", () => {
+        renderPlayerButtons();
         updateVisibleCards();
         updateCheckboxVisibility();
     });

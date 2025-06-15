@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aura Farmers Roster</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .player-pill {
+      transition: all 0.2s ease-in-out;
+    }
+    .player-pill.selected-pill {
+      background-color: #a78bfa; /* Tailwind purple-400 */
+      color: white;
+      border-color: #7c3aed;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans">
   <div class="max-w-6xl mx-auto py-10 px-4">
