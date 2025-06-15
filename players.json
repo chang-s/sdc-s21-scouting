@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Duck Man#Quack",
+    "tier": 1,
+    "points": 35,
+    "roles": ["Mid", "Top"],
+    "opgg": "https://op.gg/lol/summoners/na/Duck%20Man-QUACK",
+    "topChampions": ["Azir", "Yone", "Syndra"],
+    "champStats": [
+      { "champion": "Azir", "games": 2, "kda": "4.5", "winRate": "50%" },
+      { "champion": "Yone", "games": 1, "kda": "3.0", "winRate": "0%" }
+    ],
+    "gameStats": [
+      { "champion": "Azir", "k": 5, "d": 2, "a": 8, "result": "W", "vs": "FF", "vsAbbr": "FF" },
+      { "champion": "Yone", "k": 2, "d": 4, "a": 1, "result": "L", "vs": "The Honored Ones", "vsAbbr": "THO" }
+    ],
+    "champsPlayed": [
+      { "champ": "Azir", "games": 2 },
+      { "champ": "Yone", "games": 1 }
+    ],
+    "avgKDA": 3.5
+  },
+  {
+    "name": "Infallible#galio",
+    "tier": 1,
+    "points": 33,
+    "roles": ["Top", "Jungle"],
+    "opgg": "https://op.gg/lol/summoners/na/Infallible-Galio",
+    "topChampions": ["Galio", "Ornn", "Sejuani"],
+    "champStats": [
+      { "champion": "Galio", "games": 3, "kda": "5.0", "winRate": "33%" }
+    ],
+    "gameStats": [
+      { "champion": "Galio", "k": 3, "d": 1, "a": 10, "result": "L", "vs": "FF", "vsAbbr": "FF" }
+    ],
+    "champsPlayed": [
+      { "champ": "Galio", "games": 3 }
+    ],
+    "avgKDA": 4.2
+  }
+]
