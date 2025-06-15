@@ -1,3 +1,12 @@
+function toggleStats(button, type) {
+  const statDiv = button.nextElementSibling;
+  const isHidden = statDiv.classList.contains("hidden");
+  statDiv.classList.toggle("hidden");
+  button.textContent = isHidden
+    ? `Hide ${type === 'champ' ? 'Champ' : 'Game'} Stats ▲`
+    : `Show ${type === 'champ' ? 'Champ' : 'Game'} Stats ▼`;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const roster = document.getElementById("roster");
     const checkboxContainer = document.getElementById("checkboxContainer");
@@ -114,13 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = card.dataset.name;
         card.style.display = checkedValues.length === 0 || checkedValues.includes(name) ? "block" : "none";
         });
-    }
-
-    function toggleStats(button, type) {
-        const statDiv = button.nextElementSibling;
-        const isHidden = statDiv.classList.contains("hidden");
-        statDiv.classList.toggle("hidden");
-        button.textContent = isHidden ? `Hide ${type === 'champ' ? 'Champ' : 'Game'} Stats ▲` : `Show ${type === 'champ' ? 'Champ' : 'Game'} Stats ▼`;
     }
 
     const roleIcons = {
