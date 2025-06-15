@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="${player.opgg}" target="_blank">
             <button class="mb-2 text-sm text-white bg-pink-500 hover:bg-pink-600 px-3 py-1 rounded transition">View op.gg</button>
             </a>
-            <p><strong>Rank:</strong> ${player.rank}</p>
+            <p class="mb-2"><strong>Rank:</strong> ${player.rank}</p>
             <p><strong>Roles:</strong> ${player.roles.join(", ")}</p>
             <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
             <p><strong>Top Champions:</strong> ${player.topChampions.join(", ")}</p>
