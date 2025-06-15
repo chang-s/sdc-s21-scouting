@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Emerald": "https://static.wikia.nocookie.net/leagueoflegends/images/d/d7/Season_2023_-_Emerald.png",
     "Diamond": "https://static.wikia.nocookie.net/leagueoflegends/images/0/0f/Season_2023_-_Diamond.png",
     "Master": "https://static.wikia.nocookie.net/leagueoflegends/images/3/35/Season_2023_-_Master.png",
-    "Masters": "https://static.wikia.nocookie.net/leagueoflegends/images/3/35/Season_2023_-_Master.png",
+    "Master": "https://static.wikia.nocookie.net/leagueoflegends/images/3/35/Season_2023_-_Master.png",
     "Grandmaster": "https://static.wikia.nocookie.net/leagueoflegends/images/c/c6/Season_2023_-_Grandmaster.png",
     "Challenger": "https://static.wikia.nocookie.net/leagueoflegends/images/f/f0/Season_2023_-_Challenger.png"
   };
