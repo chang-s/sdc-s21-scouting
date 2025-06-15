@@ -52,6 +52,8 @@ async function fetchAllData() {
   const gameMap = {};
   for (const g of games) {
     if (!gameMap[g.Name]) gameMap[g.Name] = [];
+    if (!g["vs Team"]) console.warn("Missing vs Team for:", g);
+    
     gameMap[g.Name].push({
       champion: g.Champion,
       k: +g.K,
