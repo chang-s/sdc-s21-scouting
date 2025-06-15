@@ -63,15 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         </h2>
                     </div>
 
-                    <!-- Team + Button -->
+                    <!-- Team Pill -->
                     <div class="mb-2">
                         <div class="inline-block mb-1 px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full shadow-sm">
                             ${player.team}
                         </div>
                         <br />
-                        <a href="${player.opgg}" target="_blank">
-                            <button class="mt-1 text-sm text-white bg-pink-500 hover:bg-pink-600 px-3 py-1 rounded transition">View op.gg</button>
-                        </a>
                     </div>
 
                     <!-- Stats Info -->
