@@ -47,49 +47,62 @@ document.addEventListener("DOMContentLoaded", () => {
             const rankIcon = rankIcons[player.rank] || "";
 
             card.innerHTML = `
-                <div class="flex items-center mb-2">
-                    <h2 class="text-xl font-bold flex items-center gap-2">
-                        <span class="text-sm font-semibold px-2 py-1 rounded ${tierColor}">Tier ${player.tier}</span>
-                        ${player.name}
-                        ${rolesHtml}
-                    </h2>
-                </div>
-                
-                <div class="mb-2">
-                    <div class="inline-block mb-1 px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full shadow-sm">
-                        ${player.team}
-                    </div>
-                    <br />
-                    <a href="${player.opgg}" target="_blank">
-                        <button class="mt-1 text-sm text-white bg-pink-500 hover:bg-pink-600 px-3 py-1 rounded transition">View op.gg</button>
+                <div class="relative">
+
+                    <!-- op.gg icon button (top-right) -->
+                    <a href="${player.opgg}" target="_blank" class="absolute top-2 right-2" title="View op.gg profile">
+                        <img src="https://i.imgur.com/y0la7LC.png" alt="op.gg" class="w-6 h-6 opacity-70 hover:opacity-100 hover:scale-110 transition-transform duration-200" />
                     </a>
-                </div>
 
-                <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
-                <p><strong>Rank:</strong> ${rankIcon ? `<img src="${rankIcon}" class="w-6 inline ml-1" />` : ""} ${player.rank}</p>
-                <p><strong>Roles:</strong> ${player.roles.join(", ")}</p>
-                <p><strong>Top Champions:</strong> ${player.topChampions.join(", ")}</p>
+                    <!-- Name + Tier + Roles -->
+                    <div class="flex items-center mb-2">
+                        <h2 class="text-xl font-bold flex items-center gap-2">
+                            <span class="text-sm font-semibold px-2 py-1 rounded ${tierColor}">T${player.tier}</span>
+                            ${player.name}
+                            ${rolesHtml}
+                        </h2>
+                    </div>
 
-                <button onclick="toggleStats(this, 'champ')" class="mt-2 text-sm text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded transition">Show Champ Stats ▼</button>
-                <div class="hidden mt-2 text-sm bg-gray-50 p-2 rounded champ-stats">
-                    <table class="table-auto w-full text-left">
-                        <thead><tr><th>Champion</th><th>Games</th><th>KDA</th><th>Win%</th></tr></thead>
-                        <tbody>${champStatsHtml}</tbody>
-                    </table>
-                </div>
+                    <!-- Team + Button -->
+                    <div class="mb-2">
+                        <div class="inline-block mb-1 px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full shadow-sm">
+                            ${player.team}
+                        </div>
+                        <br />
+                        <a href="${player.opgg}" target="_blank">
+                            <button class="mt-1 text-sm text-white bg-pink-500 hover:bg-pink-600 px-3 py-1 rounded transition">View op.gg</button>
+                        </a>
+                    </div>
 
-                <button onclick="toggleStats(this, 'game')" class="mt-2 text-sm text-white bg-green-500 hover:bg-green-600 px-3 py-1 rounded transition">Show Game Stats ▼</button>
-                <div class="hidden mt-2 text-sm bg-gray-50 p-2 rounded game-stats">
-                    <table class="table-auto w-full text-left">
-                        <thead><tr><th>Game</th><th>Champion</th><th>K</th><th>D</th><th>A</th><th>Result</th><th>vs Team</th></tr></thead>
-                        <tbody>${gameStatsHtml}</tbody>
-                    </table>
-                    <div class="mt-4">
-                        <h4 class="font-semibold mb-1">Champs Played</h4>
-                        <table class="table-auto w-full text-left mb-2">
-                            <tbody>${champsPlayedSummary}</tbody>
+                    <!-- Stats Info -->
+                    <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
+                    <p><strong>Rank:</strong> ${rankIcon ? `<img src="${rankIcon}" class="w-6 inline ml-1" />` : ""} ${player.rank}</p>
+                    <p><strong>Roles:</strong> ${player.roles.join(", ")}</p>
+                    <p><strong>Top Champions:</strong> ${player.topChampions.join(", ")}</p>
+
+                    <!-- Champ Stats -->
+                    <button onclick="toggleStats(this, 'champ')" class="mt-2 text-sm text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded transition">Show Champ Stats ▼</button>
+                    <div class="hidden mt-2 text-sm bg-gray-50 p-2 rounded champ-stats">
+                        <table class="table-auto w-full text-left">
+                            <thead><tr><th>Champion</th><th>Games</th><th>KDA</th><th>Win%</th></tr></thead>
+                            <tbody>${champStatsHtml}</tbody>
                         </table>
-                        <p class="font-semibold">Avg KDA: <span class="${kdaColor}">${player.avgKDA}</span></p>
+                    </div>
+
+                    <!-- Game Stats -->
+                    <button onclick="toggleStats(this, 'game')" class="mt-2 text-sm text-white bg-green-500 hover:bg-green-600 px-3 py-1 rounded transition">Show Game Stats ▼</button>
+                    <div class="hidden mt-2 text-sm bg-gray-50 p-2 rounded game-stats">
+                        <table class="table-auto w-full text-left">
+                            <thead><tr><th>Game</th><th>Champion</th><th>K</th><th>D</th><th>A</th><th>Result</th><th>vs Team</th></tr></thead>
+                            <tbody>${gameStatsHtml}</tbody>
+                        </table>
+                        <div class="mt-4">
+                            <h4 class="font-semibold mb-1">Champs Played</h4>
+                            <table class="table-auto w-full text-left mb-2">
+                                <tbody>${champsPlayedSummary}</tbody>
+                            </table>
+                            <p class="font-semibold">Avg KDA: <span class="${kdaColor}">${player.avgKDA}</span></p>
+                        </div>
                     </div>
                 </div>
             `;
