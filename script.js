@@ -119,9 +119,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateVisibleCards() {
         const checkedValues = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
+        const selectedTeam = teamFilter.value;
+
         document.querySelectorAll(".player-card").forEach(card => {
             const name = card.dataset.name;
-            card.style.display = checkedValues.length === 0 || checkedValues.includes(name) ? "block" : "none";
+            const player = playerData.find(p => p.name === name);
+
+            const matchesTeam = selectedTeam === "All" || player.team === selectedTeam;
+            const matchesCheckbox = checkedValues.length === 0 || checkedValues.includes(name);
+
+            card.style.display = matchesTeam && matchesCheckbox ? "block" : "none";
         });
     }
 
@@ -173,6 +180,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     fetchPlayers();
+    const teamFilter = document.getElementById("teamFilter");
+    teamFilter.addEventListener("change", updateVisibleCards);
     window.toggleStats = toggleStats;
 
     const searchInput = document.getElementById("searchInput");
