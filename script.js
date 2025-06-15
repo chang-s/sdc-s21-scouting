@@ -59,7 +59,7 @@ async function fetchAllData() {
       a: +g.A,
       result: g.Result,
       vs: g["vs Team"],
-      vsAbbr: g["vs Team"]
+      vsAbbr: (g["vs Team"] || "")
         .split(" ")
         .map(w => w[0])
         .join("")
