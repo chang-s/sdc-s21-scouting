@@ -244,16 +244,18 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCheckboxVisibility();
     });
 
+    // Initial setup
     fetchPlayers();
     window.toggleStats = toggleStats;
-    updateCheckboxVisibility(); // ← add this
+    updateCheckboxVisibility();
+    updateGenerateBtnState();
 
     const searchInput = document.getElementById("searchInput");
     searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase();
-    document.querySelectorAll(".player-card").forEach(card => {
-        const name = card.dataset.name.toLowerCase();
-        card.style.display = name.includes(query) ? "block" : "none";
-    });
+        const query = searchInput.value.toLowerCase();
+        document.querySelectorAll(".player-card").forEach(card => {
+            const name = card.dataset.name.toLowerCase();
+            card.style.display = name.includes(query) ? "block" : "none";
+        });
     });
 });
