@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
         else if (player.avgKDA >= 4) kdaColor = "text-green-500";
         else if (player.avgKDA >= 3) kdaColor = "text-blue-500";
 
+        const rankIcon = rankIcons[player.rank] || "";
+
         card.innerHTML = `
             <div class="flex items-center mb-2">
             <h2 class="text-xl font-bold flex items-center gap-2">
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="${player.opgg}" target="_blank">
             <button class="mb-2 text-sm text-white bg-pink-500 hover:bg-pink-600 px-3 py-1 rounded transition">View op.gg</button>
             </a>
+
             <p><strong>Roles:</strong> ${player.roles.join(", ")}</p>
             <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
             <p><strong>Top Champions:</strong> ${player.topChampions.join(", ")}</p>
@@ -130,6 +133,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "Bot": "https://wiki.leagueoflegends.com/en-us/images/thumb/Bottom_icon.png/120px-Bottom_icon.png",
         "Support": "https://wiki.leagueoflegends.com/en-us/images/thumb/Support_icon.png/120px-Support_icon.png"
     };
+
+    const rankIcons = {
+        "Gold": "https://static.wikia.nocookie.net/leagueoflegends/images/d/d8/Season_2023_-_Gold.png",
+        "Platinum": "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Season_2023_-_Platinum.png",
+        "Emerald": "https://static.wikia.nocookie.net/leagueoflegends/images/f/f3/Season_2023_-_Emerald.png",
+        "Diamond": "https://static.wikia.nocookie.net/leagueoflegends/images/1/14/Season_2023_-_Diamond.png",
+        "Master": "https://static.wikia.nocookie.net/leagueoflegends/images/f/f7/Season_2023_-_Master.png",
+        "Grandmaster": "https://static.wikia.nocookie.net/leagueoflegends/images/7/70/Season_2023_-_Grandmaster.png",
+        "Challenger": "https://static.wikia.nocookie.net/leagueoflegends/images/3/35/Season_2023_-_Challenger.png"
+    };
+
 
     fetchPlayers();
     window.toggleStats = toggleStats;
