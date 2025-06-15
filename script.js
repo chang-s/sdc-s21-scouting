@@ -58,8 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         vsAbbr: row.vsAbbr
       });
     });
-    
-    console.log("Player record:", p);
 
     // Merge everything
     playerData = players.map(p => ({
@@ -75,6 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
       champsPlayed: (champMap[p.name] || []).map(c => ({ champ: c.champion, games: c.games })),
       avgKDA: +p.avgKDA
     }));
+    
+    console.log("Player record:", p);
 
     renderPlayerCards();
     renderCheckboxes();
