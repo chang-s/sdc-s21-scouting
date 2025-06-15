@@ -58,9 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button class="mb-2 text-sm text-white bg-pink-500 hover:bg-pink-600 px-3 py-1 rounded transition">View op.gg</button>
                 </a>
 
+                <p class="text-sm text-gray-600 mb-1"><strong>Team:</strong> ${player.team || 'Unassigned'}</p>
+                <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
                 <p><strong>Rank:</strong> ${rankIcon ? `<img src="${rankIcon}" class="w-6 inline ml-1" />` : ""} ${player.rank}</p>
                 <p><strong>Roles:</strong> ${player.roles.join(", ")}</p>
-                <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
                 <p><strong>Top Champions:</strong> ${player.topChampions.join(", ")}</p>
 
                 <button onclick="toggleStats(this, 'champ')" class="mt-2 text-sm text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded transition">Show Champ Stats ▼</button>

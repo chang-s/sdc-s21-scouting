@@ -1,6 +1,7 @@
 [
   {
     "name": "Duck Man#Quack",
+    "team": "Aura Farmers",
     "rank": "Master",
     "tier": 1,
     "points": 35,
@@ -23,6 +24,7 @@
   },
   {
     "name": "Infallible#galio",
+    "team": "Aura Farmers",
     "rank": "Master",
     "tier": 1,
     "points": 33,
