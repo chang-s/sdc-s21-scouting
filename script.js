@@ -1,3 +1,7 @@
+const playersURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAt4BeVzIt7X3HmqAWIPp975LP9LejP9GMyfUeGn8C4QB4e3tn8QG2ayLU9GRenRRAhOXr3w1Mg0uT/pub?gid=0&single=true&output=csv";
+const topChampsURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAt4BeVzIt7X3HmqAWIPp975LP9LejP9GMyfUeGn8C4QB4e3tn8QG2ayLU9GRenRRAhOXr3w1Mg0uT/pub?gid=1151497043&single=true&output=csv";
+const gameStatsURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAt4BeVzIt7X3HmqAWIPp975LP9LejP9GMyfUeGn8C4QB4e3tn8QG2ayLU9GRenRRAhOXr3w1Mg0uT/pub?gid=220574329&single=true&output=csv";
+
 const roleIcons = {
   Top: "https://wiki.leagueoflegends.com/en-us/images/thumb/Top_icon.png/120px-Top_icon.png",
   Jungle: "https://wiki.leagueoflegends.com/en-us/images/thumb/Jungle_icon.png/120px-Jungle_icon.png",
@@ -17,21 +21,91 @@ const rankIcons = {
 };
 
 let playerData = [];
-const roster = document.getElementById("roster");
-const checkboxContainer = document.getElementById("checkboxContainer");
 
-function fetchData() {
-  fetch("players.json")
-    .then(res => res.json())
-    .then(data => {
-      playerData = data.map(p => ({
-        ...p,
-        roles: p.roles ? p.roles.split(",").map(r => r.trim()) : []
-      }));
-      renderCheckboxes();
-      renderPlayerCards();
-    });
+async function fetchCSV(url) {
+  const response = await fetch(url);
+  const text = await response.text();
+  const [header, ...rows] = text.trim().split("\n").map(row => row.split(","));
+  return rows.map(row =>
+    Object.fromEntries(header.map((h, i) => [h.trim(), row[i]?.trim() || ""]))
+  );
 }
+
+async function fetchAllData() {
+  const [players, champs, games] = await Promise.all([
+    fetchCSV(playersURL),
+    fetchCSV(topChampsURL),
+    fetchCSV(gameStatsURL)
+  ]);
+
+  const champMap = {};
+  for (const c of champs) {
+    if (!champMap[c.Name]) champMap[c.Name] = [];
+    champMap[c.Name].push({
+      champion: c.Champion,
+      games: +c.Games,
+      kda: c.KDA,
+      winRate: c["Win%"]
+    });
+  }
+
+  const gameMap = {};
+  for (const g of games) {
+    if (!gameMap[g.Name]) gameMap[g.Name] = [];
+    gameMap[g.Name].push({
+      champion: g.Champion,
+      k: +g.K,
+      d: +g.D,
+      a: +g.A,
+      result: g.Result,
+      vs: g["vs Team"],
+      vsAbbr: g["vs Team"]
+        .split(" ")
+        .map(w => w[0])
+        .join("")
+        .toUpperCase()
+    });
+  }
+
+  playerData = players.map(p => ({
+    name: `${p.Name}#${p.Tagline}`,
+    tier: +p.Tier,
+    points: +p.Points,
+    rank: p.Rank,
+    roles: (p.Roles || "")
+      .replace(/\\/g, "")
+      .split(",")
+      .map(r => r.trim()),
+    opgg: p["op.gg Link"],
+    topChampions: (champMap[p.Name] || []).map(c => c.champion),
+    champStats: champMap[p.Name] || [],
+    gameStats: gameMap[p.Name] || [],
+    champsPlayed: (champMap[p.Name] || []).map(c => ({
+      champ: c.champion,
+      games: c.games
+    })),
+    avgKDA: calculateAverageKDA(gameMap[p.Name] || [])
+  }));
+
+  renderCheckboxes();
+  renderPlayerCards();
+}
+
+function calculateAverageKDA(games) {
+  if (!games.length) return 0;
+  const total = games.reduce(
+    (acc, g) => {
+      acc.k += g.k;
+      acc.d += g.d;
+      acc.a += g.a;
+      return acc;
+    },
+    { k: 0, d: 0, a: 0 }
+  );
+  return ((total.k + total.a) / Math.max(total.d, 1)).toFixed(1);
+}
+
+// ... define renderCheckboxes, renderPlayerCards, updateVisibleCards, toggleStats etc as before ...
 
 function renderCheckboxes() {
   checkboxContainer.innerHTML = `
@@ -135,4 +209,6 @@ function renderPlayerCards() {
   });
 }
 
-fetchData();
+document.addEventListener("DOMContentLoaded", () => {
+  fetchAllData();
+});
