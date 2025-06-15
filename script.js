@@ -32,65 +32,71 @@ async function fetchCSV(url) {
 }
 
 async function fetchAllData() {
-  const [players, champs, games] = await Promise.all([
+  const normalize = (name, tagline) =>
+    `${(name || "").trim()}#${(tagline || "").trim()}`.toLowerCase();
+
+  const [players, champStats, gameStats] = await Promise.all([
     fetchCSV(playersURL),
     fetchCSV(topChampsURL),
     fetchCSV(gameStatsURL)
   ]);
 
   const champMap = {};
-  for (const c of champs) {
-    if (!champMap[c.Name]) champMap[c.Name] = [];
-    champMap[c.Name].push({
+  champStats.forEach(c => {
+    const key = normalize(c.Name, c.Tagline);
+    if (!champMap[key]) champMap[key] = [];
+    champMap[key].push({
       champion: c.Champion,
       games: +c.Games,
       kda: c.KDA,
-      winRate: c["Win%"]
+      winRate: c.WinRate
     });
-  }
+  });
 
   const gameMap = {};
-  for (const g of games) {
-    if (!gameMap[g.Name]) gameMap[g.Name] = [];
-    if (!g["vs Team"]) console.warn("Missing vs Team for:", g);
-    
-    gameMap[g.Name].push({
+  gameStats.forEach(g => {
+    const key = normalize(g.Name, g.Tagline);
+    if (!gameMap[key]) gameMap[key] = [];
+    gameMap[key].push({
       champion: g.Champion,
-      k: +g.K,
-      d: +g.D,
-      a: +g.A,
+      k: +g.Kills,
+      d: +g.Deaths,
+      a: +g.Assists,
       result: g.Result,
       vs: g["vs Team"],
-      vsAbbr: (g["vs Team"] || "")
-        .split(" ")
-        .map(w => w[0])
-        .join("")
-        .toUpperCase()
+      vsAbbr: g["vs Abbreviation"]
     });
-  }
+  });
 
-  playerData = players.map(p => ({
-    name: `${p.Name}#${p.Tagline}`,
-    tier: +p.Tier,
-    points: +p.Points,
-    rank: p.Rank,
-    roles: (p.Roles || "")
-      .replace(/\\/g, "")
-      .split(",")
-      .map(r => r.trim()),
-    opgg: p["op.gg Link"],
-    topChampions: (champMap[p.Name] || []).map(c => c.champion),
-    champStats: champMap[p.Name] || [],
-    gameStats: gameMap[p.Name] || [],
-    champsPlayed: (champMap[p.Name] || []).map(c => ({
-      champ: c.champion,
-      games: c.games
-    })),
-    avgKDA: calculateAverageKDA(gameMap[p.Name] || [])
-  }));
+  playerData = players.map(p => {
+    const key = normalize(p.Name, p.Tagline);
+    const champsPlayed = champMap[key]?.map(c => ({
+      champ: c.Champion,
+      games: +c.Games
+    })) || [];
 
-  renderCheckboxes();
+    const avgKDA = champMap[key]?.reduce((acc, cur) => acc + parseFloat(cur.KDA || 0), 0) / (champMap[key]?.length || 1);
+
+    return {
+      name: `${p.Name}#${p.Tagline}`,
+      tier: +p.Tier,
+      points: +p.Points,
+      rank: p.Rank,
+      roles: (p.Roles || "")
+        .replace(/\\/g, "")
+        .split(",")
+        .map(r => r.trim()),
+      opgg: p["op.gg Link"],
+      topChampions: [], // can be filled later
+      champStats: champMap[key] || [],
+      gameStats: gameMap[key] || [],
+      champsPlayed,
+      avgKDA: +avgKDA.toFixed(2)
+    };
+  });
+
   renderPlayerCards();
+  renderCheckboxes();
 }
 
 function calculateAverageKDA(games) {
