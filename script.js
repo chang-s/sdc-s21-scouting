@@ -149,3 +149,42 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchPlayers();
     window.toggleStats = toggleStats;
 });
+
+// Confetti animation when button is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("generateBtn");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      // your actual generate logic should go here
+
+      // basic confetti burst!
+      for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement("div");
+        confetti.innerText = ["🌟", "💫", "✨", "🌱", "🍇"][Math.floor(Math.random() * 5)];
+        confetti.className = "confetti text-xl absolute";
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.top = "50%";
+        confetti.style.animation = `fall 1s ease-out forwards`;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 1000);
+      }
+    });
+  }
+});
+
+// Add the animation style
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes fall {
+  to {
+    transform: translateY(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+.confetti {
+  pointer-events: none;
+  z-index: 9999;
+  transform: translateY(0);
+}
+`;
+document.head.appendChild(style);
