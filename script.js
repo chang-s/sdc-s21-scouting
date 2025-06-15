@@ -1,28 +1,18 @@
+function toggleStats(button, type) {
+  const statDiv = button.nextElementSibling;
+  const isHidden = statDiv.classList.contains("hidden");
+  statDiv.classList.toggle("hidden");
+  button.textContent = isHidden
+    ? `Hide ${type === "champ" ? "Champ" : "Game"} Stats ▲`
+    : `Show ${type === "champ" ? "Champ" : "Game"} Stats ▼`;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const roster = document.getElementById("roster");
   const checkboxContainer = document.getElementById("checkboxContainer");
-  const searchBar = document.getElementById("searchInput");
-  const multiOpggBtn = document.getElementById("generateMultiOpgg");
-
+  const searchInput = document.getElementById("searchInput");
+  const multiOpggLink = document.getElementById("multiOpggLink");
   let playerData = [];
-
-  const roleIcons = {
-    "Top": "https://wiki.leagueoflegends.com/en-us/images/thumb/Top_icon.png/120px-Top_icon.png",
-    "Jungle": "https://wiki.leagueoflegends.com/en-us/images/thumb/Jungle_icon.png/120px-Jungle_icon.png",
-    "Mid": "https://wiki.leagueoflegends.com/en-us/images/thumb/Middle_icon.png/120px-Middle_icon.png",
-    "Bot": "https://wiki.leagueoflegends.com/en-us/images/thumb/Bottom_icon.png/120px-Bottom_icon.png",
-    "Support": "https://wiki.leagueoflegends.com/en-us/images/thumb/Support_icon.png/120px-Support_icon.png"
-  };
-
-  const rankIcons = {
-    "Gold": "https://static.wikia.nocookie.net/leagueoflegends/images/7/78/Season_2023_-_Gold.png",
-    "Platinum": "https://static.wikia.nocookie.net/leagueoflegends/images/b/bd/Season_2023_-_Platinum.png",
-    "Emerald": "https://static.wikia.nocookie.net/leagueoflegends/images/4/4b/Season_2023_-_Emerald.png",
-    "Diamond": "https://static.wikia.nocookie.net/leagueoflegends/images/3/37/Season_2023_-_Diamond.png/",
-    "Master": "https://static.wikia.nocookie.net/leagueoflegends/images/d/d5/Season_2023_-_Master.png",
-    "Grandmaster": "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Season_2023_-_Grandmaster.png",
-    "Challenger": "https://static.wikia.nocookie.net/leagueoflegends/images/1/14/Season_2023_-_Challenger.png"
-  };
 
   async function fetchPlayers() {
     const response = await fetch("players.json");
@@ -31,12 +21,25 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCheckboxes();
   }
 
+  function getRankIcon(rank) {
+    const icons = {
+      Gold: "https://static.wikia.nocookie.net/leagueoflegends/images/3/3d/Season_2023_-_Gold.png",
+      Platinum: "https://static.wikia.nocookie.net/leagueoflegends/images/c/cb/Season_2023_-_Platinum.png",
+      Emerald: "https://static.wikia.nocookie.net/leagueoflegends/images/b/bb/Season_2023_-_Emerald.png",
+      Diamond: "https://static.wikia.nocookie.net/leagueoflegends/images/f/f5/Season_2023_-_Diamond.png",
+      Master: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4b/Season_2023_-_Master.png",
+      Grandmaster: "https://static.wikia.nocookie.net/leagueoflegends/images/1/1f/Season_2023_-_Grandmaster.png",
+      Challenger: "https://static.wikia.nocookie.net/leagueoflegends/images/7/72/Season_2023_-_Challenger.png"
+    };
+    return icons[rank] || "";
+  }
+
   function renderPlayerCards() {
     roster.innerHTML = "";
-    playerData.forEach(player => {
+    playerData.forEach((player) => {
       const card = document.createElement("div");
       card.className = "player-card rounded-lg shadow-md p-4 bg-white";
-      card.dataset.name = player.name.toLowerCase();
+      card.dataset.name = player.name;
 
       const tierColor = {
         1: "bg-red-200",
@@ -45,21 +48,29 @@ document.addEventListener("DOMContentLoaded", () => {
         4: "bg-green-200"
       }[player.tier];
 
-      const rolesHtml = player.roles.map(role =>
-        `<img src="${roleIcons[role]}" class="w-6 h-6" title="${role}"/>`
-      ).join(" ");
+      const rolesHtml = player.roles
+        .map((role) => `<img src="${roleIcons[role]}" class="w-6 h-6" />`)
+        .join(" ");
 
-      const champStatsHtml = player.champStats.map(cs =>
-        `<tr><td>${cs.champion}</td><td>${cs.games}</td><td>${cs.kda}</td><td>${cs.winRate}</td></tr>`
-      ).join("");
+      const champStatsHtml = player.champStats
+        .map(
+          (cs) =>
+            `<tr><td>${cs.champion}</td><td>${cs.games}</td><td>${cs.kda}</td><td>${cs.winRate}</td></tr>`
+        )
+        .join("");
 
-      const gameStatsHtml = player.gameStats.map((g, i) =>
-        `<tr><td>${i + 1}</td><td>${g.champion}</td><td>${g.k}</td><td>${g.d}</td><td>${g.a}</td><td><span class="${g.result === 'W' ? 'text-green-600' : 'text-red-600'} font-semibold">${g.result}</span></td><td title="${g.vs}">${g.vsAbbr}</td></tr>`
-      ).join("");
+      const gameStatsHtml = player.gameStats
+        .map(
+          (g, i) =>
+            `<tr><td>${i + 1}</td><td>${g.champion}</td><td>${g.k}</td><td>${g.d}</td><td>${g.a}</td><td><span class="${
+              g.result === "W" ? "text-green-600" : "text-red-600"
+            } font-semibold">${g.result}</span></td><td title="${g.vs}">${g.vsAbbr}</td></tr>`
+        )
+        .join("");
 
-      const champsPlayedSummary = player.champsPlayed.map(cp =>
-        `<tr><td>${cp.champ}</td><td>${cp.games} games</td></tr>`
-      ).join("");
+      const champsPlayedSummary = player.champsPlayed
+        .map((cp) => `<tr><td>${cp.champ}</td><td>${cp.games} games</td></tr>`)
+        .join("");
 
       let kdaColor = "text-gray-500";
       if (player.avgKDA >= 6) kdaColor = "text-red-500";
@@ -67,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (player.avgKDA >= 4) kdaColor = "text-green-500";
       else if (player.avgKDA >= 3) kdaColor = "text-blue-500";
 
-      const rankIcon = rankIcons[player.rank] || "";
+      const rankIcon = getRankIcon(player.rank);
 
       card.innerHTML = `
         <div class="flex items-center mb-2">
@@ -80,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="${player.opgg}" target="_blank">
           <button class="mb-2 text-sm text-white bg-pink-500 hover:bg-pink-600 px-3 py-1 rounded transition">View op.gg</button>
         </a>
-        <p><strong>Rank:</strong> ${rankIcon ? ` <img src="${rankIcon}" class="inline w-6 h-6 ml-1" title="${player.rank}"/>` : ""} ${player.rank}</p>
+        <p><strong>Rank:</strong> ${player.rank} ${rankIcon ? `<img src="${rankIcon}" class="w-6 inline ml-1" />` : ""}</p>
         <p><strong>Roles:</strong> ${player.roles.join(", ")}</p>
         <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
         <p><strong>Top Champions:</strong> ${player.topChampions.join(", ")}</p>
@@ -108,13 +119,24 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `;
+
       roster.appendChild(card);
     });
   }
 
   function renderCheckboxes() {
     checkboxContainer.innerHTML = "";
-    playerData.forEach(player => {
+
+    const multiOpggButton = document.createElement("a");
+    multiOpggButton.id = "multiOpggLink";
+    multiOpggButton.href = "#";
+    multiOpggButton.target = "_blank";
+    multiOpggButton.className =
+      "hidden mb-2 inline-block bg-pink-500 text-white px-4 py-2 rounded text-sm hover:bg-pink-600 transition";
+    multiOpggButton.textContent = "Generate Multi op.gg";
+    checkboxContainer.appendChild(multiOpggButton);
+
+    playerData.forEach((player) => {
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.id = `cb-${player.name}`;
@@ -132,58 +154,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
       checkboxContainer.appendChild(wrapper);
 
-      checkbox.addEventListener("change", () => {
-        updateVisibleCards();
-        updateMultiOpggLink();
-      });
+      checkbox.addEventListener("change", () => updateVisibleCards());
     });
   }
 
   function updateVisibleCards() {
-    const checkedValues = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
+    const checkedValues = Array.from(
+      checkboxContainer.querySelectorAll("input:checked")
+    ).map((cb) => cb.value);
 
-    document.querySelectorAll(".player-card").forEach(card => {
-        const name = card.dataset.name;
-        card.style.display = checkedValues.length === 0 || checkedValues.includes(name) ? "block" : "none";
+    document.querySelectorAll(".player-card").forEach((card) => {
+      const name = card.dataset.name;
+      card.style.display =
+        checkedValues.length === 0 || checkedValues.includes(name)
+          ? "block"
+          : "none";
     });
 
     const multiOpggLink = document.getElementById("multiOpggLink");
     if (checkedValues.length >= 2) {
-        const encodedSummoners = checkedValues.map(name => encodeURIComponent(name)).join("%2C");
-        multiOpggLink.href = `https://op.gg/lol/multisearch/na?summoners=${encodedSummoners}`;
-        multiOpggLink.classList.remove("hidden");
+      const encodedSummoners = checkedValues
+        .map((name) => encodeURIComponent(name))
+        .join("%2C");
+      multiOpggLink.href = `https://op.gg/lol/multisearch/na?summoners=${encodedSummoners}`;
+      multiOpggLink.classList.remove("hidden");
     } else {
-        multiOpggLink.classList.add("hidden");
+      multiOpggLink.classList.add("hidden");
     }
   }
 
-
-  function updateMultiOpggLink() {
-    const checked = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
-    if (checked.length >= 2) {
-      const encoded = checked.map(name => encodeURIComponent(name)).join("%2C");
-      const url = `https://op.gg/lol/multisearch/na?summoners=${encoded}`;
-      multiOpggBtn.href = url;
-      multiOpggBtn.classList.remove("opacity-50", "pointer-events-none");
-    } else {
-      multiOpggBtn.href = "#";
-      multiOpggBtn.classList.add("opacity-50", "pointer-events-none");
-    }
-  }
-
-  window.toggleStats = function(button, type) {
-    const statDiv = button.nextElementSibling;
-    const isHidden = statDiv.classList.contains("hidden");
-    statDiv.classList.toggle("hidden");
-    button.textContent = isHidden
-      ? `Hide ${type === 'champ' ? 'Champ' : 'Game'} Stats ▲`
-      : `Show ${type === 'champ' ? 'Champ' : 'Game'} Stats ▼`;
+  const roleIcons = {
+    Top: "https://wiki.leagueoflegends.com/en-us/images/thumb/Top_icon.png/120px-Top_icon.png",
+    Jungle:
+      "https://wiki.leagueoflegends.com/en-us/images/thumb/Jungle_icon.png/120px-Jungle_icon.png",
+    Mid: "https://wiki.leagueoflegends.com/en-us/images/thumb/Middle_icon.png/120px-Middle_icon.png",
+    Bot: "https://wiki.leagueoflegends.com/en-us/images/thumb/Bottom_icon.png/120px-Bottom_icon.png",
+    Support:
+      "https://wiki.leagueoflegends.com/en-us/images/thumb/Support_icon.png/120px-Support_icon.png"
   };
 
-  searchBar.addEventListener("input", () => {
-    const query = searchBar.value.toLowerCase();
-    document.querySelectorAll(".player-card").forEach(card => {
-      const name = card.dataset.name;
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    document.querySelectorAll(".player-card").forEach((card) => {
+      const name = card.dataset.name.toLowerCase();
       card.style.display = name.includes(query) ? "block" : "none";
     });
   });
