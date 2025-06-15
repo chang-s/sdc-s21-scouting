@@ -158,30 +158,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function updateVisibleCards() {
-    const checkedValues = Array.from(
-      checkboxContainer.querySelectorAll("input:checked")
-    ).map((cb) => cb.value);
+function updateVisibleCards() {
+  const checkedValues = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
+  document.querySelectorAll(".player-card").forEach(card => {
+    const name = card.dataset.name;
+    card.style.display = checkedValues.length === 0 || checkedValues.includes(name) ? "block" : "none";
+  });
 
-    document.querySelectorAll(".player-card").forEach((card) => {
-      const name = card.dataset.name;
-      card.style.display =
-        checkedValues.length === 0 || checkedValues.includes(name)
-          ? "block"
-          : "none";
-    });
-
-    const multiOpggLink = document.getElementById("multiOpggLink");
-    if (checkedValues.length >= 2) {
-      const encodedSummoners = checkedValues
-        .map((name) => encodeURIComponent(name))
-        .join("%2C");
-      multiOpggLink.href = `https://op.gg/lol/multisearch/na?summoners=${encodedSummoners}`;
-      multiOpggLink.classList.remove("hidden");
-    } else {
-      multiOpggLink.classList.add("hidden");
-    }
-  }
+  // Always update the multi-op.gg link, even if fewer than 2
+  const multiOpggLink = document.getElementById("multiOpggLink");
+  const encodedSummoners = checkedValues.map(name => encodeURIComponent(name)).join("%2C");
+  multiOpggLink.href = `https://op.gg/lol/multisearch/na?summoners=${encodedSummoners}`;
+}
 
   const roleIcons = {
     Top: "https://wiki.leagueoflegends.com/en-us/images/thumb/Top_icon.png/120px-Top_icon.png",
