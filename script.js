@@ -60,21 +60,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Merge everything
-    playerData = players.map(p => ({
-      name: p.name,
-      tier: +p.tier,
-      points: +p.points,
-      rank: p.rank,
-      roles: (p.roles || "").split(",").map(r => r.trim()),
-      opgg: p.opgg,
-      topChampions: (p.topChampions || "").split(",").map(c => c.trim()),
-      champStats: champMap[p.name] || [],
-      gameStats: gameMap[p.name] || [],
-      champsPlayed: (champMap[p.name] || []).map(c => ({ champ: c.champion, games: c.games })),
-      avgKDA: +p.avgKDA
-    }));
-    
-    console.log("Player record:", p);
+    playerData = players.map(p => {
+        // Optional: Log missing values to help with debugging
+        if (!p.name || !p.topChampions) {
+            console.warn("Missing data for player:", p);
+        }
+
+        return {
+            name: p.name,
+            tier: +p.tier,
+            points: +p.points,
+            rank: p.rank,
+            roles: (p.roles || "").split(",").map(r => r.trim()),
+            opgg: p.opgg,
+            topChampions: (p.topChampions || "").split(",").map(c => c.trim()),
+            champStats: champMap[p.name] || [],
+            gameStats: gameMap[p.name] || [],
+            champsPlayed: (champMap[p.name] || []).map(c => ({ champ: c.champion, games: c.games })),
+            avgKDA: +p.avgKDA
+        };
+    });
 
     renderPlayerCards();
     renderCheckboxes();
