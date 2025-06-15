@@ -186,23 +186,23 @@ document.addEventListener("DOMContentLoaded", () => {
         "Challenger": "https://static.wikia.nocookie.net/leagueoflegends/images/1/14/Season_2023_-_Challenger.png"
     };
 
+    function updateCheckboxVisibility() {
+        const selectedTeam = teamFilter.value;
+        const wrapper = document.getElementById("checkboxWrapper");
+
+        if (selectedTeam === "All") {
+            wrapper.style.display = "none";
+        } else {
+            wrapper.style.display = "block";
+        }
+    }
+
     const teamFilter = document.getElementById("teamFilter");
     teamFilter.addEventListener("change", () => {
         updateVisibleCards();
         updateCheckboxVisibility();
     });
-
-    function updateCheckboxVisibility() {
-        const selectedTeam = teamFilter.value;
-        const checkboxWrapper = checkboxContainer.parentElement;
-
-        if (selectedTeam === "All") {
-            checkboxWrapper.style.display = "none";
-        } else {
-            checkboxWrapper.style.display = "block";
-        }
-    }
-
+    
     fetchPlayers();
     window.toggleStats = toggleStats;
     updateCheckboxVisibility(); // ← add this
