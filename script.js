@@ -54,13 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         ${rolesHtml}
                     </h2>
                 </div>
+                
+                <div class="inline-block mb-2 mt-1 px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full shadow-sm">
+                    <p>${player.team || 'Unassigned'}</p>
+                </div>
+
                 <a href="${player.opgg}" target="_blank">
                     <button class="mb-2 text-sm text-white bg-pink-500 hover:bg-pink-600 px-3 py-1 rounded transition">View op.gg</button>
                 </a>
-                
-                <div class="inline-block mb-2 mt-1 px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full shadow-sm">
-                    ${player.team || 'Unassigned'}
-                </div>
 
                 <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
                 <p><strong>Rank:</strong> ${rankIcon ? `<img src="${rankIcon}" class="w-6 inline ml-1" />` : ""} ${player.rank}</p>
