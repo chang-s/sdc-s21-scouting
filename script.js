@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
         vsAbbr: row.vsAbbr
       });
     });
+    
+    console.log("Player record:", p);
 
     // Merge everything
     playerData = players.map(p => ({
@@ -65,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tier: +p.tier,
       points: +p.points,
       rank: p.rank,
-      roles: p.roles.split(";").map(r => r.trim()),
+      roles: (p.roles || "").split(",").map(r => r.trim()),
       opgg: p.opgg,
       topChampions: p.topChampions.split(";").map(c => c.trim()),
       champStats: champMap[p.name] || [],
