@@ -98,8 +98,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderCheckboxes() {
+        const selectedTeam = teamFilter.value;
         checkboxContainer.innerHTML = "";
-        playerData.forEach(player => {
+        
+        playerData
+        .filter(player => player.team === selectedTeam)
+        .forEach(player => {
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.id = `cb-${player.name}`;
@@ -188,12 +192,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateCheckboxVisibility() {
         const selectedTeam = teamFilter.value;
-        const wrapper = document.getElementById("checkboxWrapper");
+        const checkboxContainer = document.getElementById("checkboxContainer");
 
         if (selectedTeam === "All") {
-            wrapper.style.display = "none";
+            checkboxContainer.innerHTML = ""; // hide checkboxes
         } else {
-            wrapper.style.display = "block";
+            renderCheckboxes(); // show checkboxes for selected team only
         }
     }
 
@@ -202,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateVisibleCards();
         updateCheckboxVisibility();
     });
-    
+
     fetchPlayers();
     window.toggleStats = toggleStats;
     updateCheckboxVisibility(); // ← add this
