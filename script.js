@@ -127,7 +127,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateGenerateBtnState() {
         const checked = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
-        generateBtn.disabled = checked.length === 0;
+        if (checked.length === 0) {
+            generateBtn.disabled = true;
+            generateBtn.classList.remove("bg-gradient-to-r", "from-purple-500", "to-pink-500", "ring-2", "ring-purple-300", "hover:ring-4", "hover:scale-105");
+            generateBtn.classList.add("bg-gray-200", "text-gray-500", "cursor-not-allowed");
+        } else {
+            generateBtn.disabled = false;
+            generateBtn.classList.add("bg-gradient-to-r", "from-purple-500", "to-pink-500", "ring-2", "ring-purple-300", "hover:ring-4", "hover:scale-105");
+            generateBtn.classList.remove("bg-gray-200", "text-gray-500", "cursor-not-allowed");
+        }
     }
 
     function toggleStats(button, type) {
@@ -166,4 +174,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchPlayers();
     window.toggleStats = toggleStats;
+
+    const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    document.querySelectorAll(".player-card").forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        card.style.display = name.includes(query) ? "block" : "none";
+    });
+    });
 });
