@@ -33,7 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
             ).join("");
 
             const gameStatsHtml = player.gameStats.map((g, i) =>
-                `<tr><td>${i + 1}</td><td>${g.champion}</td><td>${g.k}</td><td>${g.d}</td><td>${g.a}</td><td><span class="${g.result === 'W' ? 'text-green-600' : 'text-red-600'} font-semibold">${g.result}</span></td><td title="${g.vs}">${g.vsAbbr}</td></tr>`
+                `<tr>
+                    <td>${i + 1}</td>
+                    <td>${g.champion}</td>
+                    <td>${g.k}</td>
+                    <td>${g.d}</td>
+                    <td>${g.a}</td>
+                    <td class="text-center">
+                        <span class="${g.result === 'W' ? 'text-green-600' : 'text-red-600'} font-semibold">${g.result}</span>
+                    </td>
+                    <td title="${g.vs}">${g.vsAbbr}</td>
+                </tr>`
             ).join("");
 
             const champsPlayedSummary = player.champsPlayed.map(cp => `<tr><td>${cp.champ}</td><td>${cp.games} games</td></tr>`).join("");
