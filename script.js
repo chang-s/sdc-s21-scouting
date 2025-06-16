@@ -48,19 +48,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.innerHTML = `
                 <div class="relative">
-
-                    <!-- op.gg icon button (top-right) -->
-                    <a href="${player.opgg}" target="_blank" class="absolute top-2 right-2" title="View op.gg profile">
-                        <img src="https://i.imgur.com/y0la7LC.png" alt="op.gg" class="w-6 h-6 opacity-70 hover:opacity-100 hover:scale-110 transition-transform duration-200" />
-                    </a>
-
-                    <!-- Name + Tier + Roles -->
-                    <div class="flex items-center mb-2">
+                    <!-- Name + Tier + op.gg + Roles -->
+                    <div class="flex items-center mb-2 gap-2">
                         <h2 class="text-xl font-bold flex items-center gap-2">
                             <span class="text-sm font-semibold px-2 py-1 rounded ${tierColor}">T${player.tier}</span>
                             ${player.name}
-                            ${rolesHtml}
                         </h2>
+                        <a href="${player.opgg}" target="_blank" title="View op.gg profile">
+                            <img src="https://i.imgur.com/y0la7LC.png" alt="op.gg"
+                                class="w-6 h-6 rounded-full opacity-70 hover:opacity-100 hover:scale-110 transition-transform duration-200" />
+                        </a>
+                        <div class="flex gap-1">
+                            ${rolesHtml}
+                        </div>
                     </div>
 
                     <!-- Team + Button -->
@@ -200,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         }
     }
-
 
     function toggleStats(button, type) {
         const statDiv = button.nextElementSibling;
