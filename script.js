@@ -187,7 +187,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Initial setup
     fetchPlayers();
+    window.toggleStats = toggleStats;
+    updateGenerateBtnState();
 
     const roleIcons = {
         "Top": "https://wiki.leagueoflegends.com/en-us/images/thumb/Top_icon.png/120px-Top_icon.png",
