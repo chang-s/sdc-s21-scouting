@@ -40,7 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${g.d}</td>
                     <td>${g.a}</td>
                     <td class="text-center">
-                        <span class="${g.result === 'W' ? 'text-green-600' : 'text-red-600'} font-semibold">${g.result}</span>
+                        <span class="inline-block w-6 h-6 leading-6 text-center rounded-full font-bold text-white 
+                            ${g.result === 'W' ? 'bg-green-500' : 'bg-red-500'}">
+                            ${g.result}
+                        </span>
                     </td>
                     <td title="${g.vs}">${g.vsAbbr}</td>
                 </tr>`
@@ -100,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button onclick="toggleStats(this, 'game')" class="mt-2 text-sm text-white bg-green-500 hover:bg-green-600 px-3 py-1 rounded transition">Show Game Stats ▼</button>
                     <div class="hidden mt-2 text-sm bg-gray-50 p-2 rounded game-stats">
                         <table class="table-auto w-full text-left">
-                            <thead><tr><th>Game</th><th>Champion</th><th>K</th><th>D</th><th>A</th><th>Result</th><th>vs Team</th></tr></thead>
+                            <thead><tr><th>Game</th><th>Champion</th><th>K</th><th>D</th><th>A</th><th class="text-center">Result</th><th>vs Team</th></tr></thead>
                             <tbody>${gameStatsHtml}</tbody>
                         </table>
                         <div class="mt-4">
