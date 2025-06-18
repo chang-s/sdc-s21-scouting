@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SolaCSVParser": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\Sola\\Downloads\\SDC S21 Scouting Sheet - Teams.csv\" \"C:\\Users\\Sola\\Downloads\\SDC S21 Scouting Sheet - Players.csv\" \"C:\\Users\\Sola\\Downloads\\SDC S21 Scouting Sheet - Top Champs.csv\""
+    }
+  }
+}
