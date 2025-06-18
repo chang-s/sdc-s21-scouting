@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.querySelectorAll(".player-card").forEach(card => {
             const name = card.dataset.name;
-            const player = playerData.find(p => p.name === name);
+            const player = playerData.find(p => p.ign === name);
 
             const matchesTeam = selectedTeam === "All" || player.team === selectedTeam;
             const matchesCheckbox = checkedValues.length === 0 || checkedValues.includes(name);
@@ -231,11 +231,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const roleIcons = {
-        "Top": "https://wiki.leagueoflegends.com/en-us/images/thumb/Top_icon.png/120px-Top_icon.png",
-        "Jungle": "https://wiki.leagueoflegends.com/en-us/images/thumb/Jungle_icon.png/120px-Jungle_icon.png",
-        "Mid": "https://wiki.leagueoflegends.com/en-us/images/thumb/Middle_icon.png/120px-Middle_icon.png",
-        "Bot": "https://wiki.leagueoflegends.com/en-us/images/thumb/Bottom_icon.png/120px-Bottom_icon.png",
-        "Support": "https://wiki.leagueoflegends.com/en-us/images/thumb/Support_icon.png/120px-Support_icon.png"
+        "TOP": "https://wiki.leagueoflegends.com/en-us/images/thumb/Top_icon.png/120px-Top_icon.png",
+        "JNG": "https://wiki.leagueoflegends.com/en-us/images/thumb/Jungle_icon.png/120px-Jungle_icon.png",
+        "MID": "https://wiki.leagueoflegends.com/en-us/images/thumb/Middle_icon.png/120px-Middle_icon.png",
+        "BOT": "https://wiki.leagueoflegends.com/en-us/images/thumb/Bottom_icon.png/120px-Bottom_icon.png",
+        "SUP": "https://wiki.leagueoflegends.com/en-us/images/thumb/Support_icon.png/120px-Support_icon.png"
     };
 
     const rankIcons = {
