@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const response = await fetch("players.json");
         playerData = await response.json();
         renderPlayerCards();
-        renderCheckboxes();
+        renderPlayerButtons();
         updateGenerateBtnState();
     }
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         playerData.forEach(player => {
             const card = document.createElement("div");
             card.className = "player-card rounded-lg shadow-md p-4 bg-white";
-            card.dataset.name = player.name;
+            card.dataset.name = player.ign;
 
             const tierColor = {
                 1: "bg-red-200",
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="flex items-center mb-2 gap-2">
                         <h2 class="text-xl font-bold flex items-center gap-2">
                             <span class="text-sm font-semibold px-2 py-1 rounded ${tierColor}">T${player.tier}</span>
-                            ${player.name}
+                            ${player.ign}
                         </h2>
                         <a href="${player.opgg}" target="_blank" title="View op.gg profile">
                             <img src="https://i.imgur.com/y0la7LC.png" alt="op.gg"
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>Tier:</strong> Tier ${player.tier} (${player.points} pts)</p>
                     <p><strong>Rank:</strong> ${rankIcon ? `<img src="${rankIcon}" class="w-6 inline ml-1" />` : ""} ${player.rank}</p>
                     <p><strong>Roles:</strong> ${player.roles.join(", ")}</p>
-                    <p><strong>Top Champions:</strong> ${player.topChampions.join(", ")}</p>
+                    <p><strong>Top Champions:</strong> ${player.topChamps.join(", ")}</p>
 
                     <!-- Champ Stats -->
                     <button onclick="toggleStats(this, 'champ')" class="mt-2 text-sm text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded transition">Show Champ Stats ▼</button>
@@ -133,12 +133,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .filter(player => player.team === selectedTeam)
         .forEach(player => {
             const btn = document.createElement("button");
-            btn.dataset.name = player.name;
+            btn.dataset.name = player.ign;
             btn.className =
             "player-pill px-4 py-1 rounded-full text-sm font-semibold transition border border-gray-300 " +
             "hover:bg-purple-100 hover:text-purple-800 mb-1 mr-2";
 
-            btn.innerHTML = player.name;
+            btn.innerHTML = player.ign;
 
             btn.addEventListener("click", () => {
             btn.classList.toggle("selected-pill");
@@ -148,9 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.classList.toggle("border-purple-500");
 
             if (btn.classList.contains("selected-pill")) {
-                btn.innerHTML = `✅ ${player.name}`;
+                btn.innerHTML = `✅ ${player.ign}`;
             } else {
-                btn.innerHTML = player.name;
+                btn.innerHTML = player.ign;
             }
 
             updateVisibleCards();
@@ -253,9 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const checkboxContainer = document.getElementById("checkboxContainer");
 
         if (selectedTeam === "All") {
-            checkboxContainer.innerHTML = ""; // hide checkboxes
+            checkboxContainer.innerHTML = ""; // hide player roster
         } else {
-            renderCheckboxes(); // show checkboxes for selected team only
+            renderPlayerButtons(); // show player roster for selected team only
         }
     }
 
