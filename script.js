@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.classList.toggle("border-purple-500");
 
             if (btn.classList.contains("selected-pill")) {
-                btn.innerHTML = `✅ ${player.ign}`;
+                btn.innerHTML = `${player.ign}`;
             } else {
                 btn.innerHTML = player.ign;
             }
