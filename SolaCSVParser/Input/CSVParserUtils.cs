@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 
 namespace SolaCSVParser.Input
 {
@@ -32,10 +28,12 @@ namespace SolaCSVParser.Input
                         Console.WriteLine("This table is weird");
                         continue;
                     }
+                    
+                    PropertyInfo[] properties = typeof(TeamsRow).GetProperties();
                     for (int i = 1; i < lines.Length; i++)
                     {
                         string[] lineData = lines[i].Split(",");
-                        if (lineData.Length != 4)
+                        if (lineData.Length != properties.Length)
                         {
                             Console.WriteLine("This row is weird");
                             continue;
@@ -60,10 +58,12 @@ namespace SolaCSVParser.Input
                         Console.WriteLine("This table is weird");
                         continue;
                     }
+                    
+                    PropertyInfo[] properties = typeof(PlayersRow).GetProperties();
                     for (int i = 1; i < lines.Length; i++)
                     {
                         string[] lineData = lines[i].Split(",");
-                        if (lineData.Length != 8)
+                        if (lineData.Length != properties.Length)
                         {
                             Console.WriteLine("This row is weird");
                             continue;
@@ -92,10 +92,11 @@ namespace SolaCSVParser.Input
                         Console.WriteLine("This table is weird");
                         continue;
                     }
+                    PropertyInfo[] properties = typeof(TopChampsRow).GetProperties();
                     for (int i = 1; i < lines.Length; i++)
                     {
                         string[] lineData = lines[i].Split(",");
-                        if (lineData.Length != 7)
+                        if (lineData.Length != properties.Length)
                         {
                             Console.WriteLine("This row is weird");
                             continue;
