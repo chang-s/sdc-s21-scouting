@@ -55,7 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }, {});
 
             const champsPlayedSummary = Object.entries(champCounts)
-                .map(([champ, count]) => `<tr><td>${champ}</td><td>${count} game${count > 1 ? "s" : ""}</td></tr>`)
+                .map(([champ, count]) => {
+                    const iconUrl = `https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/${champ}.png`;
+                    return `
+                    <tr>
+                        <td class="flex items-center gap-2">
+                            <img src="${iconUrl}" alt="${champ}" class="w-6 h-6 rounded-sm" />
+                            ${champ}
+                        </td>
+                        <td>${count} game${count > 1 ? "s" : ""}</td>
+                    </tr>`;
+                        })
                 .join("");
 
             let kdaColor = "text-gray-500";
