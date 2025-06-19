@@ -171,15 +171,6 @@ namespace SolaCSVParser
                 // At the end, save the file
                 File.WriteAllText(filePath, JsonConvert.SerializeObject(players, Formatting.Indented));
                 Console.WriteLine("Match processed and data updated!");
-
-                Console.Write("\nDo you have another game to enter? (y/n): ");
-                string? again = Console.ReadLine()?.Trim().ToLower();
-                if (again != "y" && again != "yes")
-                {
-                    Console.WriteLine("Bye bye!");
-                    break;
-                }
-
                 Console.WriteLine(); // just for spacing
             }
         }
