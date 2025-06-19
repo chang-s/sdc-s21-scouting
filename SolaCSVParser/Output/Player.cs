@@ -9,6 +9,7 @@ namespace SolaCSVParser.Output
     public class Player
     {
         public string ign { get; set; } = string.Empty;
+        public string puuid { get; set; } = string.Empty;
         public string team { get; set; } = string.Empty;
         public string rank { get; set; } = string.Empty;
         public string tier { get; set; } = string.Empty;

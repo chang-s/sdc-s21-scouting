@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const gameStatsHtml = player.gameStats.map((g, i) =>
                 `<tr>
                     <td>${i + 1}</td>
+                    <td>${g.date}</td>
                     <td>${g.champion}</td>
                     <td>${g.k}</td>
                     <td>${g.d}</td>

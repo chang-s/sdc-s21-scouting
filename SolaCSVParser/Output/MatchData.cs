@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SolaCSVParser.Models
+namespace SolaCSVParser.Output
 {
     public class MatchData
     {
-        public Metadata metadata { get; set; }
-        public Info info { get; set; }
+        public Metadata metadata { get; set; } = new Metadata();
+        public Info info { get; set; } = new Info();
     }
 }
