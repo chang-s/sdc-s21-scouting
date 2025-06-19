@@ -32,7 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 `<tr><td>${cs.champion}</td><td>${cs.games}</td><td>${cs.kda}</td><td>${cs.winRate}</td></tr>`
             ).join("");
 
-            const gameStatsHtml = player.gameStats.map((g, i) =>
+            const gameStatsHtml = player.gameStats.map((g, i) => {
+                const result = (g.result || "").toLowerCase().trim();
+                const isWin = result === "win";
+
+                return
                 `<tr>
                     <td>${g.date}</td>
                     <td>${g.champion}</td>
@@ -41,13 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${g.a}</td>
                     <td class="text-center">
                         <span class="inline-block w-6 h-6 leading-6 text-center rounded-full font-bold text-white 
-                            ${g.result === 'W' ? 'bg-green-500' : 'bg-red-500'}">
-                            ${g.result}
+                            ${isWin ? 'bg-green-500' : 'bg-red-500'}">
+                            ${isWin ? 'W' : 'L'}
                         </span>
                     </td>
                     <td title="${g.vs}">${g.vsAbbr}</td>
-                </tr>`
-            ).join("");
+                </tr>`;
+            }).join("");
 
             const champsPlayedSummary = player.champsPlayed.map(cp => `<tr><td>${cp.champ}</td><td>${cp.games} games</td></tr>`).join("");
 
