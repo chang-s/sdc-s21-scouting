@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const gameStatsHtml = player.gameStats.map((g, i) =>
                 `<tr>
-                    <td>${i + 1}</td>
                     <td>${g.date}</td>
                     <td>${g.champion}</td>
                     <td>${g.k}</td>
@@ -104,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button onclick="toggleStats(this, 'game')" class="mt-2 text-sm text-white bg-green-500 hover:bg-green-600 px-3 py-1 rounded transition">Show Game Stats ▼</button>
                     <div class="hidden mt-2 text-sm bg-gray-50 p-2 rounded game-stats">
                         <table class="table-auto w-full text-left">
-                            <thead><tr><th>Game</th><th>Champion</th><th>K</th><th>D</th><th>A</th><th class="text-center">Result</th><th>vs Team</th></tr></thead>
+                            <thead><tr><th>Date</th><th>Champion</th><th>K</th><th>D</th><th>A</th><th class="text-center">Result</th><th>vs Team</th></tr></thead>
                             <tbody>${gameStatsHtml}</tbody>
                         </table>
                         <div class="mt-4">
