@@ -49,7 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 </tr>`
             ).join("");
 
-            const champsPlayedSummary = player.champsPlayed.map(cp => `<tr><td>${cp.champ}</td><td>${cp.games} games</td></tr>`).join("");
+            const champCounts = player.champsPlayed.reduce((acc, champ) => {
+                acc[champ] = (acc[champ] || 0) + 1;
+                return acc;
+            }, {});
+
+            const champsPlayedSummary = Object.entries(champCounts)
+                .map(([champ, count]) => `<tr><td>${champ}</td><td>${count} game${count > 1 ? "s" : ""}</td></tr>`)
+                .join("");
 
             let kdaColor = "text-gray-500";
             if (player.avgKDA >= 6) kdaColor = "text-red-500";

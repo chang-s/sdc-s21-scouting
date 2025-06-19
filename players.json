@@ -499,13 +499,16 @@
         "k": "8",
         "d": "1",
         "a": "5",
+        "kda": 13.0,
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Syndra"
+    ],
+    "avgKDA": 13.0
   },
   {
     "ign": "Duck Man#Quack",
@@ -897,13 +900,16 @@
         "k": "6",
         "d": "0",
         "a": "4",
+        "kda": 10.0,
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Zeri"
+    ],
+    "avgKDA": 10.0
   },
   {
     "ign": "LostZeroツ #000",
@@ -1460,13 +1466,16 @@
         "k": "2",
         "d": "6",
         "a": "1",
+        "kda": 0.5,
         "result": "lose",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Ezreal"
+    ],
+    "avgKDA": 0.5
   },
   {
     "ign": "Sovereign#444",
@@ -1968,13 +1977,16 @@
         "k": "1",
         "d": "3",
         "a": "0",
+        "kda": 0.33333334,
         "result": "lose",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Kayle"
+    ],
+    "avgKDA": 0.33
   },
   {
     "ign": "TrickyZ#SUPP",
@@ -2971,13 +2983,16 @@
         "k": "0",
         "d": "4",
         "a": "3",
+        "kda": 0.75,
         "result": "lose",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Zilean"
+    ],
+    "avgKDA": 0.75
   },
   {
     "ign": "ChillSavior#NA1",
@@ -3039,13 +3054,16 @@
         "k": "6",
         "d": "1",
         "a": "3",
+        "kda": 9.0,
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Ambessa"
+    ],
+    "avgKDA": 9.0
   },
   {
     "ign": "Kckoolz#NA1",
@@ -3877,13 +3895,16 @@
         "k": "0",
         "d": "0",
         "a": "13",
+        "kda": 13.0,
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Rakan"
+    ],
+    "avgKDA": 13.0
   },
   {
     "ign": "Ibeyondgodly#NA1",
@@ -4495,13 +4516,16 @@
         "k": "3",
         "d": "4",
         "a": "4",
+        "kda": 1.75,
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Udyr"
+    ],
+    "avgKDA": 1.75
   },
   {
     "ign": "Death #March",
@@ -5993,13 +6017,16 @@
         "k": "0",
         "d": "5",
         "a": "3",
+        "kda": 0.6,
         "result": "lose",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Vi"
+    ],
+    "avgKDA": 0.6
   },
   {
     "ign": "Zuiy#NA1",
@@ -6336,13 +6363,16 @@
         "k": "1",
         "d": "5",
         "a": "0",
+        "kda": 0.2,
         "result": "lose",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
       }
     ],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "champsPlayed": [
+      "Hwei"
+    ],
+    "avgKDA": 0.2
   },
   {
     "ign": "spatel19981#0148",

@@ -19,7 +19,7 @@ namespace SolaCSVParser.Output
         public List<string> topChamps { get; set; } = new List<string>();
         public List<ChampionStats> champStats { get; set; } = new List<ChampionStats>();
         public List<GameStats> gameStats { get; set; } = new List<GameStats>();
-        public List<ChampionStatsShort> champsPlayed { get; set; } = new List<ChampionStatsShort>();
+        public List<string> champsPlayed { get; set; } = new List<string>();
         public float avgKDA { get; set; } = 0.0f;
     }
 }

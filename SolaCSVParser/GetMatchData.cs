@@ -146,10 +146,20 @@ namespace SolaCSVParser
                     k = participant.kills.ToString(),
                     d = participant.deaths.ToString(),
                     a = participant.assists.ToString(),
+                    kda = participant.challenges.kda,
                     result = participant.win ? "win" : "lose",
                     vs = opponentTeam,
                     vsAbbr = opponentAbbr
                 });
+
+                // Add champ to champs played list
+                player.champsPlayed.Add(participant.championName);
+
+                // Make sure there are KDA values to average, then calculate KDA. Round to 2 decimal places.
+                if (player.gameStats != null && player.gameStats.Count > 0)
+                {
+                    player.avgKDA = (float)Math.Round(player.gameStats.Average(gs => gs.kda), 2);
+                }
 
                 Console.WriteLine($"Recorded stats for {player.ign} vs {opponentAbbr}");
 

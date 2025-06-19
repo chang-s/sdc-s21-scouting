@@ -15,6 +15,7 @@ namespace SolaCSVParser.Output
         public string k { get; set; } = string.Empty;
         public string d { get; set; } = string.Empty;
         public string a { get; set; } = string.Empty;
+        public float kda { get; set; } = 0;
         public string result { get; set; } = string.Empty;
         public string vs { get; set; } = string.Empty;
         public string vsAbbr { get; set; } = string.Empty;
