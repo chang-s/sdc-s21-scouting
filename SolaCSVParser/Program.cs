@@ -9,6 +9,8 @@ namespace SolaCSVParser
     {
         static void Main(string[] args)
         {
+            GetMatchData.Main().GetAwaiter().GetResult();
+            /*
             CSVParserUtils.ParseFiles(args, out List<TeamsRow> teamsData, out List<PlayersRow> playersData, out List<TopChampsRow> topChampsData);
 
             Console.WriteLine("Creating player list");
@@ -70,6 +72,7 @@ namespace SolaCSVParser
             string outputFilePath = $"{Directory.GetCurrentDirectory()}\\SolaData.json";
             string jsonString =  JsonSerializer.Serialize(players);
             File.WriteAllText(outputFilePath, jsonString);
+            */
         }
     }
 }
