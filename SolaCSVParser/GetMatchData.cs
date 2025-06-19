@@ -35,28 +35,6 @@ namespace SolaCSVParser
             string apiKey = "RGAPI-1d867183-5942-496a-9ab0-d9536a410dc3";
             string filePath = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\players.json";
 
-            // Enter match ID
-            Console.Write("Enter Match ID (just the number, e.g. 5307242122): ");
-            string? inputId = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(inputId))
-            {
-                Console.WriteLine("Match ID cannot be empty.");
-                return;
-            }
-
-            string matchId = $"NA1_{inputId.Trim()}";
-
-            // Enter match date
-            Console.Write("Enter match date (e.g. W1D1): ");
-            string? matchDate = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(matchDate))
-            {
-                Console.WriteLine("Match date cannot be empty.");
-                return;
-            }
-
             if (!File.Exists(filePath))
             {
                 Console.WriteLine("players.json not found.");
@@ -71,103 +49,139 @@ namespace SolaCSVParser
             }
 
             using HttpClient client = new HttpClient();
-            string url = $"https://americas.api.riotgames.com/lol/match/v5/matches/{matchId}?api_key={apiKey}";
 
-            HttpResponseMessage response = await client.GetAsync(url);
-            if (!response.IsSuccessStatusCode)
+            while (true)
             {
-                Console.WriteLine($"Failed to get match data: {response.StatusCode}");
-                return;
-            }
+                // Enter match ID
+                Console.Write("Enter Match ID (just the number, e.g. 5307242122): ");
+                string? inputId = Console.ReadLine();
 
-            string json = await response.Content.ReadAsStringAsync();
-            var matchDetail = System.Text.Json.JsonSerializer.Deserialize<MatchDetail>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-            if (matchDetail == null || matchDetail.info == null)
-            {
-                Console.WriteLine("Match detail is null.");
-                return;
-            }
-
-            // Step 1: Map puuid -> teamName from players.json
-            var teamMapping = new Dictionary<string, string>();
-            foreach (var participant in matchDetail.info.participants)
-            {
-                var player = players.Find(p => p.puuid == participant.puuid);
-                if (player != null)
+                if (string.IsNullOrWhiteSpace(inputId))
                 {
-                    teamMapping[participant.puuid] = player.team;
-                }
-            }
-
-            var uniqueTeams = teamMapping.Values.Distinct().ToList();
-            if (uniqueTeams.Count != 2)
-            {
-                Console.WriteLine("Could not determine exactly 2 teams in the match.");
-                return;
-            }
-
-            string team1 = uniqueTeams[0];
-            string team2 = uniqueTeams[1];
-            string team1Abbr = TeamAbbreviations.GetValueOrDefault(team1, "--");
-            string team2Abbr = TeamAbbreviations.GetValueOrDefault(team2, "--");
-
-            // Step 2: For each participant, add new match data
-            foreach (var participant in matchDetail.info.participants)
-            {
-                var player = players.Find(p => p.puuid == participant.puuid);
-                if (player == null)
-                {
-                    Console.WriteLine($"No match found in players.json for: {participant.summonerName}");
-                    continue;
+                    Console.WriteLine("Match ID cannot be empty.");
+                    return;
                 }
 
-                // Ensure gameStats list is initialized
-                player.gameStats ??= new List<GameStats>();
+                string matchId = $"NA1_{inputId.Trim()}";
+                string url = $"https://americas.api.riotgames.com/lol/match/v5/matches/{matchId}?api_key={apiKey}";
 
-                // Skip entering match details if it exists
-                bool alreadyExists = player.gameStats.Any(gs => gs.matchId == matchId);
-                if (alreadyExists)
+                // Enter match date
+                Console.Write("Enter match date (e.g. W1D1): ");
+                string? matchDate = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(matchDate))
                 {
-                    Console.WriteLine($"Skipped {player.ign}, match already recorded.");
-                    continue;
+                    Console.WriteLine("Match date cannot be empty.");
+                    return;
                 }
 
-                // Add new match stat
-                string opponentTeam = player.team == team1 ? team2 : team1;
-                string opponentAbbr = player.team == team1 ? team2Abbr : team1Abbr;
-
-                player.gameStats.Add(new GameStats
+                HttpResponseMessage response = await client.GetAsync(url);
+                if (!response.IsSuccessStatusCode)
                 {
-                    ign = player.ign,
-                    matchId = matchId,
-                    date = matchDate.Trim(),
-                    champion = participant.championName,
-                    k = participant.kills.ToString(),
-                    d = participant.deaths.ToString(),
-                    a = participant.assists.ToString(),
-                    kda = participant.challenges.kda,
-                    result = participant.win ? "win" : "lose",
-                    vs = opponentTeam,
-                    vsAbbr = opponentAbbr
-                });
-
-                // Add champ to champs played list
-                player.champsPlayed.Add(participant.championName);
-
-                // Make sure there are KDA values to average, then calculate KDA. Round to 2 decimal places.
-                if (player.gameStats != null && player.gameStats.Count > 0)
-                {
-                    player.avgKDA = (float)Math.Round(player.gameStats.Average(gs => gs.kda), 2);
+                    Console.WriteLine($"Failed to get match data: {response.StatusCode}");
+                    return;
                 }
 
-                Console.WriteLine($"Recorded stats for {player.ign} vs {opponentAbbr}");
+                string json = await response.Content.ReadAsStringAsync();
+                var matchDetail = System.Text.Json.JsonSerializer.Deserialize<MatchDetail>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-                await Task.Delay(300); // rate limit buffer
+                if (matchDetail == null || matchDetail.info == null)
+                {
+                    Console.WriteLine("Match detail is null.");
+                    return;
+                }
+
+                // Step 1: Map puuid -> teamName from players.json
+                var teamMapping = new Dictionary<string, string>();
+                foreach (var participant in matchDetail.info.participants)
+                {
+                    var player = players.Find(p => p.puuid == participant.puuid);
+                    if (player != null)
+                    {
+                        teamMapping[participant.puuid] = player.team;
+                    }
+                }
+
+                var uniqueTeams = teamMapping.Values.Distinct().ToList();
+                if (uniqueTeams.Count != 2)
+                {
+                    Console.WriteLine("Could not determine exactly 2 teams in the match.");
+                    return;
+                }
+
+                string team1 = uniqueTeams[0];
+                string team2 = uniqueTeams[1];
+                string team1Abbr = TeamAbbreviations.GetValueOrDefault(team1, "--");
+                string team2Abbr = TeamAbbreviations.GetValueOrDefault(team2, "--");
+
+                // Step 2: For each participant, add new match data
+                foreach (var participant in matchDetail.info.participants)
+                {
+                    var player = players.Find(p => p.puuid == participant.puuid);
+                    if (player == null)
+                    {
+                        Console.WriteLine($"No match found in players.json for: {participant.summonerName}");
+                        continue;
+                    }
+
+                    // Ensure gameStats list is initialized
+                    player.gameStats ??= new List<GameStats>();
+
+                    // Skip entering match details if it exists
+                    bool alreadyExists = player.gameStats.Any(gs => gs.matchId == matchId);
+                    if (alreadyExists)
+                    {
+                        Console.WriteLine($"Skipped {player.ign}, match already recorded.");
+                        continue;
+                    }
+
+                    // Add new match stat
+                    string opponentTeam = player.team == team1 ? team2 : team1;
+                    string opponentAbbr = player.team == team1 ? team2Abbr : team1Abbr;
+
+                    player.gameStats.Add(new GameStats
+                    {
+                        ign = player.ign,
+                        matchId = matchId,
+                        date = matchDate.Trim(),
+                        champion = participant.championName,
+                        k = participant.kills.ToString(),
+                        d = participant.deaths.ToString(),
+                        a = participant.assists.ToString(),
+                        kda = participant.challenges.kda,
+                        result = participant.win ? "win" : "lose",
+                        vs = opponentTeam,
+                        vsAbbr = opponentAbbr
+                    });
+
+                    // Add champ to champs played list
+                    player.champsPlayed.Add(participant.championName);
+
+                    // Make sure there are KDA values to average, then calculate KDA. Round to 2 decimal places.
+                    if (player.gameStats != null && player.gameStats.Count > 0)
+                    {
+                        player.avgKDA = (float)Math.Round(player.gameStats.Average(gs => gs.kda), 2);
+                    }
+
+                    Console.WriteLine($"Recorded stats for {player.ign} vs {opponentAbbr}");
+
+                    await Task.Delay(300); // rate limit buffer
+                }
+
+                // At the end, save the file
+                File.WriteAllText(filePath, JsonConvert.SerializeObject(players, Formatting.Indented));
+                Console.WriteLine("Match processed and data updated!");
+
+                Console.Write("\nDo you have another game to enter? (y/n): ");
+                string? again = Console.ReadLine()?.Trim().ToLower();
+                if (again != "y" && again != "yes")
+                {
+                    Console.WriteLine("Bye bye!");
+                    break;
+                }
+
+                Console.WriteLine(); // just for spacing
             }
-
-            File.WriteAllText(filePath, JsonConvert.SerializeObject(players, Formatting.Indented));
-            Console.WriteLine("All gameStats updated!");
         }
 
 
