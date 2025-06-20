@@ -208,6 +208,14 @@ document.addEventListener("DOMContentLoaded", () => {
             ? `Hide ${type === 'champ' ? 'Champ' : 'Game'} Stats ▲`
             : `Show ${type === 'champ' ? 'Champ' : 'Game'} Stats ▼`;
     }
+    function updateCheckboxVisibility() {
+        const selectedTeam = teamFilter.value;
+        if (selectedTeam === "All") {
+            checkboxContainer.innerHTML = ""; // hide pills
+        } else {
+            renderPlayerButtons(); // show pills
+        }
+    }
 
     // --- ICON MAPPINGS ---
     const roleIcons = {
