@@ -200,6 +200,14 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.display = name.includes(query) ? "block" : "none";
         });
     });
+    function toggleStats(button, type) {
+        const statDiv = button.nextElementSibling;
+        const isHidden = statDiv.classList.contains("hidden");
+        statDiv.classList.toggle("hidden");
+        button.textContent = isHidden
+            ? `Hide ${type === 'champ' ? 'Champ' : 'Game'} Stats ▲`
+            : `Show ${type === 'champ' ? 'Champ' : 'Game'} Stats ▼`;
+    }
 
     // --- ICON MAPPINGS ---
     const roleIcons = {
