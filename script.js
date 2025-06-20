@@ -276,6 +276,28 @@ document.addEventListener("DOMContentLoaded", () => {
         window.open(url, "_blank");
     });
 
+    let showingSelectedOnly = false;
+
+    const showCardsBtn = document.getElementById("showCardsBtn");
+    showCardsBtn.addEventListener("click", () => {
+        showingSelectedOnly = !showingSelectedOnly;
+        updateCardVisibilityForToggle();
+        showCardsBtn.textContent = showingSelectedOnly ? "Show All Cards" : "Show Selected Cards";
+    });
+
+    function updateCardVisibilityForToggle() {
+        const selectedNames = Array.from(document.querySelectorAll(".selected-pill")).map(el => el.dataset.name);
+        document.querySelectorAll(".player-card").forEach(card => {
+            if (showingSelectedOnly) {
+                card.style.display = selectedNames.includes(card.dataset.name) ? "block" : "none";
+            } else {
+                const selectedTeam = teamFilter.value;
+                const player = playerData.find(p => p.ign === card.dataset.name);
+                card.style.display = selectedTeam === "All" || player.team === selectedTeam ? "block" : "none";
+            }
+        });
+    }
+
     const roleIcons = {
         "TOP": "https://wiki.leagueoflegends.com/en-us/images/thumb/Top_icon.png/120px-Top_icon.png",
         "JNG": "https://wiki.leagueoflegends.com/en-us/images/thumb/Jungle_icon.png/120px-Jungle_icon.png",
@@ -307,10 +329,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const teamFilter = document.getElementById("teamFilter");
     teamFilter.addEventListener("change", () => {
+        document.querySelectorAll(".selected-pill").forEach(el => el.classList.remove("selected-pill", "bg-purple-500", "text-white", "border-purple-500"));
+        showingSelectedOnly = false;
+        showCardsBtn.textContent = "Show Selected Cards";
         renderPlayerButtons();
         updateVisibleCards();
         updateCheckboxVisibility();
+        updateGenerateBtnState();
     });
+
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        document.querySelectorAll(".selected-pill").forEach(el => el.classList.remove("selected-pill", "bg-purple-500", "text-white", "border-purple-500"));
+        showingSelectedOnly = false;
+        showCardsBtn.textContent = "Show Selected Cards";
+        document.querySelectorAll(".player-card").forEach(card => {
+            const name = card.dataset.name.toLowerCase();
+            card.style.display = name.includes(query) ? "block" : "none";
+        });
+        updateGenerateBtnState();
+    });
+
 
     // Initial setup
     fetchPlayers();

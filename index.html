@@ -26,17 +26,19 @@
         <div class="mb-6">
             <div class="bg-white p-4 rounded-lg shadow-md max-w-2xl mx-auto">
 
-                <!-- MULTI OP.GG BUTTON -->
+                <!-- MULTI OP.GG + SHOW CARDS BUTTONS -->
                 <div class="text-center my-6">
                     <p class="text-base text-gray-600 mb-2">
-                        View all selected players on op.gg
+                        View selected players on op.gg or display their cards below
                     </p>
-                    <button id="generateBtn"
-                            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 ring-2 ring-purple-300 hover:ring-4
-                  disabled:bg-gray-200 disabled:text-gray-500 disabled:shadow-none disabled:cursor-not-allowed disabled:transform-none disabled:ring-0"
-                            disabled>
-                        Generate Multi op.gg
-                    </button>
+                    <div class="flex gap-4 justify-center">
+                        <button id="generateBtn" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 ring-2 ring-purple-300 hover:ring-4 disabled:bg-gray-200 disabled:text-gray-500 disabled:shadow-none disabled:cursor-not-allowed disabled:transform-none disabled:ring-0" disabled>
+                            Generate Multi op.gg
+                        </button>
+                        <button id="showCardsBtn" class="bg-purple-200 text-purple-900 font-bold py-3 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105">
+                            Show Selected Cards
+                        </button>
+                    </div>
                 </div>
 
                 <!-- TEAM FILTER -->
