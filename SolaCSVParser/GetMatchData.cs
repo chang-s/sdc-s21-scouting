@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -31,7 +32,6 @@ namespace SolaCSVParser
 
         public static async Task Main()
         {
-
             string apiKey = "RGAPI-1d867183-5942-496a-9ab0-d9536a410dc3";
             string filePath = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\players.json";
 
@@ -48,8 +48,10 @@ namespace SolaCSVParser
                 return;
             }
 
-            using HttpClient client = new HttpClient();
+            // await PopulatePuuids(players, apiKey, filePath);
 
+            using HttpClient client = new HttpClient();
+            
             while (true)
             {
                 // Enter match ID
@@ -154,7 +156,8 @@ namespace SolaCSVParser
                         vsAbbr = opponentAbbr
                     });
 
-                    // Add champ to champs played list
+                    // Add champ to champs played list only if match was successfully added
+                    player.champsPlayed ??= new List<string>();
                     player.champsPlayed.Add(participant.championName);
 
                     // Make sure there are KDA values to average, then calculate KDA. Round to 2 decimal places.
@@ -175,54 +178,121 @@ namespace SolaCSVParser
             }
         }
 
-
-        /* OLD VERSION
-         * 
-        public static async Task Main()
+        public static async Task PopulatePuuids(List<Player> players, string apiKey, string filePath)
         {
-            HttpClient client = new HttpClient();
+            using HttpClient client = new HttpClient();
 
-            string gameId = "NA1_5307242122";
-            string apiKey = "RGAPI-1d867183-5942-496a-9ab0-d9536a410dc3";
-            string url = $"https://americas.api.riotgames.com/lol/match/v5/matches/{gameId}?api_key={apiKey}";
-
-            using (client)
+            foreach (var player in players)
             {
-                HttpResponseMessage response = await client.GetAsync(url);
-
-                string content = await response.Content.ReadAsStringAsync();
-
-                var options = new JsonSerializerOptions
+                if (!string.IsNullOrEmpty(player.puuid))
                 {
-                    PropertyNameCaseInsensitive = true
-                };
-
-                // Deserialize<TValue>(string, JsonSerializerOptions)
-                // https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializer.deserialize?view=net-9.0
-                MatchData? match = System.Text.Json.JsonSerializer.Deserialize<MatchData>(content, options);
-
-                if (match == null)
-                {
-                    Console.WriteLine("Could not deserialize the match data.");
-                    return;
+                    Console.WriteLine($"Already has PUUID: {player.ign}");
+                    continue;
                 }
 
-                Console.WriteLine("Metadata Participants (PUUIDs):");
-                foreach (var puuid in match.metadata.participants)
+                if (!player.ign.Contains('#'))
                 {
-                    Console.WriteLine($"- {puuid}");
+                    Console.WriteLine($"Skipping malformed IGN: {player.ign}");
+                    continue;
                 }
 
-                Console.WriteLine("\nParticipant Stats:");
-                foreach (var p in match.info.participants)
+                string[] split = player.ign.Split('#');
+                string gameName = Uri.EscapeDataString(split[0].Trim());
+                string tagLine = Uri.EscapeDataString(split[1].Trim());
+
+                string url = $"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine}?api_key={apiKey}";
+
+                try
                 {
-                    Console.WriteLine($"{p.riotIdGameName}#{p.riotIdTagline} - {p.championName}");
-                    Console.WriteLine($"Kills: {p.kills}, Deaths: {p.deaths}, Assists: {p.assists}, Win: {p.win}");
-                    Console.WriteLine();
+                    HttpResponseMessage response = await client.GetAsync(url);
+
+                    if (response.StatusCode == HttpStatusCode.TooManyRequests)
+                    {
+                        Console.WriteLine("Rate limit hit. Waiting 5 seconds...");
+                        await Task.Delay(5000);
+                        response = await client.GetAsync(url);
+                    }
+
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        Console.WriteLine($"Failed to get PUUID for {player.ign}: {response.StatusCode}");
+                        continue;
+                    }
+
+                    string content = await response.Content.ReadAsStringAsync();
+                    var json = System.Text.Json.JsonSerializer.Deserialize<JsonElement>(content);
+
+                    if (json.TryGetProperty("puuid", out JsonElement puuidElement))
+                    {
+                        player.puuid = puuidElement.GetString() ?? "";
+                        File.WriteAllText(filePath, JsonConvert.SerializeObject(players, Formatting.Indented));
+                        Console.WriteLine($"Got PUUID for {player.ign}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"No PUUID returned for {player.ign}");
+                    }
+
+                    await Task.Delay(300); // safety delay for rate limiting
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching PUUID for {player.ign}: {ex.Message}");
                 }
             }
+
+            File.WriteAllText(filePath, JsonConvert.SerializeObject(players, Formatting.Indented));
+            Console.WriteLine("All available PUUIDs updated!");
         }
-        */
+
+
+        /* OLD MANUAL VERSION
+         public static async Task Main()
+         {
+             HttpClient client = new HttpClient();
+
+             string gameId = "NA1_5307242122";
+             string apiKey = "RGAPI-1d867183-5942-496a-9ab0-d9536a410dc3";
+             string url = $"https://americas.api.riotgames.com/lol/match/v5/matches/{gameId}?api_key={apiKey}";
+
+             using (client)
+             {
+                 HttpResponseMessage response = await client.GetAsync(url);
+
+                 string content = await response.Content.ReadAsStringAsync();
+
+                 var options = new JsonSerializerOptions
+                 {
+                     PropertyNameCaseInsensitive = true
+                 };
+
+                 // Deserialize<TValue>(string, JsonSerializerOptions)
+                 // https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializer.deserialize?view=net-9.0
+                 MatchData? match = System.Text.Json.JsonSerializer.Deserialize<MatchData>(content, options);
+
+                 if (match == null)
+                 {
+                     Console.WriteLine("Could not deserialize the match data.");
+                     return;
+                 }
+
+                 Console.WriteLine("Metadata Participants (PUUIDs):");
+                 foreach (var puuid in match.metadata.participants)
+                 {
+                     Console.WriteLine($"- {puuid}");
+                 }
+
+                 Console.WriteLine("\nParticipant Stats:");
+                 foreach (var p in match.info.participants)
+                 {
+                     Console.WriteLine($"{p.riotIdGameName}#{p.riotIdTagline} - {p.championName}");
+                     Console.WriteLine($"Kills: {p.kills}, Deaths: {p.deaths}, Assists: {p.assists}, Win: {p.win}");
+                     Console.WriteLine();
+                 }
+             }
+         }
+         */
+
 
         // "metadata"
         // participants

@@ -9,8 +9,17 @@ namespace SolaCSVParser
     {
         static void Main(string[] args)
         {
+            // Create new json file with players
+            // createPlayersJsonFile(args);
+
+
+
+            // Add game data
             GetMatchData.Main().GetAwaiter().GetResult();
-            /*
+        }
+
+        public static void createPlayersJsonFile(string[] args)
+        {
             CSVParserUtils.ParseFiles(args, out List<TeamsRow> teamsData, out List<PlayersRow> playersData, out List<TopChampsRow> topChampsData);
 
             Console.WriteLine("Creating player list");
@@ -62,17 +71,13 @@ namespace SolaCSVParser
                 players.Add(player);
             }
 
-
-
             // For each top champ row
-                // Look through playersData list for matching player
-                // Add top champ row data to that player json object
-
+            // Look through playersData list for matching player
+            // Add top champ row data to that player json object
             Console.WriteLine("Writing players list to SolaData.json");
             string outputFilePath = $"{Directory.GetCurrentDirectory()}\\SolaData.json";
-            string jsonString =  JsonSerializer.Serialize(players);
+            string jsonString = JsonSerializer.Serialize(players);
             File.WriteAllText(outputFilePath, jsonString);
-            */
         }
     }
 }

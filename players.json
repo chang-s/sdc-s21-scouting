@@ -114,7 +114,7 @@
   },
   {
     "ign": "nico#sccer",
-    "puuid": "cKmEjX3lPzJgKLUDeiG4ncei2vBYzr76QtEVgw2s1kS3f4axRkRuKGupUaHqvBmIwxr36Xqhklc2ag",
+    "puuid": "BZ2twkpXSCGbTmYasGwbuYsfaFWpeO9tDzqEC5awDMg6TMR1K9mkkp6BOheGRXEBDUPjhXgNsXYdFA",
     "team": "Godzilla Strikes Back",
     "rank": "Challenger",
     "tier": "1",
@@ -163,9 +163,39 @@
         "winRate": "67%"
       }
     ],
-    "gameStats": [],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "gameStats": [
+      {
+        "ign": "nico#sccer",
+        "matchId": "NA1_5307978851",
+        "date": "W1D2",
+        "champion": "Gwen",
+        "k": "8",
+        "d": "7",
+        "a": "8",
+        "kda": 2.2857144,
+        "result": "lose",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
+      },
+      {
+        "ign": "nico#sccer",
+        "matchId": "NA1_5307899271",
+        "date": "W1D2",
+        "champion": "Ryze",
+        "k": "16",
+        "d": "4",
+        "a": "11",
+        "kda": 6.75,
+        "result": "lose",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
+      }
+    ],
+    "champsPlayed": [
+      "Gwen",
+      "Ryze"
+    ],
+    "avgKDA": 4.52
   },
   {
     "ign": "DJ Benjamin#BTD6",
@@ -2657,7 +2687,7 @@
   },
   {
     "ign": "Sovereign#444",
-    "puuid": "gxZiHpVRleVChnzwUNlQGu-4p47387KbcVQpOakT1KA0rxdQo7Saqx0Gd1AY799rJ87nRkFi8g80Bw",
+    "puuid": "nG7HPWx1AHGiAUJ4m2AAS6ull005FqHkVrQBNaAFYDB-zKmWEUYUC7cnNlMxV7uZPmwuJ0Y60FnzEA",
     "team": "Slytherin",
     "rank": "Master",
     "tier": "1",
@@ -2706,9 +2736,53 @@
         "winRate": "55%"
       }
     ],
-    "gameStats": [],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "gameStats": [
+      {
+        "ign": "Sovereign#444",
+        "matchId": "NA1_5307936290",
+        "date": "W1D2",
+        "champion": "JarvanIV",
+        "k": "4",
+        "d": "7",
+        "a": "10",
+        "kda": 2.0,
+        "result": "lose",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
+      },
+      {
+        "ign": "Sovereign#444",
+        "matchId": "NA1_5307970615",
+        "date": "W1D2",
+        "champion": "Gwen",
+        "k": "9",
+        "d": "3",
+        "a": "9",
+        "kda": 6.0,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
+      },
+      {
+        "ign": "Sovereign#444",
+        "matchId": "NA1_5307310154",
+        "date": "W1D2",
+        "champion": "Viego",
+        "k": "0",
+        "d": "9",
+        "a": "1",
+        "kda": 0.11111111,
+        "result": "lose",
+        "vs": "Oh Good Heavens",
+        "vsAbbr": "OGH"
+      }
+    ],
+    "champsPlayed": [
+      "JarvanIV",
+      "Gwen",
+      "Viego"
+    ],
+    "avgKDA": 2.7
   },
   {
     "ign": "Scorpio#DC1",
@@ -11599,7 +11673,7 @@
   },
   {
     "ign": "Misa#burgr",
-    "puuid": "BwdWCnhpnQIcRKVObr3WPKemsXg_pcPI7Yc2_WQhxzKKOmRqUv4_YgMWTiRC7nSuZN9VpS1yq4ILgw",
+    "puuid": "59jEm7BZU0bXMST0MGrZZI2uByqBOhpoY6Gbo8FfipQJrras9QMpars7EE0CvmYV4WRFez5dMyEZRg",
     "team": "Oh Good Heavens",
     "rank": "Diamond",
     "tier": "3",
@@ -11648,9 +11722,39 @@
         "winRate": "63%"
       }
     ],
-    "gameStats": [],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "gameStats": [
+      {
+        "ign": "Misa#burgr",
+        "matchId": "NA1_5307965125",
+        "date": "W1D2",
+        "champion": "Smolder",
+        "k": "5",
+        "d": "8",
+        "a": "2",
+        "kda": 0.875,
+        "result": "lose",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
+      },
+      {
+        "ign": "Misa#burgr",
+        "matchId": "NA1_5307898237",
+        "date": "W1D2",
+        "champion": "Smolder",
+        "k": "4",
+        "d": "4",
+        "a": "9",
+        "kda": 3.25,
+        "result": "win",
+        "vs": "Slytherin",
+        "vsAbbr": "SLY"
+      }
+    ],
+    "champsPlayed": [
+      "Smolder",
+      "Smolder"
+    ],
+    "avgKDA": 2.06
   },
   {
     "ign": "Balmer#024",
@@ -16572,5 +16676,104 @@
       "Nami"
     ],
     "avgKDA": 3.0
+  },
+  {
+    "ign": "Sultan#2002",
+    "puuid": "EgkLI6sffo0R4Hrd2GL4Aot6TwwQAl2zUeBCK0EnnJhDIcA9ixvud4Lm-yr1OfHXTekIMW1Cjx8ltQ",
+    "team": "Slytherin",
+    "rank": "Diamond",
+    "tier": "4",
+    "points": "13",
+    "roles": [
+      "BOT",
+      "SUP"
+    ],
+    "opgg": "https://op.gg/lol/summoners/na/Sultan-2002",
+    "topChamps": [
+      "Jinx",
+      "Varus",
+      "Mel",
+      "Senna",
+      "Jhin"
+    ],
+    "champStats": [
+      {
+        "champion": "Jinx",
+        "games": 20,
+        "kda": "2.24",
+        "winRate": "55%"
+      },
+      {
+        "champion": "Varus",
+        "games": 11,
+        "kda": "2.05",
+        "winRate": "45%"
+      },
+      {
+        "champion": "Mel",
+        "games": 10,
+        "kda": "2.85",
+        "winRate": "70%"
+      },
+      {
+        "champion": "Senna",
+        "games": 10,
+        "kda": "3.65",
+        "winRate": "50%"
+      },
+      {
+        "champion": "Jhin",
+        "games": 9,
+        "kda": "3.4",
+        "winRate": "67%"
+      }
+    ],
+    "gameStats": [
+      {
+        "ign": "Sultan#2002",
+        "matchId": "NA1_5307243832",
+        "date": "W1D1",
+        "champion": "Varus",
+        "k": "4",
+        "d": "8",
+        "a": "2",
+        "kda": 0.75,
+        "result": "lose",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
+      },
+      {
+        "ign": "Sultan#2002",
+        "matchId": "NA1_5307970615",
+        "date": "W1D2",
+        "champion": "Senna",
+        "k": "5",
+        "d": "2",
+        "a": "16",
+        "kda": 10.5,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
+      },
+      {
+        "ign": "Sultan#2002",
+        "matchId": "NA1_5307310154",
+        "date": "W1D2",
+        "champion": "Lulu",
+        "k": "2",
+        "d": "8",
+        "a": "2",
+        "kda": 0.5,
+        "result": "lose",
+        "vs": "Oh Good Heavens",
+        "vsAbbr": "OGH"
+      }
+    ],
+    "champsPlayed": [
+      "Varus",
+      "Senna",
+      "Lulu"
+    ],
+    "avgKDA": 3.92
   }
 ]
