@@ -129,11 +129,20 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    // Enable/disable the Multi op.gg button
+    // Enable/disable the Multi op.gg/show cards buttons
     function updateGenerateBtnState() {
         const selected = document.querySelectorAll(".selected-pill");
-        generateBtn.disabled = selected.length === 0;
+        const hasSelection = selected.length > 0;
+
+        // Multi op.gg button
+        generateBtn.disabled = !hasSelection;
+
+        // Show Cards button
+        showCardsBtn.disabled = !hasSelection;
+        showCardsBtn.classList.toggle("opacity-50", !hasSelection);
+        showCardsBtn.classList.toggle("cursor-not-allowed", !hasSelection);
     }
+
 
     // Show only selected cards if toggled, otherwise show by team
     function updateCardVisibilityForToggle() {
@@ -213,4 +222,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- BOOTSTRAP EVERYTHING ---
     fetchPlayers();
+    window.toggleStats = toggleStats;
+    updateCheckboxVisibility();
+    updateGenerateBtnState();
+
+    const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        document.querySelectorAll(".player-card").forEach(card => {
+            const name = card.dataset.name.toLowerCase();
+            card.style.display = name.includes(query) ? "block" : "none";
+        });
+    });
 });
