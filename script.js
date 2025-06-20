@@ -1,4 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Password protection
+    const correctPassword = "cupcake123"; // password
+    const gate = document.getElementById("passwordGate");
+    const input = document.getElementById("passwordInput");
+    const submit = document.getElementById("submitPassword");
+    const error = document.getElementById("errorMessage");
+    const siteContent = document.querySelector("body > .max-w-6xl");
+
+    siteContent.classList.add("opacity-0"); // hide content until unlocked
+
+    submit.addEventListener("click", () => {
+        if (input.value === correctPassword) {
+            gate.classList.add("opacity-0", "pointer-events-none", "transition", "duration-700");
+            setTimeout(() => {
+                gate.style.display = "none";
+                siteContent.classList.remove("opacity-0");
+                siteContent.classList.add("fade-in");
+            }, 700);
+        } else {
+            error.classList.remove("hidden");
+            input.classList.add("border-red-400");
+        }
+    });
+
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") submit.click();
+    });
+
+    // Actual content
     const roster = document.getElementById("roster");
     const checkboxContainer = document.getElementById("checkboxContainer");
     const generateBtn = document.getElementById("generateBtn");
@@ -34,22 +63,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const gameStatsHtml = player.gameStats.map((g, i) =>
                 `<tr>
-                    <td>${i + 1}</td>
+                    <td>${g.date}</td>
                     <td>${g.champion}</td>
                     <td>${g.k}</td>
                     <td>${g.d}</td>
                     <td>${g.a}</td>
                     <td class="text-center">
                         <span class="inline-block w-6 h-6 leading-6 text-center rounded-full font-bold text-white 
-                            ${g.result === 'W' ? 'bg-green-500' : 'bg-red-500'}">
-                            ${g.result}
+                            ${g.result?.trim().toLowerCase() === 'win' ? 'bg-green-500' : 'bg-red-500'}">
+                            ${g.result?.trim().toLowerCase() === 'win' ? 'W' : 'L'}
                         </span>
                     </td>
                     <td title="${g.vs}">${g.vsAbbr}</td>
                 </tr>`
             ).join("");
 
-            const champsPlayedSummary = player.champsPlayed.map(cp => `<tr><td>${cp.champ}</td><td>${cp.games} games</td></tr>`).join("");
+            const champCounts = player.champsPlayed.reduce((acc, champ) => {
+                acc[champ] = (acc[champ] || 0) + 1;
+                return acc;
+            }, {});
+
+            const champsPlayedSummary = Object.entries(champCounts)
+                .map(([champ, count]) => {
+                    const iconUrl = `https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/${champ}.png`;
+                    return `
+                    <tr>
+                        <td class="flex items-center gap-2">
+                            <img src="${iconUrl}" alt="${champ}" class="w-6 h-6 rounded-sm" />
+                            ${champ}
+                        </td>
+                        <td>${count} game${count > 1 ? "s" : ""}</td>
+                    </tr>`;
+                        })
+                .join("");
 
             let kdaColor = "text-gray-500";
             if (player.avgKDA >= 6) kdaColor = "text-red-500";
@@ -103,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button onclick="toggleStats(this, 'game')" class="mt-2 text-sm text-white bg-green-500 hover:bg-green-600 px-3 py-1 rounded transition">Show Game Stats ▼</button>
                     <div class="hidden mt-2 text-sm bg-gray-50 p-2 rounded game-stats">
                         <table class="table-auto w-full text-left">
-                            <thead><tr><th>Game</th><th>Champion</th><th>K</th><th>D</th><th>A</th><th class="text-center">Result</th><th>vs Team</th></tr></thead>
+                            <thead><tr><th>Date</th><th>Champion</th><th>K</th><th>D</th><th>A</th><th class="text-center">Result</th><th>vs Team</th></tr></thead>
                             <tbody>${gameStatsHtml}</tbody>
                         </table>
                         <div class="mt-4">
@@ -230,6 +276,28 @@ document.addEventListener("DOMContentLoaded", () => {
         window.open(url, "_blank");
     });
 
+    let showingSelectedOnly = false;
+
+    const showCardsBtn = document.getElementById("showCardsBtn");
+    showCardsBtn.addEventListener("click", () => {
+        showingSelectedOnly = !showingSelectedOnly;
+        updateCardVisibilityForToggle();
+        showCardsBtn.textContent = showingSelectedOnly ? "Show All Cards" : "Show Selected Cards";
+    });
+
+    function updateCardVisibilityForToggle() {
+        const selectedNames = Array.from(document.querySelectorAll(".selected-pill")).map(el => el.dataset.name);
+        document.querySelectorAll(".player-card").forEach(card => {
+            if (showingSelectedOnly) {
+                card.style.display = selectedNames.includes(card.dataset.name) ? "block" : "none";
+            } else {
+                const selectedTeam = teamFilter.value;
+                const player = playerData.find(p => p.ign === card.dataset.name);
+                card.style.display = selectedTeam === "All" || player.team === selectedTeam ? "block" : "none";
+            }
+        });
+    }
+
     const roleIcons = {
         "TOP": "https://wiki.leagueoflegends.com/en-us/images/thumb/Top_icon.png/120px-Top_icon.png",
         "JNG": "https://wiki.leagueoflegends.com/en-us/images/thumb/Jungle_icon.png/120px-Jungle_icon.png",
@@ -261,10 +329,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const teamFilter = document.getElementById("teamFilter");
     teamFilter.addEventListener("change", () => {
+        document.querySelectorAll(".selected-pill").forEach(el => el.classList.remove("selected-pill", "bg-purple-500", "text-white", "border-purple-500"));
+        showingSelectedOnly = false;
+        showCardsBtn.textContent = "Show Selected Cards";
         renderPlayerButtons();
         updateVisibleCards();
         updateCheckboxVisibility();
+        updateGenerateBtnState();
     });
+
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        document.querySelectorAll(".selected-pill").forEach(el => el.classList.remove("selected-pill", "bg-purple-500", "text-white", "border-purple-500"));
+        showingSelectedOnly = false;
+        showCardsBtn.textContent = "Show Selected Cards";
+        document.querySelectorAll(".player-card").forEach(card => {
+            const name = card.dataset.name.toLowerCase();
+            card.style.display = name.includes(query) ? "block" : "none";
+        });
+        updateGenerateBtnState();
+    });
+
 
     // Initial setup
     fetchPlayers();

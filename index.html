@@ -1,95 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SDC Tournament (S21) Players</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    .player-pill {
-      transition: all 0.2s ease-in-out;
-    }
-
-    .player-pill.selected-pill {
-      background-color: #a78bfa; /* Tailwind purple-400 */
-      color: white;
-      border-color: #7c3aed;
-    }
-
-    .player-card.selected-card {
-      border: 3px solid #7c3aed; /* Tailwind purple-600 */
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDC Tournament (S21) Players</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-gray-100 font-sans">
-  <div class="max-w-6xl mx-auto py-10 px-4">
-    <h1 class="text-3xl font-bold text-center mb-6">SDC Player List</h1>
+    <!-- PASSWORD MODAL -->
+    <div id="passwordGate" class="fixed inset-0 z-50 bg-pink-100 flex items-center justify-center flex-col gap-4 text-center p-4">
+        <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full border-4 border-pink-300">
+            <h2 class="text-2xl font-bold text-pink-600 mb-2">🔐 Welcome, Summoner!</h2>
+            <p class="text-gray-600 mb-4">Only trusted scouts may enter! What's the magic word?</p>
+            <input id="passwordInput" type="password" placeholder="Type the secret..." class="w-full px-4 py-2 rounded-lg border-2 border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition mb-3" />
+            <button id="submitPassword" class="bg-gradient-to-r from-pink-400 to-purple-400 text-white font-bold px-6 py-2 rounded-full shadow hover:scale-105 transition transform">Let Me In!</button>
+            <p id="errorMessage" class="text-red-500 mt-2 hidden">Oops! Wrong password 💦</p>
+        </div>
+    </div>
 
-    <div class="mb-6">
-      <div class="bg-white p-4 rounded-lg shadow-md max-w-2xl mx-auto">
-        
-        <!-- Multi op.gg Button (goes ABOVE checkboxes) -->
-        <div class="text-center my-6">
-          <p class="text-base text-gray-600 mb-2">
-            View all selected players on op.gg
-          </p>
-          <button
-            id="generateBtn"
-            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 ring-2 ring-purple-300 hover:ring-4
+    <div class="max-w-6xl mx-auto py-10 px-4">
+        <h1 class="text-3xl font-bold text-center mb-6">SDC Player List</h1>
+
+        <div class="mb-6">
+            <div class="bg-white p-4 rounded-lg shadow-md max-w-2xl mx-auto">
+
+                <!-- MULTI OP.GG BUTTON -->
+                <div class="text-center my-6">
+                    <p class="text-base text-gray-600 mb-2">
+                        View all selected players on op.gg
+                    </p>
+                    <button id="generateBtn"
+                            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 ring-2 ring-purple-300 hover:ring-4
                   disabled:bg-gray-200 disabled:text-gray-500 disabled:shadow-none disabled:cursor-not-allowed disabled:transform-none disabled:ring-0"
-            disabled
-          >
-            Generate Multi op.gg
-          </button>
+                            disabled>
+                        Generate Multi op.gg
+                    </button>
+                </div>
+
+                <!-- TEAM FILTER -->
+                <div id="checkboxWrapper" class="mb-6">
+                    <div class="mb-4 text-center px-4">
+                        <label for="teamFilter" class="block font-semibold mb-2 text-lg">Choose a Team</label>
+                        <select id="teamFilter" class="border border-gray-300 rounded-md px-3 py-2 w-full max-w-xs mx-auto">
+                            <option value="All">All Teams</option>
+                            <option value="Aura Farmers">Aura Farmers</option>
+                            <option value="Blockspinners">Blockspinners</option>
+                            <option value="FF">FF</option>
+                            <option value="Final Boss Phase IV">Final Boss Phase IV</option>
+                            <option value="Godzilla Strikes Back">Godzilla Strikes Back</option>
+                            <option value="Honey Pack">Honey Pack</option>
+                            <option value="Men-nefer">Men-nefer</option>
+                            <option value="Oh Good Heavens">Oh Good Heavens</option>
+                            <option value="Revenge Arc">Revenge Arc</option>
+                            <option value="Slytherin">Slytherin</option>
+                            <option value="Sneaky Gitz">Sneaky Gitz</option>
+                            <option value="Sternritter">Sternritter</option>
+                            <option value="Termina Time Travelers">Termina Time Travelers</option>
+                            <option value="The Bnuunies">The Bnuunies</option>
+                            <option value="The Honored Ones">The Honored Ones</option>
+                            <option value="Wolhaiksong">Wolhaiksong</option>
+                        </select>
+                    </div>
+
+                    <!-- PILL-STYLE PLAYER BUTTONS -->
+                    <div id="checkboxContainer" class="px-4 flex flex-wrap gap-2 justify-center"></div>
+                </div>
+            </div>
         </div>
 
-        <!-- Checkboxes + Team Filter -->
-        <div id="checkboxWrapper" class="mb-6">
-          <div class="mb-4 text-center px-4">
-            <label for="teamFilter" class="block font-semibold mb-2 text-lg">Choose a Team</label>
-            <select id="teamFilter" class="border border-gray-300 rounded-md px-3 py-2 w-full max-w-xs mx-auto">
-              <option value="All">All Teams</option>
-              <option value="Aura Farmers">Aura Farmers</option>
-              <option value="Blockspinners">Blockspinners</option>
-              <option value="FF">FF</option>
-              <option value="Final Boss Phase IV">Final Boss Phase IV</option>
-              <option value="Godzilla Strikes Back">Godzilla Strikes Back</option>
-              <option value="Honey Pack">Honey Pack</option>
-              <option value="Men-nefer">Men-nefer</option>
-              <option value="Oh Good Heavens">Oh Good Heavens</option>
-              <option value="Revenge Arc">Revenge Arc</option>
-              <option value="Slytherin">Slytherin</option>
-              <option value="Sneaky Gitz">Sneaky Gitz</option>
-              <option value="Sternritter">Sternritter</option>
-              <option value="Termina Time Travelers">Termina Time Travelers</option>
-              <option value="The Bnuunies">The Bnuunies</option>
-              <option value="The Honored Ones">The Honored Ones</option>
-              <option value="Wolhaiksong">Wolhaiksong</option>
-            </select>
-          </div>
-
-          <!-- Pill-style player buttons will appear here -->
-          <div id="checkboxContainer" class="px-4 flex flex-wrap gap-2 justify-center"></div>
+        <!-- SEARCH BAR -->
+        <div class="mb-6 text-center">
+            <input type="text"
+                   id="searchInput"
+                   placeholder="Search player by name..."
+                   class="border border-gray-300 px-3 py-2 rounded-md w-full max-w-sm focus:outline-none focus:ring-2 focus:ring-purple-400 transition" />
         </div>
-      </div>
+
+        <!-- PLAYER CARDS -->
+        <div id="roster" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </div>
 
-    <!-- SEARCH BAR (add this ABOVE roster div!) -->
-    <div class="mb-6 text-center">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search player by name..."
-        class="border border-gray-300 px-3 py-2 rounded-md w-full max-w-sm focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
-      />
-    </div>
-
-    <!-- PLAYER CARDS -->
-    <div id="roster" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-  </div>
-
-  <!-- ✅ JavaScript goes at the very end -->
-  <script src="script.js"></script>
+    <!-- JAVASCRIPT FILE -->
+    <script src="script.js"></script>
 </body>
 </html>
