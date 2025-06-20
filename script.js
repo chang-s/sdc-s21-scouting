@@ -226,7 +226,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCheckboxVisibility();
     updateGenerateBtnState();
 
-    const searchInput = document.getElementById("searchInput");
     searchInput.addEventListener("input", () => {
         const query = searchInput.value.toLowerCase();
         document.querySelectorAll(".player-card").forEach(card => {
