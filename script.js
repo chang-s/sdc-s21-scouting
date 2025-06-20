@@ -1,4 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Password protection
+    const correctPassword = "cupcake123"; // password
+    const gate = document.getElementById("passwordGate");
+    const input = document.getElementById("passwordInput");
+    const submit = document.getElementById("submitPassword");
+    const error = document.getElementById("errorMessage");
+    const siteContent = document.querySelector("body > .max-w-6xl");
+
+    siteContent.classList.add("opacity-0"); // hide content until unlocked
+
+    submit.addEventListener("click", () => {
+        if (input.value === correctPassword) {
+            gate.classList.add("opacity-0", "pointer-events-none", "transition", "duration-700");
+            setTimeout(() => {
+                gate.style.display = "none";
+                siteContent.classList.remove("opacity-0");
+                siteContent.classList.add("fade-in");
+            }, 700);
+        } else {
+            error.classList.remove("hidden");
+            input.classList.add("border-red-400");
+        }
+    });
+
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") submit.click();
+    });
+
+    // Actual content
     const roster = document.getElementById("roster");
     const checkboxContainer = document.getElementById("checkboxContainer");
     const generateBtn = document.getElementById("generateBtn");
