@@ -87,7 +87,7 @@
         "a": "2",
         "kda": 2.3333333,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -299,7 +299,7 @@
   {
     "ign": "Bassel#001",
     "puuid": "KY_faVQHE5FSc_KS7f8xbSwR4dy2N5ffo40SbyqHf0mmYrrImh9Pb-0b8g-cTt_1noHvzWe7BedVVw",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Diamond",
     "tier": "1",
     "points": "36",
@@ -1431,7 +1431,7 @@
         "a": "4",
         "kda": 0.75,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -1444,7 +1444,7 @@
         "a": "2",
         "kda": 0.5555556,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -2039,7 +2039,7 @@
         "a": "25",
         "kda": 6.25,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -2052,7 +2052,7 @@
         "a": "10",
         "kda": 2.75,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -2278,7 +2278,7 @@
   {
     "ign": "conv#NA1",
     "puuid": "-TKLKBdj3MLbribvl35UcCwy6c6cDoTzDaIvk2L8-a_DBtN8SW1zvmAIRsMtJ0A5IqfGdCwyaNX-aQ",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Master",
     "tier": "1",
     "points": "32",
@@ -2490,7 +2490,7 @@
   {
     "ign": "RebornMountainx#NA1",
     "puuid": "_-Z5lbqnsYczJCW0RPYWmQkiHQRWFzcNbTDluTpAduEjXvEv76CBuGru34qxSKoXoasBhQFGnkDTdQ",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Grandmaster",
     "tier": "1",
     "points": "32",
@@ -3210,7 +3210,7 @@
         "a": "14",
         "kda": 3.142857,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -3338,7 +3338,7 @@
   {
     "ign": "Age Of The Cage#Custm",
     "puuid": "_qWMlXnHqz1qu4ufANFkG9xqf6EZj5tETejwUvy_Go-FdVKgJjZr-T2XWJBt7wkpAU-YaS-jxdcZ4A",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Master",
     "tier": "1",
     "points": "29",
@@ -3536,7 +3536,7 @@
         "a": "6",
         "kda": 3.5,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -3549,7 +3549,7 @@
         "a": "5",
         "kda": 11.0,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -3873,7 +3873,7 @@
     "avgKDA": 5.21
   },
   {
-    "ign": "THE NETHER#CRAFT",
+    "ign": "Pior#000",
     "puuid": "IvSrkUdQdSb4uUdgk8fKXaK88vf-9VkV7kyEiEPsgZFpTEgQ3tJnKEPCizln64PImzUEpOtqE5X4rA",
     "team": "Wolhaiksong",
     "rank": "Master",
@@ -3883,7 +3883,7 @@
       "MID",
       "TOP"
     ],
-    "opgg": "https://op.gg/lol/summoners/na/THE%20NETHER-CRAFT",
+    "opgg": "https://op.gg/lol/summoners/na/Pior-000",
     "topChamps": [
       "Katarina",
       "Aurora",
@@ -3925,7 +3925,7 @@
     ],
     "gameStats": [
       {
-        "ign": "THE NETHER#CRAFT",
+        "ign": "Pior#000",
         "matchId": "NA1_5307314800",
         "date": "6/14",
         "champion": "Lissandra",
@@ -3938,7 +3938,7 @@
         "vsAbbr": "FF"
       },
       {
-        "ign": "THE NETHER#CRAFT",
+        "ign": "Pior#000",
         "matchId": "NA1_5307900097",
         "date": "6/15",
         "champion": "Aurora",
@@ -3951,7 +3951,7 @@
         "vsAbbr": "FF"
       },
       {
-        "ign": "THE NETHER#CRAFT",
+        "ign": "Pior#000",
         "matchId": "NA1_5307973646",
         "date": "6/15",
         "champion": "Katarina",
@@ -4085,7 +4085,7 @@
     "avgKDA": 10.75
   },
   {
-    "ign": "OneDraven#NA1",
+    "ign": "One Draven#NA1",
     "puuid": "4JQF5OoOe4T2r9EBg1Cfe1MT8kARKskOI6pflCXk3t1IuNZ5eGB_dN7uA3yxh7IjU_EdusSBLa4QHg",
     "team": "Termina Time Travelers",
     "rank": "Grandmaster",
@@ -5585,7 +5585,7 @@
         "a": "1",
         "kda": 1.0,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -6092,7 +6092,7 @@
         "a": "11",
         "kda": 3.4,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -6516,7 +6516,7 @@
         "a": "19",
         "kda": 29.0,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -6529,7 +6529,7 @@
         "a": "8",
         "kda": 2.4,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -6670,7 +6670,7 @@
   {
     "ign": "Nat#Glory",
     "puuid": "6rN2nj0Ntt4fUmZrn7m3OKSH4S0TEDPVw23EO8ZV915VLeyi6iBn4XhdK-nwp5glLDTFzF5nEvES1w",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Diamond",
     "tier": "2",
     "points": "23",
@@ -7304,7 +7304,7 @@
     "avgKDA": 8.04
   },
   {
-    "ign": "FLINT N STEEL#CRAFT",
+    "ign": "BanPeriodCramps#girl",
     "puuid": "90mtewTqnFmVQkPfL9jTEf2wNdsg7wEL5PSEYZHU2kkpupCD3N-mqTs6S1sCMFC84AtBBzJtVSp4dg",
     "team": "Blockspinners",
     "rank": "Master",
@@ -7314,7 +7314,7 @@
       "TOP",
       "MID"
     ],
-    "opgg": "https://op.gg/lol/summoners/na/FLINT%20N%20STEEL-CRAFT",
+    "opgg": "https://op.gg/lol/summoners/na/BanPeriodCramps-girl",
     "topChamps": [
       "Riven",
       "Ambessa",
@@ -7356,7 +7356,7 @@
     ],
     "gameStats": [
       {
-        "ign": "FLINT N STEEL#CRAFT",
+        "ign": "BanPeriodCramps#girl",
         "matchId": "NA1_5307901453",
         "date": "6/15",
         "champion": "Jayce",
@@ -7365,11 +7365,11 @@
         "a": "3",
         "kda": 0.6,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
-        "ign": "FLINT N STEEL#CRAFT",
+        "ign": "BanPeriodCramps#girl",
         "matchId": "NA1_5307943229",
         "date": "6/15",
         "champion": "Yorick",
@@ -7382,7 +7382,7 @@
         "vsAbbr": "GSB"
       },
       {
-        "ign": "FLINT N STEEL#CRAFT",
+        "ign": "BanPeriodCramps#girl",
         "matchId": "NA1_5307978851",
         "date": "6/15",
         "champion": "Ambessa",
@@ -7940,7 +7940,7 @@
     "avgKDA": 5.76
   },
   {
-    "ign": "CHICKEN JOCKEY#CRAFT",
+    "ign": "humongofrog#w101",
     "puuid": "arwL2SxVmmWANqAZg1xRh-bMr-j-rof3yX1ANjv3NOyJvlM1zlTxY8AzHf0CwRkFOkRHhYdwC-KHCQ",
     "team": "Wolhaiksong",
     "rank": "Diamond",
@@ -7950,7 +7950,7 @@
       "BOT",
       "SUP"
     ],
-    "opgg": "https://op.gg/lol/summoners/na/CHICKEN%20JOCKEY-CRAFT",
+    "opgg": "https://op.gg/lol/summoners/na/humongofrog-w101",
     "topChamps": [
       "Aphelios",
       "Tristana",
@@ -7992,7 +7992,7 @@
     ],
     "gameStats": [
       {
-        "ign": "CHICKEN JOCKEY#CRAFT",
+        "ign": "humongofrog#w101",
         "matchId": "NA1_5307251904",
         "date": "6/14",
         "champion": "Aphelios",
@@ -8005,7 +8005,7 @@
         "vsAbbr": "HON"
       },
       {
-        "ign": "CHICKEN JOCKEY#CRAFT",
+        "ign": "humongofrog#w101",
         "matchId": "NA1_5307283979",
         "date": "6/14",
         "champion": "Sivir",
@@ -8025,7 +8025,7 @@
     "avgKDA": 0.46
   },
   {
-    "ign": "Hierarchs#halo2",
+    "ign": "Hierarchs#INT",
     "puuid": "PXv_w1KlEzOh8rHqUpcvvpa1dtldbLRP0LAO4TA778YI7Cdd-NHDOQ1m8IPIcULZnHgDR19tkH_Nnw",
     "team": "Oh Good Heavens",
     "rank": "Diamond",
@@ -8035,7 +8035,7 @@
       "TOP",
       "SUP"
     ],
-    "opgg": "https://op.gg/lol/summoners/na/Hierarchs-halo2",
+    "opgg": "https://op.gg/lol/summoners/na/Hierarchs-INT",
     "topChamps": [
       "Sett",
       "Renekton",
@@ -8185,7 +8185,7 @@
         "a": "4",
         "kda": 0.71428573,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -8436,7 +8436,7 @@
         "a": "20",
         "kda": 2.75,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -8635,7 +8635,7 @@
   {
     "ign": "carbill#bilng",
     "puuid": "CfVcH9G01KpQXh1jQ8TE7Q2ml7dNpk9lE4G6PDTPD1PIhI80ZYBAl7XpSELFo_uzfP_XGdCn53cd_A",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Master",
     "tier": "3",
     "points": "19",
@@ -9355,7 +9355,7 @@
         "a": "17",
         "kda": 4.5,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -9796,7 +9796,7 @@
         "a": "6",
         "kda": 15.0,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -9809,7 +9809,7 @@
         "a": "3",
         "kda": 1.0,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -10221,7 +10221,7 @@
         "a": "7",
         "kda": 5.0,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -10234,7 +10234,7 @@
         "a": "5",
         "kda": 0.75,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -10333,7 +10333,7 @@
         "a": "20",
         "kda": 12.0,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -10346,7 +10346,7 @@
         "a": "7",
         "kda": 5.0,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -11395,7 +11395,7 @@
         "a": "4",
         "kda": 2.5,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -11408,7 +11408,7 @@
         "a": "4",
         "kda": 1.2,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -11516,61 +11516,6 @@
       "Twitch"
     ],
     "avgKDA": 1.83
-  },
-  {
-    "ign": "ImP Krall#000",
-    "puuid": "GNqPY-nMkOd-okESg6nvyMs6I4c14ZA1bH7bPocJ4zW1qhfX1dTK5DR_mlMwNLnhaejiyfBvJ0s_OQ",
-    "team": "Honey Pack",
-    "rank": "Diamond",
-    "tier": "3",
-    "points": "13",
-    "roles": [
-      "BOT",
-      "SUP"
-    ],
-    "opgg": "https://op.gg/lol/summoners/na/ImP%20Krall-000",
-    "topChamps": [
-      "Gwen",
-      "Jinx",
-      "Rell",
-      "Senna",
-      "Viego"
-    ],
-    "champStats": [
-      {
-        "champion": "Gwen",
-        "games": 7,
-        "kda": "3.09",
-        "winRate": "86%"
-      },
-      {
-        "champion": "Jinx",
-        "games": 5,
-        "kda": "3.76",
-        "winRate": "80%"
-      },
-      {
-        "champion": "Rell",
-        "games": 5,
-        "kda": "2.97",
-        "winRate": "40%"
-      },
-      {
-        "champion": "Senna",
-        "games": 5,
-        "kda": "1.78",
-        "winRate": "40%"
-      },
-      {
-        "champion": "Viego",
-        "games": 4,
-        "kda": "3.15",
-        "winRate": "75%"
-      }
-    ],
-    "gameStats": [],
-    "champsPlayed": [],
-    "avgKDA": 0.0
   },
   {
     "ign": "awesomeguytx#NA1",
@@ -12325,7 +12270,7 @@
         "a": "11",
         "kda": 23.0,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       },
       {
@@ -12338,7 +12283,7 @@
         "a": "2",
         "kda": 1.75,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -12352,7 +12297,7 @@
   {
     "ign": "Hoppermh#NA1",
     "puuid": "EU62-yjGX0yHj8Z_7k3VSXQaO0U-fzIcjnrBhz8AraB8P4jK5Gf2NBuXEdGJuLvXATTn-c9ZfbarUg",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Diamond",
     "tier": "3",
     "points": "11",
@@ -12437,7 +12382,7 @@
   {
     "ign": "MountainRebornX#ASH",
     "puuid": "c44JOV9Xz6XdvjwpLRVj9yAuuR3yVP43DP1oZ5NiUm1HSxuG3WZ8RSoElx5Tcfccfkek632biWuoWA",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Platinum",
     "tier": "3",
     "points": "11",
@@ -12607,7 +12552,7 @@
   {
     "ign": "cloudboys#ca1",
     "puuid": "_XODV0cgGxSz3Z1txvhvzost4_BeDWKkuWNfiKWHWn_HoCCvmnD_KNqu-d3oXuYbmydROIFMAWHpdg",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Diamond",
     "tier": "4",
     "points": "10",
@@ -12935,7 +12880,7 @@
         "a": "17",
         "kda": 10.0,
         "result": "win",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -14447,7 +14392,7 @@
         "a": "3",
         "kda": 1.0,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -15027,7 +14972,7 @@
         "a": "10",
         "kda": 2.0,
         "result": "lose",
-        "vs": "Final Boss Phase IV",
+        "vs": "Final Boss Phase X",
         "vsAbbr": "FBP4"
       }
     ],
@@ -15211,7 +15156,7 @@
   {
     "ign": "No Hwei#green",
     "puuid": "INZ-k80jcwBtpae6VijyChlCZ7gT7KypAoPLM-CFdFv-MmroJeYREZBkunwKy505JLQdRJC58yvtUQ",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Platinum",
     "tier": "4",
     "points": "6",
@@ -16398,7 +16343,7 @@
   {
     "ign": "Chromos #OOM",
     "puuid": "jak1NAP01l3803h7StkPgTocqwUykiM2mG-hexukuz35JEq5gLOoZ3fZzy1YwA0n5vTWep267xS82Q",
-    "team": "Final Boss Phase IV",
+    "team": "Final Boss Phase X",
     "rank": "Platinum",
     "tier": "4",
     "points": "2",
