@@ -58,6 +58,7 @@ namespace SolaCSVParser
             if (string.IsNullOrWhiteSpace(matchDate))
             {
                 Console.WriteLine("Match date cannot be empty.");
+                Console.WriteLine();
                 return;
             }
 
@@ -70,6 +71,7 @@ namespace SolaCSVParser
                 if (string.IsNullOrWhiteSpace(inputId))
                 {
                     Console.WriteLine("Match ID cannot be empty.");
+                    Console.WriteLine();
                     continue;
                 }
 
@@ -80,6 +82,7 @@ namespace SolaCSVParser
                 if (!response.IsSuccessStatusCode)
                 {
                     Console.WriteLine($"Failed to get match data: {response.StatusCode}");
+                    Console.WriteLine();
                     continue;
                 }
 
@@ -89,6 +92,7 @@ namespace SolaCSVParser
                 if (matchDetail == null || matchDetail.info == null)
                 {
                     Console.WriteLine("Match detail is null.");
+                    Console.WriteLine();
                     continue;
                 }
 
@@ -107,6 +111,7 @@ namespace SolaCSVParser
                 if (uniqueTeams.Count != 2)
                 {
                     Console.WriteLine("Could not determine exactly 2 teams in the match.");
+                    Console.WriteLine();
                     continue;
                 }
 
