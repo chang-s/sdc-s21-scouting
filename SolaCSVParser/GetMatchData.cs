@@ -32,7 +32,7 @@ namespace SolaCSVParser
 
         public static async Task Main()
         {
-            string apiKey = "RGAPI-1d867183-5942-496a-9ab0-d9536a410dc3";
+            string apiKey = "RGAPI-316c67ad-3dce-4bbe-b608-8f557ed7dfb4";
             string filePath = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\players.json";
 
             if (!File.Exists(filePath))
@@ -51,7 +51,16 @@ namespace SolaCSVParser
             // await PopulatePuuids(players, apiKey, filePath);
 
             using HttpClient client = new HttpClient();
-            
+
+            Console.Write("Enter match date (e.g. 6/17): ");
+            string? matchDate = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(matchDate))
+            {
+                Console.WriteLine("Match date cannot be empty.");
+                return;
+            }
+
             while (true)
             {
                 // Enter match ID
@@ -61,27 +70,17 @@ namespace SolaCSVParser
                 if (string.IsNullOrWhiteSpace(inputId))
                 {
                     Console.WriteLine("Match ID cannot be empty.");
-                    return;
+                    continue;
                 }
 
                 string matchId = $"NA1_{inputId.Trim()}";
                 string url = $"https://americas.api.riotgames.com/lol/match/v5/matches/{matchId}?api_key={apiKey}";
 
-                // Enter match date
-                Console.Write("Enter match date (e.g. W1D1): ");
-                string? matchDate = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(matchDate))
-                {
-                    Console.WriteLine("Match date cannot be empty.");
-                    return;
-                }
-
                 HttpResponseMessage response = await client.GetAsync(url);
                 if (!response.IsSuccessStatusCode)
                 {
                     Console.WriteLine($"Failed to get match data: {response.StatusCode}");
-                    return;
+                    continue;
                 }
 
                 string json = await response.Content.ReadAsStringAsync();
@@ -90,7 +89,7 @@ namespace SolaCSVParser
                 if (matchDetail == null || matchDetail.info == null)
                 {
                     Console.WriteLine("Match detail is null.");
-                    return;
+                    continue;
                 }
 
                 // Step 1: Map puuid -> teamName from players.json
@@ -108,7 +107,7 @@ namespace SolaCSVParser
                 if (uniqueTeams.Count != 2)
                 {
                     Console.WriteLine("Could not determine exactly 2 teams in the match.");
-                    return;
+                    continue;
                 }
 
                 string team1 = uniqueTeams[0];
