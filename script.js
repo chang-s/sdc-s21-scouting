@@ -197,20 +197,22 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.innerHTML = player.ign;
 
             btn.addEventListener("click", () => {
-            btn.classList.toggle("selected-pill");
-            btn.classList.toggle("bg-purple-500");
-            btn.classList.toggle("text-white");
-            btn.classList.toggle("border-gray-300");
-            btn.classList.toggle("border-purple-500");
+                searchInput.value = ""; // Clear search box on click
 
-            if (btn.classList.contains("selected-pill")) {
-                btn.innerHTML = `${player.ign}`;
-            } else {
-                btn.innerHTML = player.ign;
-            }
+                btn.classList.toggle("selected-pill");
+                btn.classList.toggle("bg-purple-500");
+                btn.classList.toggle("text-white");
+                btn.classList.toggle("border-gray-300");
+                btn.classList.toggle("border-purple-500");
 
-            updateVisibleCards();
-            updateGenerateBtnState();
+                if (btn.classList.contains("selected-pill")) {
+                    btn.innerHTML = `${player.ign}`;
+                } else {
+                    btn.innerHTML = player.ign;
+                }
+
+                updateVisibleCards();
+                updateGenerateBtnState();
             });
 
             checkboxContainer.appendChild(btn);
@@ -317,6 +319,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const teamFilter = document.getElementById("teamFilter");
     teamFilter.addEventListener("change", () => {
+        searchInput.value = ""; // Clear the search box
+
         renderPlayerButtons();
         updateVisibleCards();
         updateCheckboxVisibility();
