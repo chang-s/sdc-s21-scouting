@@ -402,7 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
             Array.from({ length: 7 }).map((_, i) => {
                 const id = p[`item${i}`];
                 return id && id !== 0
-                    ? `<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${id}.png" class="w-6 h-6 inline-block mx-[1px] rounded" title="Item ${id}" />`
+                    ? `<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${id}.png" class="w-6 h-6 md:w-7 md:h-7 inline-block mx-[1px] rounded" title="Item ${id}" />`
                     : "";
             }).join("");
 
@@ -420,23 +420,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 const teamName = knownPlayer?.team || "Unknown";
 
                 return `
-                <tr class="border-b">
-                    <td class="py-1 pr-2 text-sm font-medium">
-                        <div>${p.riotIdGameName}#${p.riotIdTagline}</div>
-                    </td>
-                    <td class="py-1 pr-2 flex items-center gap-1 text-sm">
+            <tr class="border-b text-center align-middle">
+                <td class="py-1 px-1 text-sm font-medium break-words">
+                    ${p.riotIdGameName}#${p.riotIdTagline}
+                </td>
+                <td class="py-1 px-1 text-sm">
+                    <div class="flex items-center justify-center gap-1 flex-col">
                         <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/${p.championName}.png"
                             class="w-6 h-6 rounded-sm" alt="${p.championName}" />
-                        <br />
-                        <div class="text-gray-500 text-xs">${p.championName}</div>
-                    </td>
-                    <td class="py-1 text-sm">${p.kills}/${p.deaths}/${p.assists}</td>
-                    <td class="py-1">
-                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5 inline" />
-                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5 inline" />
-                    </td>
-                    <td class="py-1">${getItemIcons(p)}</td>
-                </tr>`;
+                        <span class="text-gray-500 text-xs">${p.championName}</span>
+                    </div>
+                </td>
+                <td class="py-1 px-1 text-sm">${p.kills}/${p.deaths}/${p.assists}</td>
+                <td class="py-1 px-1">
+                    <div class="flex justify-center gap-1">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5" />
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5" />
+                    </div>
+                </td>
+                <td class="py-1 px-1">
+                    <div class="flex flex-wrap justify-center gap-[2px]">
+                        ${getItemIcons(p)}
+                    </div>
+                </td>
+            </tr>`;
             }).join("");
         };
 
@@ -444,33 +451,33 @@ document.addEventListener("DOMContentLoaded", () => {
         const winningTeam = match.info.teams.find(t => t.win === true)?.teamId;
 
         return `
-        <div>
-            <h2 class="text-xl font-bold mb-3">Match Details</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                ${teams.map(teamId => {
+    <div>
+        <h2 class="text-xl font-bold mb-3 text-center">Match Details</h2>
+        <div class="flex flex-col gap-6 items-center">
+            ${teams.map(teamId => {
             const isWinner = teamId === winningTeam;
             const name = getTeamName(teamId);
             return `
-                    <div>
-                        <h3 class="font-semibold text-base mb-1 ${isWinner ? 'text-green-600' : 'text-red-600'}">
-                            ${isWinner ? '🏆 ' : ''}${name}
-                        </h3>
-                        <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
-                            <thead class="bg-gray-100">
-                                <tr>
-                                    <th class="text-left p-1">Player</th>
-                                    <th class="text-left p-1">Champ</th>
-                                    <th class="text-left p-1">KDA</th>
-                                    <th class="text-left p-1">Spells</th>
-                                    <th class="text-left p-1">Items</th>
-                                </tr>
-                            </thead>
-                            <tbody>${renderTeam(teamId)}</tbody>
-                        </table>
-                    </div>`;
+                <div class="w-full max-w-3xl">
+                    <h3 class="text-center font-semibold text-base mb-2 ${isWinner ? 'text-green-600' : 'text-red-600'}">
+                        ${isWinner ? '🏆 ' : ''}${name}
+                    </h3>
+                    <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
+                        <thead class="bg-gray-100 text-center">
+                            <tr>
+                                <th class="p-1">Player</th>
+                                <th class="p-1">Champ</th>
+                                <th class="p-1">KDA</th>
+                                <th class="p-1">Spells</th>
+                                <th class="p-1">Items</th>
+                            </tr>
+                        </thead>
+                        <tbody>${renderTeam(teamId)}</tbody>
+                    </table>
+                </div>`;
         }).join("")}
-            </div>
-        </div>`;
+        </div>
+    </div>`;
     }
 
     // Initial setup
