@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
             for (let i = 0; i < 6; i++) {
                 const id = p[`item${i}`];
                 if (id && id !== 0) {
-                    items.push(`<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${id}.png"
+                    items.push(`<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${id}.png"
                     class="w-6 h-6 md:w-7 md:h-7 rounded-sm" title="Item ${id}" />`);
                 } else {
                     items.push(`<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-sm inline-block"></div>`);
@@ -412,7 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const trinketId = p.item6;
             const trinket = trinketId && trinketId !== 0
-                ? `<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${trinketId}.png"
+                ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${trinketId}.png"
                 class="w-6 h-6 md:w-7 md:h-7 rounded-full ring-1 ring-gray-300" title="Trinket ${trinketId}" />`
                 : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-full inline-block"></div>`;
 
@@ -435,10 +435,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 const rank = knownPlayer?.rank;
                 const rankIcon = rankIcons?.[rank] || "";
 
-                const tierColor = tier === 1 ? 'bg-red-200' :
-                    tier === 2 ? 'bg-orange-200' :
-                        tier === 3 ? 'bg-blue-200' :
-                            'bg-green-200';
+                const tierColor =
+                    tier === "1" ? "bg-red-200" :
+                        tier === "2" ? "bg-orange-200" :
+                            tier === "3" ? "bg-blue-200" :
+                                "bg-green-200";
 
                 return `
             <tr class="text-left align-middle ${isWinner ? 'bg-green-50' : 'bg-red-50'}">
@@ -452,7 +453,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </td>
                 <td class="py-2 px-1 text-sm text-center">
                     <div class="flex items-center justify-center gap-1 flex-col">
-                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/${p.championName}.png"
+                        <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${p.championName}.png"
                             class="w-6 h-6 rounded-sm" alt="${p.championName}" />
                         <span class="text-gray-500 text-xs">${p.championName}</span>
                     </div>
@@ -483,11 +484,11 @@ document.addEventListener("DOMContentLoaded", () => {
             ${teams.map(teamId => {
             const isWinner = teamId === winningTeam;
             const name = getTeamName(teamId);
-            const headerColor = isWinner ? 'bg-green-200 text-white' : 'bg-red-200 text-white';
+            const headerColor = isWinner ? 'bg-green-200 text-green-900' : 'bg-red-200 text-red-900';
 
             return `
                 <div class="w-full max-w-3xl">
-                    <h3 class="text-center font-semibold text-base mb-2 ${isWinner ? 'text-green-600' : 'text-red-600'}">
+                    <h3 class="text-center font-semibold text-base mb-2 w-full ${isWinner ? 'text-green-600' : 'text-red-600'}">
                         ${isWinner ? '🏆 ' : ''}${name}
                     </h3>
                     <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
@@ -507,6 +508,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>`;
     }
+
 
     // Initial setup
     fetchPlayers();
