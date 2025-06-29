@@ -138,14 +138,77 @@ namespace SolaCSVParser
                 string team2Abbr = TeamAbbreviations.GetValueOrDefault(team2, "--");
 
                 // Step 2: For each participant, add new match data
+                bool continueMatchLoop = false;
+
                 foreach (var participant in matchDetail.info.participants)
                 {
                     var player = players.Find(p => p.puuid == participant.puuid);
+
                     if (player == null)
                     {
-                        Console.WriteLine($"No match found in players.json for: {participant.summonerName}");
-                        continue;
+                        string ign = $"{participant.riotIdGameName}#{participant.riotIdTagline}";
+                        Console.WriteLine($"No player found in players.json for: {ign}");
+
+                        Console.Write("Do you want to add this player to players.json? (y/n): ");
+                        string? responseInput = Console.ReadLine()?.Trim().ToLower();
+
+                        if (responseInput != "y")
+                        {
+                            Console.WriteLine("Skipping unknown player.");
+                            continue;
+                        }
+
+                        // Validate team name or allow skip
+                        string? newTeam = null;
+                        while (true)
+                        {
+                            Console.Write($"Enter team name for {ign} (or type 'skip' to skip this player): ");
+                            string? input = Console.ReadLine()?.Trim();
+
+                            if (string.Equals(input, "skip", StringComparison.OrdinalIgnoreCase))
+                            {
+                                Console.WriteLine("Skipping player.");
+                                continueMatchLoop = true;
+                                break;
+                            }
+
+                            if (!string.IsNullOrWhiteSpace(input) && GetMatchData.TeamAbbreviations.ContainsKey(input))
+                            {
+                                newTeam = input;
+                                break;
+                            }
+
+                            Console.WriteLine("Invalid team name. Please enter one of the following:");
+                            foreach (var name in GetMatchData.TeamAbbreviations.Keys.OrderBy(n => n))
+                            {
+                                Console.WriteLine($"- {name}");
+                            }
+                        }
+
+                        if (continueMatchLoop) continue;
+
+                        player = new Player
+                        {
+                            ign = ign,
+                            puuid = participant.puuid,
+                            team = newTeam ?? "",
+                            rank = "",
+                            tier = "",
+                            opgg = $"https://op.gg/lol/summoners/na/{Uri.EscapeDataString(participant.riotIdGameName)}-{participant.riotIdTagline}".ToLower(),
+                            roles = new List<string>(),
+                            champStats = new List<ChampionStats>(),
+                            gameStats = new List<GameStats>(),
+                            topChamps = new List<string>(),
+                            champsPlayed = new List<string>(),
+                            points = "",
+                            avgKDA = 0
+                        };
+
+                        players.Add(player);
+                        File.WriteAllText(filePath, JsonConvert.SerializeObject(players, Formatting.Indented));
+                        Console.WriteLine($"Added new player {ign} to players.json.");
                     }
+
 
                     // Ensure gameStats list is initialized
                     player.gameStats ??= new List<GameStats>();
