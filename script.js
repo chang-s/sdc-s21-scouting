@@ -487,8 +487,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 return `
                     <div class="w-full max-w-3xl">
                         <h2 class="text-center font-bold text-xl md:text-2xl mb-2 w-full ${isWinner ? 'text-green-600' : 'text-red-600'}">
-                            ${isWinner ? '🏆 ' : ''}${name}
+                            ${name}
                         </h2>
+                        <p class="text-sm font-semibold text-center mb-3">
+                          <span class="inline-block px-2 py-0.5 rounded-full text-white text-xs font-bold ${isWinner ? 'bg-green-600' : 'bg-red-500'}">
+                            ${isWinner ? 'WIN' : 'LOSE'}
+                          </span>
+                        </p>
 
                         <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
                             <thead class="${headerColor} text-center">
