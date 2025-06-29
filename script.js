@@ -514,6 +514,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.toggleStats = toggleStats;
     updateCheckboxVisibility();
     updateGenerateBtnState();
+    window.buildMatchModalContent = buildMatchModalContent;
+
 
     const searchInput = document.getElementById("searchInput");
 
