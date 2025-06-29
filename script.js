@@ -374,6 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const match = await response.json();
                 content.innerHTML = buildMatchModalContent(match);
                 modal.classList.remove("hidden");
+                document.body.classList.add("overflow-hidden");
             } catch (err) {
                 content.innerHTML = "Error loading match data.";
             }
@@ -381,7 +382,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("closeModal").addEventListener("click", () => {
-        document.getElementById("matchModal").classList.add("hidden");
+        const modal = document.getElementById("matchModal");
+        modal.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
     });
 
     function buildMatchModalContent(match) {
