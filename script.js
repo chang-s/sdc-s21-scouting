@@ -512,15 +512,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`;
     }
 
-    // Close modal if open
-    document.addEventListener("click", (e) => {
-        const modal = document.getElementById("matchModal");
-        const content = document.getElementById("matchModalContent");
-
-        if (!modal.classList.contains("hidden") && !content.contains(e.target) && e.target.id !== "matchModalContent") {
-            modal.classList.add("hidden");
-        }
-    });
 
     // Initial setup
     fetchPlayers();
