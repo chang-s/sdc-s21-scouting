@@ -236,7 +236,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-
     function updateGenerateBtnState() {
         const selected = Array.from(checkboxContainer.querySelectorAll(".selected-pill"));
 
@@ -322,7 +321,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const teamFilter = document.getElementById("teamFilter");
     teamFilter.addEventListener("change", () => {
-        searchInput.value = ""; // Clear the search box
+        // Clear all selected pills
+        document.querySelectorAll(".selected-pill").forEach(pill => {
+            pill.classList.remove("selected-pill", "bg-purple-500", "text-white", "border-purple-500");
+            pill.classList.add("border-gray-300");
+        });
+
+        // Clear search input
+        searchInput.value = "";
 
         renderPlayerButtons();
         updateVisibleCards();
@@ -336,8 +342,17 @@ document.addEventListener("DOMContentLoaded", () => {
     updateGenerateBtnState();
 
     const searchInput = document.getElementById("searchInput");
+
     searchInput.addEventListener("input", () => {
         const query = searchInput.value.toLowerCase();
+
+        // Clear all selected pills when typing
+        document.querySelectorAll(".selected-pill").forEach(pill => {
+            pill.classList.remove("selected-pill", "bg-purple-500", "text-white", "border-purple-500");
+            pill.classList.add("border-gray-300");
+        });
+
+        // Update search-based visibility
         document.querySelectorAll(".player-card").forEach(card => {
             const name = card.dataset.name.toLowerCase();
             card.style.display = name.includes(query) ? "block" : "none";
