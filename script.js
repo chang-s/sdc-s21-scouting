@@ -398,13 +398,28 @@ document.addEventListener("DOMContentLoaded", () => {
             32: "SummonerSnowball"
         }[id] || "SummonerFlash");
 
-        const getItemIcons = (p) =>
-            Array.from({ length: 7 }).map((_, i) => {
+        const getItemIcons = (p, isWinner) => {
+            let items = [];
+            for (let i = 0; i < 6; i++) {
                 const id = p[`item${i}`];
-                return id && id !== 0
-                    ? `<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${id}.png" class="w-6 h-6 md:w-7 md:h-7 inline-block mx-[1px] rounded" title="Item ${id}" />`
-                    : "";
-            }).join("");
+                if (id && id !== 0) {
+                    items.push(`<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${id}.png"
+                    class="w-6 h-6 md:w-7 md:h-7 rounded-sm" title="Item ${id}" />`);
+                } else {
+                    items.push(`<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-sm inline-block"></div>`);
+                }
+            }
+
+            // Add trinket as circular icon
+            const trinketId = p.item6;
+            const trinket = trinketId && trinketId !== 0
+                ? `<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${trinketId}.png"
+                class="w-6 h-6 md:w-7 md:h-7 rounded-full ring-1 ring-gray-300" title="Trinket ${trinketId}" />`
+                : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-full inline-block"></div>`;
+
+            items.push(trinket);
+            return items.join("");
+        };
 
         const getTeamName = (teamId) => {
             const puuid = match.info.participants.find(p => p.teamId === teamId)?.puuid;
@@ -412,35 +427,42 @@ document.addEventListener("DOMContentLoaded", () => {
             return player?.team || `Team ${teamId}`;
         };
 
-        const renderTeam = (teamId) => {
+        const renderTeam = (teamId, isWinner) => {
             const players = match.info.participants.filter(p => p.teamId === teamId);
 
             return players.map(p => {
                 const knownPlayer = playerData.find(pl => pl.puuid === p.puuid);
-                const teamName = knownPlayer?.team || "Unknown";
+                const tier = knownPlayer?.tier;
+                const rank = knownPlayer?.rank;
+                const rankIcon = rankIcons?.[rank] || "";
 
                 return `
-            <tr class="border-b text-center align-middle">
-                <td class="py-1 px-1 text-sm font-medium break-words">
-                    ${p.riotIdGameName}#${p.riotIdTagline}
+            <tr class="text-left align-middle ${isWinner ? 'bg-green-50' : 'bg-red-50'}">
+                <td class="py-2 px-2 text-sm font-medium align-top whitespace-nowrap">
+                    <div class="mb-1">${p.riotIdGameName}#${p.riotIdTagline}</div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded ${tier === 1 ? 'bg-red-200' : tier === 2 ? 'bg-orange-200' : tier === 3 ? 'bg-blue-200' : 'bg-green-200'}">T${tier || '?'}</span>
+                        <span class="text-xs text-gray-600">${rank || ''}</span>
+                        ${rankIcon ? `<img src="${rankIcon}" class="w-5 h-5 inline-block ml-1" />` : ''}
+                    </div>
                 </td>
-                <td class="py-1 px-1 text-sm">
+                <td class="py-2 px-1 text-sm text-center">
                     <div class="flex items-center justify-center gap-1 flex-col">
                         <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/${p.championName}.png"
                             class="w-6 h-6 rounded-sm" alt="${p.championName}" />
                         <span class="text-gray-500 text-xs">${p.championName}</span>
                     </div>
                 </td>
-                <td class="py-1 px-1 text-sm">${p.kills}/${p.deaths}/${p.assists}</td>
-                <td class="py-1 px-1">
+                <td class="py-2 px-1 text-sm text-center">${p.kills}/${p.deaths}/${p.assists}</td>
+                <td class="py-2 px-1 text-center">
                     <div class="flex justify-center gap-1">
                         <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5" />
                         <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5" />
                     </div>
                 </td>
-                <td class="py-1 px-1">
-                    <div class="flex flex-wrap justify-center gap-[2px]">
-                        ${getItemIcons(p)}
+                <td class="py-2 px-1 text-center">
+                    <div class="flex flex-wrap justify-start gap-[2px] pl-1">
+                        ${getItemIcons(p, isWinner)}
                     </div>
                 </td>
             </tr>`;
@@ -465,14 +487,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
                         <thead class="bg-gray-100 text-center">
                             <tr>
-                                <th class="p-1">Player</th>
+                                <th class="p-1 text-left">Player</th>
                                 <th class="p-1">Champ</th>
                                 <th class="p-1">KDA</th>
                                 <th class="p-1">Spells</th>
-                                <th class="p-1">Items</th>
+                                <th class="p-1 text-left">Items</th>
                             </tr>
                         </thead>
-                        <tbody>${renderTeam(teamId)}</tbody>
+                        <tbody>${renderTeam(teamId, isWinner)}</tbody>
                     </table>
                 </div>`;
         }).join("")}
