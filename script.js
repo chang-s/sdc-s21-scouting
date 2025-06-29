@@ -87,7 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 return acc;
             }, {});
 
-            const champsPlayedSummary = Object.entries(champCounts)
+            // Sort champ entries by count descending
+            const sortedChamps = Object.entries(champCounts)
+                .sort((a, b) => b[1] - a[1]);
+
+            const champsPlayedSummary = sortedChamps
                 .map(([champ, count]) => {
                     const iconUrl = `https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/${champ}.png`;
                     return `
@@ -98,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </td>
                         <td>${count} game${count > 1 ? "s" : ""}</td>
                     </tr>`;
-                        })
+                })
                 .join("");
 
             let kdaColor = "text-gray-500";
@@ -162,12 +166,25 @@ document.addEventListener("DOMContentLoaded", () => {
                             <thead><tr><th>Date</th><th>Champion</th><th>K</th><th>D</th><th>A</th><th class="text-center">Result</th><th>vs Team</th></tr></thead>
                             <tbody>${gameStatsHtml}</tbody>
                         </table>
-                        <div class="mt-4">
-                            <h4 class="font-semibold mb-1">Champs Played</h4>
+                        <div class="mt-6 border-t pt-3">
+                            <h4 class="font-semibold text-gray-700 mb-2">Player Overview</h4>
+                            <ul class="text-sm leading-6">
+                                <li><strong>Avg KDA:</strong> <span class="${kdaColor}">${player.avgKDA}</span></li>
+                                <li><strong>Total Games:</strong> ${player.gameStats.length}</li>
+                                <li><strong>Winrate:</strong> ${player.gameStats.length > 0
+                                            ? Math.round(
+                                                (player.gameStats.filter(g => g.result.toLowerCase() === "win").length /
+                                                    player.gameStats.length) *
+                                                100
+                                            ) + "%"
+                                            : "N/A"
+                                        }</li>
+                            </ul>
+
+                            <h4 class="font-semibold text-gray-700 mt-4 mb-1">Champs Played</h4>
                             <table class="table-auto w-full text-left mb-2">
                                 <tbody>${champsPlayedSummary}</tbody>
                             </table>
-                            <p class="font-semibold">Avg KDA: <span class="${kdaColor}">${player.avgKDA}</span></p>
                         </div>
                     </div>
                 </div>
