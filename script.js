@@ -352,6 +352,10 @@ document.addEventListener("DOMContentLoaded", () => {
             pill.classList.add("border-gray-300");
         });
 
+        // Change team filter to "All"
+        teamFilter.value = "All";
+        updateCheckboxVisibility(); // hides roster since it's not relevant during search
+
         // Update search-based visibility
         document.querySelectorAll(".player-card").forEach(card => {
             const name = card.dataset.name.toLowerCase();
