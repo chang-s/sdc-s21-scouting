@@ -102,15 +102,29 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "aquanick#bbcsr",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "Ahri",
+        "k": "5",
+        "d": "4",
+        "a": "11",
+        "kda": 4.0,
+        "result": "win",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
       }
     ],
     "champsPlayed": [
       "Aurora",
       "Syndra",
       "Mel",
-      "Taliyah"
+      "Taliyah",
+      "Ahri"
     ],
-    "avgKDA": 6.0
+    "avgKDA": 5.6
   },
   {
     "ign": "nico#sccer",
@@ -189,13 +203,27 @@
         "result": "lose",
         "vs": "The Bnuunies",
         "vsAbbr": "BNU"
+      },
+      {
+        "ign": "nico#sccer",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "Yone",
+        "k": "2",
+        "d": "1",
+        "a": "8",
+        "kda": 10.0,
+        "result": "lose",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
       }
     ],
     "champsPlayed": [
       "Gwen",
-      "Ryze"
+      "Ryze",
+      "Yone"
     ],
-    "avgKDA": 4.52
+    "avgKDA": 6.35
   },
   {
     "ign": "DJ Benjamin#BTD6",
@@ -654,14 +682,28 @@
         "result": "lose",
         "vs": "Aura Farmers",
         "vsAbbr": "AF"
+      },
+      {
+        "ign": "Fliptik#skbdi",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "DrMundo",
+        "k": "4",
+        "d": "5",
+        "a": "5",
+        "kda": 1.8,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Ambessa",
       "Yorick",
-      "Yorick"
+      "Yorick",
+      "DrMundo"
     ],
-    "avgKDA": 7.33
+    "avgKDA": 5.95
   },
   {
     "ign": "Yetzu#Qualm",
@@ -1005,6 +1047,19 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "handytaco#na1",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Corki",
+        "k": "7",
+        "d": "0",
+        "a": "10",
+        "kda": 17.0,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
@@ -1012,9 +1067,10 @@
       "Ahri",
       "Leblanc",
       "TwistedFate",
+      "Corki",
       "Corki"
     ],
-    "avgKDA": 14.45
+    "avgKDA": 14.88
   },
   {
     "ign": "Duck Man#Quack",
@@ -1132,6 +1188,19 @@
         "result": "win",
         "vs": "Wolhaiksong",
         "vsAbbr": "WOL"
+      },
+      {
+        "ign": "Duck Man#Quack",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "Orianna",
+        "k": "7",
+        "d": "1",
+        "a": "14",
+        "kda": 21.0,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
@@ -1139,9 +1208,10 @@
       "Syndra",
       "Viktor",
       "Orianna",
-      "Hwei"
+      "Hwei",
+      "Orianna"
     ],
-    "avgKDA": 9.77
+    "avgKDA": 11.64
   },
   {
     "ign": "mingrui#zhou",
@@ -1374,14 +1444,28 @@
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
+      },
+      {
+        "ign": "NRE HEARTBREAKER#NRE",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "Vex",
+        "k": "7",
+        "d": "3",
+        "a": "4",
+        "kda": 3.6666667,
+        "result": "win",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Azir",
       "Sylas",
-      "Vladimir"
+      "Vladimir",
+      "Vex"
     ],
-    "avgKDA": 10.78
+    "avgKDA": 9.0
   },
   {
     "ign": "Frosty#0802",
@@ -1700,13 +1784,41 @@
         "result": "win",
         "vs": "Slytherin",
         "vsAbbr": "SLY"
+      },
+      {
+        "ign": "Ritty#na1",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Pantheon",
+        "k": "1",
+        "d": "7",
+        "a": "4",
+        "kda": 0.71428573,
+        "result": "lose",
+        "vs": "Sternritter",
+        "vsAbbr": "STRN"
+      },
+      {
+        "ign": "Ritty#na1",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Viego",
+        "k": "10",
+        "d": "4",
+        "a": "4",
+        "kda": 3.5,
+        "result": "lose",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
       "Belveth",
+      "Viego",
+      "Pantheon",
       "Viego"
     ],
-    "avgKDA": 8.85
+    "avgKDA": 5.48
   },
   {
     "ign": "Dreamo#ILMGF",
@@ -2024,14 +2136,28 @@
         "result": "win",
         "vs": "Wolhaiksong",
         "vsAbbr": "WOL"
+      },
+      {
+        "ign": "Infallible#galio",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "Nocturne",
+        "k": "7",
+        "d": "5",
+        "a": "10",
+        "kda": 3.4,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Hecarim",
       "Nocturne",
-      "Gwen"
+      "Gwen",
+      "Nocturne"
     ],
-    "avgKDA": 6.39
+    "avgKDA": 5.64
   },
   {
     "ign": "StrikeeeLoL #Sup",
@@ -2236,14 +2362,56 @@
         "result": "lose",
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
+      },
+      {
+        "ign": "anvium#NA1",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "Rell",
+        "k": "1",
+        "d": "6",
+        "a": "15",
+        "kda": 2.6666667,
+        "result": "lose",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
+      },
+      {
+        "ign": "anvium#NA1",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "Zyra",
+        "k": "3",
+        "d": "1",
+        "a": "8",
+        "kda": 11.0,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
+      },
+      {
+        "ign": "anvium#NA1",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "Thresh",
+        "k": "2",
+        "d": "0",
+        "a": "15",
+        "kda": 17.0,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
       }
     ],
     "champsPlayed": [
       "Thresh",
       "Blitzcrank",
+      "Thresh",
+      "Rell",
+      "Zyra",
       "Thresh"
     ],
-    "avgKDA": 3.39
+    "avgKDA": 6.81
   },
   {
     "ign": "venom#elias",
@@ -2348,15 +2516,29 @@
         "result": "lose",
         "vs": "FF",
         "vsAbbr": "FF"
+      },
+      {
+        "ign": "venom#elias",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Kindred",
+        "k": "6",
+        "d": "4",
+        "a": "10",
+        "kda": 4.0,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
       "Vi",
       "Kindred",
       "JarvanIV",
+      "Kindred",
       "Kindred"
     ],
-    "avgKDA": 7.73
+    "avgKDA": 6.98
   },
   {
     "ign": "Carpal#NA1",
@@ -2815,14 +2997,28 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "RebornMountainx#NA1",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "JarvanIV",
+        "k": "6",
+        "d": "0",
+        "a": "15",
+        "kda": 21.0,
+        "result": "win",
+        "vs": "Slytherin",
+        "vsAbbr": "SLY"
       }
     ],
     "champsPlayed": [
       "Udyr",
       "XinZhao",
-      "Volibear"
+      "Volibear",
+      "JarvanIV"
     ],
-    "avgKDA": 8.33
+    "avgKDA": 11.5
   },
   {
     "ign": "AKM xFluke#NA1",
@@ -3127,19 +3323,19 @@
         "vs": "FF",
         "vsAbbr": "FF"
       },
-        {
-            "ign": "Scorpio#DC1",
-            "matchId": "NA1_5311641409",
-            "date": "6/21",
-            "champion": "Cassiopeia",
-            "k": "3",
-            "d": "4",
-            "a": "2",
-            "kda": 1.25,
-            "result": "lose",
-            "vs": "Final Boss Phase X",
-            "vsAbbr": "FBPX"
-        },
+      {
+        "ign": "Scorpio#DC1",
+        "matchId": "NA1_5311641409",
+        "date": "6/21",
+        "champion": "Cassiopeia",
+        "k": "3",
+        "d": "4",
+        "a": "2",
+        "kda": 1.25,
+        "result": "lose",
+        "vs": "Final Boss Phase X",
+        "vsAbbr": "FBPX"
+      },
       {
         "ign": "Scorpio#DC1",
         "matchId": "NA1_5311682324",
@@ -3519,6 +3715,32 @@
         "result": "win",
         "vs": "FF",
         "vsAbbr": "FF"
+      },
+      {
+        "ign": "Jaagan#hound",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Briar",
+        "k": "1",
+        "d": "6",
+        "a": "5",
+        "kda": 1.0,
+        "result": "lose",
+        "vs": "FF",
+        "vsAbbr": "FF"
+      },
+      {
+        "ign": "Jaagan#hound",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Volibear",
+        "k": "4",
+        "d": "4",
+        "a": "14",
+        "kda": 4.5,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
@@ -3526,9 +3748,11 @@
       "Poppy",
       "Pantheon",
       "Volibear",
-      "Udyr"
+      "Udyr",
+      "Briar",
+      "Volibear"
     ],
-    "avgKDA": 10.36
+    "avgKDA": 8.19
   },
   {
     "ign": "Jim Cantore #NA1",
@@ -3973,14 +4197,28 @@
         "result": "lose",
         "vs": "Sternritter",
         "vsAbbr": "STRN"
+      },
+      {
+        "ign": "Fiery#slam",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Aurora",
+        "k": "3",
+        "d": "4",
+        "a": "4",
+        "kda": 1.75,
+        "result": "lose",
+        "vs": "Sternritter",
+        "vsAbbr": "STRN"
       }
     ],
     "champsPlayed": [
       "Kayle",
       "Naafiri",
-      "Yone"
+      "Yone",
+      "Aurora"
     ],
-    "avgKDA": 2.78
+    "avgKDA": 2.52
   },
   {
     "ign": "TrickyZ#SUPP",
@@ -4238,6 +4476,19 @@
         "result": "lose",
         "vs": "Revenge Arc",
         "vsAbbr": "REV"
+      },
+      {
+        "ign": "Alucard#sun",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Vladimir",
+        "k": "8",
+        "d": "7",
+        "a": "3",
+        "kda": 1.5714285,
+        "result": "lose",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
       }
     ],
     "champsPlayed": [
@@ -4246,9 +4497,10 @@
       "Camille",
       "Aatrox",
       "Aatrox",
-      "Aatrox"
+      "Aatrox",
+      "Vladimir"
     ],
-    "avgKDA": 6.69
+    "avgKDA": 5.96
   },
   {
     "ign": "Pior#000",
@@ -4340,14 +4592,56 @@
         "result": "lose",
         "vs": "Aura Farmers",
         "vsAbbr": "AF"
+      },
+      {
+        "ign": "Pior#000",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "Hwei",
+        "k": "6",
+        "d": "3",
+        "a": "7",
+        "kda": 4.3333335,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Pior#000",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "Gnar",
+        "k": "0",
+        "d": "10",
+        "a": "0",
+        "kda": 0.0,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Pior#000",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Syndra",
+        "k": "10",
+        "d": "6",
+        "a": "7",
+        "kda": 2.8333333,
+        "result": "win",
+        "vs": "Termina Time Travelers",
+        "vsAbbr": "TTT"
       }
     ],
     "champsPlayed": [
       "Lissandra",
       "Aurora",
-      "Katarina"
+      "Katarina",
+      "Hwei",
+      "Gnar",
+      "Syndra"
     ],
-    "avgKDA": 13.67
+    "avgKDA": 8.03
   },
   {
     "ign": "TIP#333",
@@ -4592,6 +4886,19 @@
         "result": "lose",
         "vs": "Revenge Arc",
         "vsAbbr": "REV"
+      },
+      {
+        "ign": "One Draven#NA1",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Samira",
+        "k": "6",
+        "d": "7",
+        "a": "7",
+        "kda": 1.8571428,
+        "result": "lose",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
       }
     ],
     "champsPlayed": [
@@ -4599,9 +4906,10 @@
       "Nilah",
       "Jinx",
       "Samira",
-      "Jinx"
+      "Jinx",
+      "Samira"
     ],
-    "avgKDA": 5.88
+    "avgKDA": 5.21
   },
   {
     "ign": "Bubbster#White",
@@ -4852,9 +5160,39 @@
         "winRate": "50%"
       }
     ],
-    "gameStats": [],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "gameStats": [
+      {
+        "ign": "Rapidfire#NA1",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Zeri",
+        "k": "2",
+        "d": "5",
+        "a": "0",
+        "kda": 0.4,
+        "result": "lose",
+        "vs": "Oh Good Heavens",
+        "vsAbbr": "OGH"
+      },
+      {
+        "ign": "Rapidfire#NA1",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "Aphelios",
+        "k": "1",
+        "d": "7",
+        "a": "3",
+        "kda": 0.5714286,
+        "result": "lose",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
+      }
+    ],
+    "champsPlayed": [
+      "Zeri",
+      "Aphelios"
+    ],
+    "avgKDA": 0.49
   },
   {
     "ign": "ني هاو فاين شيت#Trin",
@@ -4972,6 +5310,19 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "ني هاو فاين شيت#Trin",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Braum",
+        "k": "0",
+        "d": "7",
+        "a": "16",
+        "kda": 2.2857144,
+        "result": "lose",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
       }
     ],
     "champsPlayed": [
@@ -4979,9 +5330,10 @@
       "Poppy",
       "Lulu",
       "Rakan",
-      "Karma"
+      "Karma",
+      "Braum"
     ],
-    "avgKDA": 7.06
+    "avgKDA": 6.26
   },
   {
     "ign": "The Apotheon #ΩΔΩ",
@@ -5172,14 +5524,28 @@
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
+      },
+      {
+        "ign": "Capanese#na1",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "Zeri",
+        "k": "3",
+        "d": "5",
+        "a": "6",
+        "kda": 1.8,
+        "result": "win",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Lucian",
       "Kalista",
-      "Lucian"
+      "Lucian",
+      "Zeri"
     ],
-    "avgKDA": 6.33
+    "avgKDA": 5.2
   },
   {
     "ign": "Razed#cold",
@@ -5271,14 +5637,42 @@
         "result": "win",
         "vs": "FF",
         "vsAbbr": "FF"
+      },
+      {
+        "ign": "Razed#cold",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Syndra",
+        "k": "2",
+        "d": "2",
+        "a": "2",
+        "kda": 2.0,
+        "result": "lose",
+        "vs": "FF",
+        "vsAbbr": "FF"
+      },
+      {
+        "ign": "Razed#cold",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Azir",
+        "k": "11",
+        "d": "3",
+        "a": "13",
+        "kda": 8.0,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
       "Ryze",
       "Azir",
-      "Cassiopeia"
+      "Cassiopeia",
+      "Syndra",
+      "Azir"
     ],
-    "avgKDA": 2.89
+    "avgKDA": 3.73
   },
   {
     "ign": "hocus#miri",
@@ -5438,15 +5832,29 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "Memesta#NA2",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "Volibear",
+        "k": "3",
+        "d": "3",
+        "a": "3",
+        "kda": 2.0,
+        "result": "lose",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "MasterYi",
       "Nocturne",
       "Lillia",
-      "Gwen"
+      "Gwen",
+      "Volibear"
     ],
-    "avgKDA": 5.04
+    "avgKDA": 4.43
   },
   {
     "ign": "xef234 #NA1",
@@ -5806,14 +6214,28 @@
         "result": "lose",
         "vs": "The Bnuunies",
         "vsAbbr": "BNU"
+      },
+      {
+        "ign": "Shayden#Coney",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Milio",
+        "k": "1",
+        "d": "0",
+        "a": "18",
+        "kda": 19.0,
+        "result": "win",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
       "Rakan",
       "Leona",
-      "Lulu"
+      "Lulu",
+      "Milio"
     ],
-    "avgKDA": 5.0
+    "avgKDA": 8.5
   },
   {
     "ign": "pocari sweat#evil",
@@ -6118,13 +6540,41 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Kckoolz#NA1",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Syndra",
+        "k": "2",
+        "d": "3",
+        "a": "2",
+        "kda": 1.3333334,
+        "result": "lose",
+        "vs": "Oh Good Heavens",
+        "vsAbbr": "OGH"
+      },
+      {
+        "ign": "Kckoolz#NA1",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "Katarina",
+        "k": "3",
+        "d": "7",
+        "a": "2",
+        "kda": 0.71428573,
+        "result": "lose",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
       }
     ],
     "champsPlayed": [
       "Katarina",
-      "Azir"
+      "Azir",
+      "Syndra",
+      "Katarina"
     ],
-    "avgKDA": 3.25
+    "avgKDA": 2.14
   },
   {
     "ign": "Z 4#小猪猪",
@@ -6315,14 +6765,28 @@
         "result": "win",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
+      },
+      {
+        "ign": "Sk evaps#na1",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "Renekton",
+        "k": "9",
+        "d": "3",
+        "a": "3",
+        "kda": 4.0,
+        "result": "win",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Aatrox",
       "Camille",
-      "Jax"
+      "Jax",
+      "Renekton"
     ],
-    "avgKDA": 7.5
+    "avgKDA": 6.62
   },
   {
     "ign": "IHaveDownSyndra#8739",
@@ -6438,9 +6902,9 @@
     "avgKDA": 4.82
   },
   {
-    "ign": "ccg defance#123",
+    "ign": "CCG Defance#123",
     "puuid": "_dCZ0zmK7MHNfK4RIYteGECQQgwTkjSRa7gkISRy39vY3b66FwR4JbZKfTwxa0eTMoLbP6bck_JAWQ",
-    "team": "Slytherin",
+    "team": "Godzilla Strikes Back",
     "rank": "Diamond",
     "tier": "2",
     "points": "24",
@@ -6527,19 +6991,47 @@
         "result": "lose",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
+      },
+      {
+        "ign": "CCG Defance#123",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "Nocturne",
+        "k": "6",
+        "d": "3",
+        "a": "7",
+        "kda": 4.3333335,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
+      },
+      {
+        "ign": "CCG Defance#123",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "LeeSin",
+        "k": "8",
+        "d": "0",
+        "a": "11",
+        "kda": 19.0,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
       }
     ],
     "champsPlayed": [
       "Nocturne",
       "Trundle",
+      "LeeSin",
+      "Nocturne",
       "LeeSin"
     ],
-    "avgKDA": 1.53
+    "avgKDA": 5.58
   },
   {
     "ign": "CrystalFang#000",
     "puuid": "KHtDvbdzy9QK_DOuXqbA9F4Ac50sbj4mtN_iQ8OEZYalPJay9yoKgBUYH2caU8zxIwvftDGFP6upNg",
-    "team": "The Bnuunies",
+    "team": "Wolhaiksong",
     "rank": "Master",
     "tier": "2",
     "points": "24",
@@ -6626,14 +7118,28 @@
         "result": "win",
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
+      },
+      {
+        "ign": "CrystalFang#000",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Jinx",
+        "k": "6",
+        "d": "5",
+        "a": "11",
+        "kda": 3.4,
+        "result": "win",
+        "vs": "Termina Time Travelers",
+        "vsAbbr": "TTT"
       }
     ],
     "champsPlayed": [
       "Gnar",
       "Samira",
-      "Kalista"
+      "Kalista",
+      "Jinx"
     ],
-    "avgKDA": 2.59
+    "avgKDA": 2.79
   },
   {
     "ign": "Pretty Boy#Mid",
@@ -6824,14 +7330,28 @@
         "result": "lose",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "CZARK#NA1",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Udyr",
+        "k": "10",
+        "d": "7",
+        "a": "7",
+        "kda": 2.4285715,
+        "result": "lose",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
       }
     ],
     "champsPlayed": [
       "Amumu",
       "Darius",
-      "Pantheon"
+      "Pantheon",
+      "Udyr"
     ],
-    "avgKDA": 4.67
+    "avgKDA": 4.11
   },
   {
     "ign": "Jecki#na2",
@@ -6897,12 +7417,26 @@
         "result": "lose",
         "vs": "The Bnuunies",
         "vsAbbr": "BNU"
+      },
+      {
+        "ign": "Jecki#na2",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Lucian",
+        "k": "11",
+        "d": "1",
+        "a": "3",
+        "kda": 14.0,
+        "result": "win",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
-      "Jinx"
+      "Jinx",
+      "Lucian"
     ],
-    "avgKDA": 1.0
+    "avgKDA": 7.5
   },
   {
     "ign": "Jed#2840",
@@ -7318,20 +7852,34 @@
         "result": "lose",
         "vs": "The Bnuunies",
         "vsAbbr": "BNU"
+      },
+      {
+        "ign": "Nat#Glory",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "Volibear",
+        "k": "4",
+        "d": "1",
+        "a": "4",
+        "kda": 8.0,
+        "result": "win",
+        "vs": "Slytherin",
+        "vsAbbr": "SLY"
       }
     ],
     "champsPlayed": [
       "Fiora",
       "Shen",
       "Malphite",
-      "Pantheon"
+      "Pantheon",
+      "Volibear"
     ],
-    "avgKDA": 6.19
+    "avgKDA": 6.55
   },
   {
     "ign": "no excuses#mack",
     "puuid": "qVjaHoqi52rvMTqr7kem0RUtqdm_SUBRJ5I4Udh8T-p4AckxWI4Ab4vLrKckkSov2k3mPpWwfe27xg",
-    "team": "Godzilla Strikes Back",
+    "team": "Slytherin",
     "rank": "Diamond",
     "tier": "2",
     "points": "23",
@@ -7418,14 +7966,28 @@
         "result": "lose",
         "vs": "The Bnuunies",
         "vsAbbr": "BNU"
+      },
+      {
+        "ign": "no excuses#mack",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "Ambessa",
+        "k": "1",
+        "d": "4",
+        "a": "1",
+        "kda": 0.5,
+        "result": "lose",
+        "vs": "Final Boss Phase X",
+        "vsAbbr": "FBPX"
       }
     ],
     "champsPlayed": [
       "Illaoi",
       "Renekton",
-      "JarvanIV"
+      "JarvanIV",
+      "Ambessa"
     ],
-    "avgKDA": 1.78
+    "avgKDA": 1.46
   },
   {
     "ign": "LotusB5#999",
@@ -7644,14 +8206,42 @@
         "result": "lose",
         "vs": "Aura Farmers",
         "vsAbbr": "AF"
+      },
+      {
+        "ign": "Ibeyondgodly#NA1",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "Rakan",
+        "k": "0",
+        "d": "2",
+        "a": "2",
+        "kda": 1.0,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Ibeyondgodly#NA1",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Janna",
+        "k": "0",
+        "d": "5",
+        "a": "16",
+        "kda": 3.2,
+        "result": "win",
+        "vs": "Termina Time Travelers",
+        "vsAbbr": "TTT"
       }
     ],
     "champsPlayed": [
       "Alistar",
       "Lulu",
-      "Nautilus"
+      "Nautilus",
+      "Rakan",
+      "Janna"
     ],
-    "avgKDA": 8.06
+    "avgKDA": 5.67
   },
   {
     "ign": "Dino From Arcane#Jinx",
@@ -7756,15 +8346,29 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "Dino From Arcane#Jinx",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "Mel",
+        "k": "3",
+        "d": "4",
+        "a": "4",
+        "kda": 1.75,
+        "result": "lose",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Milio",
       "Karma",
       "Blitzcrank",
-      "Karma"
+      "Karma",
+      "Mel"
     ],
-    "avgKDA": 2.2
+    "avgKDA": 2.11
   },
   {
     "ign": "Freshveggies#NA1",
@@ -7955,14 +8559,42 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "BanPeriodCramps#girl",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "Aatrox",
+        "k": "8",
+        "d": "2",
+        "a": "9",
+        "kda": 8.5,
+        "result": "win",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
+      },
+      {
+        "ign": "BanPeriodCramps#girl",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "MonkeyKing",
+        "k": "1",
+        "d": "7",
+        "a": "5",
+        "kda": 0.85714287,
+        "result": "lose",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
       }
     ],
     "champsPlayed": [
       "Jayce",
       "Yorick",
-      "Ambessa"
+      "Ambessa",
+      "Aatrox",
+      "MonkeyKing"
     ],
-    "avgKDA": 2.13
+    "avgKDA": 3.15
   },
   {
     "ign": "タマミツネ#焔狐竜",
@@ -8293,15 +8925,29 @@
         "result": "lose",
         "vs": "Revenge Arc",
         "vsAbbr": "REV"
+      },
+      {
+        "ign": "JamesBondMeow #NA1",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Nautilus",
+        "k": "0",
+        "d": "7",
+        "a": "9",
+        "kda": 1.2857143,
+        "result": "lose",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
       "Zac",
       "Mordekaiser",
       "Nautilus",
-      "Alistar"
+      "Alistar",
+      "Nautilus"
     ],
-    "avgKDA": 2.01
+    "avgKDA": 1.87
   },
   {
     "ign": "counter#noxus",
@@ -8406,15 +9052,29 @@
         "result": "win",
         "vs": "Wolhaiksong",
         "vsAbbr": "WOL"
+      },
+      {
+        "ign": "counter#noxus",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "Darius",
+        "k": "9",
+        "d": "2",
+        "a": "5",
+        "kda": 7.0,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Aatrox",
       "Sett",
       "Zac",
+      "Darius",
       "Darius"
     ],
-    "avgKDA": 4.53
+    "avgKDA": 5.03
   },
   {
     "ign": "Zatherio#1V9",
@@ -8546,7 +9206,7 @@
   {
     "ign": "humongofrog#w101",
     "puuid": "arwL2SxVmmWANqAZg1xRh-bMr-j-rof3yX1ANjv3NOyJvlM1zlTxY8AzHf0CwRkFOkRHhYdwC-KHCQ",
-    "team": "Wolhaiksong",
+    "team": "The Bnuunies",
     "rank": "Diamond",
     "tier": "2",
     "points": "20",
@@ -8620,13 +9280,41 @@
         "result": "lose",
         "vs": "The Honored Ones",
         "vsAbbr": "HON"
+      },
+      {
+        "ign": "humongofrog#w101",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Varus",
+        "k": "1",
+        "d": "4",
+        "a": "2",
+        "kda": 0.75,
+        "result": "lose",
+        "vs": "FF",
+        "vsAbbr": "FF"
+      },
+      {
+        "ign": "humongofrog#w101",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Sivir",
+        "k": "8",
+        "d": "2",
+        "a": "13",
+        "kda": 10.5,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
       "Aphelios",
+      "Sivir",
+      "Varus",
       "Sivir"
     ],
-    "avgKDA": 0.46
+    "avgKDA": 3.04
   },
   {
     "ign": "Hierarchs#INT",
@@ -8744,6 +9432,19 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "Hierarchs#INT",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Renekton",
+        "k": "6",
+        "d": "1",
+        "a": "4",
+        "kda": 10.0,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
@@ -8751,9 +9452,10 @@
       "Kennen",
       "Renekton",
       "Sion",
-      "Trundle"
+      "Trundle",
+      "Renekton"
     ],
-    "avgKDA": 4.25
+    "avgKDA": 5.21
   },
   {
     "ign": "Death #March",
@@ -8957,15 +9659,29 @@
         "result": "lose",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
+      },
+      {
+        "ign": "Matarra#sad",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "Yasuo",
+        "k": "4",
+        "d": "5",
+        "a": "2",
+        "kda": 1.2,
+        "result": "lose",
+        "vs": "Final Boss Phase X",
+        "vsAbbr": "FBPX"
       }
     ],
     "champsPlayed": [
       "Gangplank",
       "Akali",
       "Irelia",
-      "Hwei"
+      "Hwei",
+      "Yasuo"
     ],
-    "avgKDA": 2.36
+    "avgKDA": 2.13
   },
   {
     "ign": "Dusik Kim#NA1",
@@ -9083,6 +9799,19 @@
         "result": "win",
         "vs": "FF",
         "vsAbbr": "FF"
+      },
+      {
+        "ign": "Dusik Kim#NA1",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Braum",
+        "k": "0",
+        "d": "4",
+        "a": "1",
+        "kda": 0.25,
+        "result": "lose",
+        "vs": "FF",
+        "vsAbbr": "FF"
       }
     ],
     "champsPlayed": [
@@ -9090,9 +9819,10 @@
       "Pyke",
       "Poppy",
       "Blitzcrank",
-      "Zilean"
+      "Zilean",
+      "Braum"
     ],
-    "avgKDA": 3.65
+    "avgKDA": 3.08
   },
   {
     "ign": "cluegichungus#akm",
@@ -9534,6 +10264,19 @@
         "result": "lose",
         "vs": "The Bnuunies",
         "vsAbbr": "BNU"
+      },
+      {
+        "ign": "Gala Apples#NA1",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Zac",
+        "k": "1",
+        "d": "1",
+        "a": "16",
+        "kda": 17.0,
+        "result": "win",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
@@ -9542,9 +10285,10 @@
       "Vi",
       "Volibear",
       "JarvanIV",
-      "Sion"
+      "Sion",
+      "Zac"
     ],
-    "avgKDA": 4.18
+    "avgKDA": 6.01
   },
   {
     "ign": "Sasha Smalls #777",
@@ -9721,12 +10465,26 @@
         "result": "lose",
         "vs": "Aura Farmers",
         "vsAbbr": "AF"
+      },
+      {
+        "ign": "Zee333XD#NA1",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Sett",
+        "k": "3",
+        "d": "10",
+        "a": "9",
+        "kda": 1.2,
+        "result": "win",
+        "vs": "Termina Time Travelers",
+        "vsAbbr": "TTT"
       }
     ],
     "champsPlayed": [
       "Gwen",
       "Gwen",
-      "Pantheon"
+      "Pantheon",
+      "Sett"
     ],
     "avgKDA": 1.21
   },
@@ -9905,14 +10663,28 @@
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
+      },
+      {
+        "ign": "Tøy #UwU",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "Nautilus",
+        "k": "1",
+        "d": "5",
+        "a": "13",
+        "kda": 2.8,
+        "result": "win",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Nami",
       "Renata",
-      "Nami"
+      "Nami",
+      "Nautilus"
     ],
-    "avgKDA": 12.78
+    "avgKDA": 10.28
   },
   {
     "ign": "Kaloth Kouhai#NA1",
@@ -10313,6 +11085,19 @@
         "result": "lose",
         "vs": "FF",
         "vsAbbr": "FF"
+      },
+      {
+        "ign": "Norvin#NA2",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Galio",
+        "k": "8",
+        "d": "0",
+        "a": "8",
+        "kda": 16.0,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
@@ -10320,9 +11105,10 @@
       "Zilean",
       "Orianna",
       "Jhin",
-      "Seraphine"
+      "Seraphine",
+      "Galio"
     ],
-    "avgKDA": 7.73
+    "avgKDA": 9.11
   },
   {
     "ign": "GamerGirlT3Sub#Simp",
@@ -10427,15 +11213,29 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "GamerGirlT3Sub#Simp",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "Kaisa",
+        "k": "4",
+        "d": "6",
+        "a": "3",
+        "kda": 1.1666666,
+        "result": "lose",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Lucian",
       "Corki",
       "Draven",
-      "Corki"
+      "Corki",
+      "Kaisa"
     ],
-    "avgKDA": 3.02
+    "avgKDA": 2.65
   },
   {
     "ign": "Blackvemon#na1",
@@ -10541,19 +11341,19 @@
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
       },
-        {
-            "ign": "Blackvemon#na1",
-            "matchId": "NA1_5311641409",
-            "date": "6/21",
-            "champion": "Ambessa",
-            "k": "2",
-            "d": "5",
-            "a": "1",
-            "kda": 0.6,
-            "result": "lose",
-            "vs": "Final Boss Phase X",
-            "vsAbbr": "FBPX"
-        }
+      {
+        "ign": "Blackvemon#na1",
+        "matchId": "NA1_5311641409",
+        "date": "6/21",
+        "champion": "Ambessa",
+        "k": "2",
+        "d": "5",
+        "a": "1",
+        "kda": 0.6,
+        "result": "lose",
+        "vs": "Final Boss Phase X",
+        "vsAbbr": "FBPX"
+      }
     ],
     "champsPlayed": [
       "DrMundo",
@@ -10641,13 +11441,41 @@
         "result": "lose",
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
+      },
+      {
+        "ign": "Chilly blue#snow",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "Renekton",
+        "k": "12",
+        "d": "4",
+        "a": "3",
+        "kda": 3.75,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
+      },
+      {
+        "ign": "Chilly blue#snow",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "Jax",
+        "k": "11",
+        "d": "1",
+        "a": "2",
+        "kda": 13.0,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
       }
     ],
     "champsPlayed": [
       "Mordekaiser",
-      "Poppy"
+      "Poppy",
+      "Renekton",
+      "Jax"
     ],
-    "avgKDA": 8.0
+    "avgKDA": 8.19
   },
   {
     "ign": "Pride#Diff",
@@ -10739,14 +11567,28 @@
         "result": "win",
         "vs": "Sternritter",
         "vsAbbr": "STRN"
+      },
+      {
+        "ign": "Pride#Diff",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Belveth",
+        "k": "2",
+        "d": "3",
+        "a": "10",
+        "kda": 4.0,
+        "result": "win",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
       "Kayn",
       "JarvanIV",
-      "Pantheon"
+      "Pantheon",
+      "Belveth"
     ],
-    "avgKDA": 1.34
+    "avgKDA": 2.01
   },
   {
     "ign": "제이 별 #007",
@@ -11149,14 +11991,56 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Łukê#Luke",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Diana",
+        "k": "1",
+        "d": "6",
+        "a": "3",
+        "kda": 0.6666667,
+        "result": "lose",
+        "vs": "Oh Good Heavens",
+        "vsAbbr": "OGH"
+      },
+      {
+        "ign": "Łukê#Luke",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "Jax",
+        "k": "8",
+        "d": "2",
+        "a": "7",
+        "kda": 7.5,
+        "result": "win",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
+      },
+      {
+        "ign": "Łukê#Luke",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "JarvanIV",
+        "k": "4",
+        "d": "5",
+        "a": "4",
+        "kda": 1.6,
+        "result": "lose",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
       }
     ],
     "champsPlayed": [
       "Zac",
       "Volibear",
-      "Nocturne"
+      "Nocturne",
+      "Diana",
+      "Jax",
+      "JarvanIV"
     ],
-    "avgKDA": 4.14
+    "avgKDA": 3.7
   },
   {
     "ign": "kappachungus#akm",
@@ -11261,15 +12145,43 @@
         "result": "lose",
         "vs": "Blockspinners",
         "vsAbbr": "BSP"
+      },
+      {
+        "ign": "kappachungus#akm",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "Galio",
+        "k": "1",
+        "d": "4",
+        "a": "12",
+        "kda": 3.25,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
+      },
+      {
+        "ign": "kappachungus#akm",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "TwistedFate",
+        "k": "5",
+        "d": "0",
+        "a": "9",
+        "kda": 14.0,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
       }
     ],
     "champsPlayed": [
       "Orianna",
       "Galio",
       "Aurora",
-      "Pantheon"
+      "Pantheon",
+      "Galio",
+      "TwistedFate"
     ],
-    "avgKDA": 4.95
+    "avgKDA": 6.17
   },
   {
     "ign": "Yalangur#cn1",
@@ -11627,6 +12539,32 @@
         "result": "lose",
         "vs": "Sternritter",
         "vsAbbr": "STRN"
+      },
+      {
+        "ign": "Kehal#AKB",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Viktor",
+        "k": "3",
+        "d": "4",
+        "a": "1",
+        "kda": 1.0,
+        "result": "lose",
+        "vs": "Sternritter",
+        "vsAbbr": "STRN"
+      },
+      {
+        "ign": "Kehal#AKB",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Sylas",
+        "k": "1",
+        "d": "6",
+        "a": "8",
+        "kda": 1.5,
+        "result": "lose",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
@@ -11634,9 +12572,11 @@
       "Viego",
       "Pantheon",
       "Gwen",
-      "Galio"
+      "Galio",
+      "Viktor",
+      "Sylas"
     ],
-    "avgKDA": 1.38
+    "avgKDA": 1.34
   },
   {
     "ign": "Zuiy#NA1",
@@ -11855,14 +12795,28 @@
         "result": "lose",
         "vs": "Aura Farmers",
         "vsAbbr": "AF"
+      },
+      {
+        "ign": "milk#225",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "Jinx",
+        "k": "7",
+        "d": "6",
+        "a": "8",
+        "kda": 2.5,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Varus",
       "Jinx",
-      "Varus"
+      "Varus",
+      "Jinx"
     ],
-    "avgKDA": 4.34
+    "avgKDA": 3.88
   },
   {
     "ign": "Daeda#WTF",
@@ -12152,14 +13106,28 @@
         "result": "lose",
         "vs": "The Honored Ones",
         "vsAbbr": "HON"
+      },
+      {
+        "ign": "Jestin#omni",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "Braum",
+        "k": "0",
+        "d": "4",
+        "a": "12",
+        "kda": 3.0,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Braum",
       "Blitzcrank",
-      "Neeko"
+      "Neeko",
+      "Braum"
     ],
-    "avgKDA": 2.11
+    "avgKDA": 2.33
   },
   {
     "ign": "Tate#pog",
@@ -12364,14 +13332,28 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "spatel19981#0148",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Zyra",
+        "k": "2",
+        "d": "2",
+        "a": "12",
+        "kda": 7.0,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Braum",
       "TahmKench",
-      "Nami"
+      "Nami",
+      "Zyra"
     ],
-    "avgKDA": 4.82
+    "avgKDA": 5.37
   },
   {
     "ign": "Axeified#NA1",
@@ -12463,14 +13445,28 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Axeified#NA1",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "Sivir",
+        "k": "2",
+        "d": "1",
+        "a": "12",
+        "kda": 14.0,
+        "result": "win",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
       }
     ],
     "champsPlayed": [
       "Varus",
       "Ziggs",
-      "Varus"
+      "Varus",
+      "Sivir"
     ],
-    "avgKDA": 4.46
+    "avgKDA": 6.84
   },
   {
     "ign": "OdeletteGun#NA1",
@@ -12549,13 +13545,27 @@
         "result": "lose",
         "vs": "Aura Farmers",
         "vsAbbr": "AF"
+      },
+      {
+        "ign": "OdeletteGun#NA1",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "Caitlyn",
+        "k": "0",
+        "d": "4",
+        "a": "2",
+        "kda": 0.5,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Syndra",
-      "Twitch"
+      "Twitch",
+      "Caitlyn"
     ],
-    "avgKDA": 1.83
+    "avgKDA": 1.39
   },
   {
     "ign": "awesomeguytx#NA1",
@@ -12759,15 +13769,29 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "Misa#burgr",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Mel",
+        "k": "3",
+        "d": "2",
+        "a": "5",
+        "kda": 4.0,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Smolder",
       "Smolder",
       "Mel",
-      "Seraphine"
+      "Seraphine",
+      "Mel"
     ],
-    "avgKDA": 2.49
+    "avgKDA": 2.79
   },
   {
     "ign": "Balmer#024",
@@ -12859,14 +13883,28 @@
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
+      },
+      {
+        "ign": "Balmer#024",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "Ziggs",
+        "k": "0",
+        "d": "5",
+        "a": "3",
+        "kda": 0.6,
+        "result": "lose",
+        "vs": "Final Boss Phase X",
+        "vsAbbr": "FBPX"
       }
     ],
     "champsPlayed": [
       "Varus",
       "Kaisa",
-      "Nautilus"
+      "Nautilus",
+      "Ziggs"
     ],
-    "avgKDA": 2.99
+    "avgKDA": 2.4
   },
   {
     "ign": "Skellar#keria",
@@ -12958,14 +13996,28 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "Skellar#keria",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "KSante",
+        "k": "0",
+        "d": "5",
+        "a": "4",
+        "kda": 0.8,
+        "result": "lose",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Senna",
       "Sivir",
-      "DrMundo"
+      "DrMundo",
+      "KSante"
     ],
-    "avgKDA": 2.94
+    "avgKDA": 2.41
   },
   {
     "ign": "Tiri#blizz",
@@ -13058,19 +14110,19 @@
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
       },
-        {
-            "ign": "Tiri#blizz",
-            "matchId": "NA1_5311641409",
-            "date": "6/21",
-            "champion": "Janna",
-            "k": "0",
-            "d": "6",
-            "a": "4",
-            "kda": 0.6666667,
-            "result": "lose",
-            "vs": "Final Boss Phase X",
-            "vsAbbr": "FBPX"
-        }
+      {
+        "ign": "Tiri#blizz",
+        "matchId": "NA1_5311641409",
+        "date": "6/21",
+        "champion": "Janna",
+        "k": "0",
+        "d": "6",
+        "a": "4",
+        "kda": 0.6666667,
+        "result": "lose",
+        "vs": "Final Boss Phase X",
+        "vsAbbr": "FBPX"
+      }
     ],
     "champsPlayed": [
       "Nami",
@@ -13170,14 +14222,28 @@
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
+      },
+      {
+        "ign": "Jewelpet2002#mel",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Lulu",
+        "k": "1",
+        "d": "2",
+        "a": "13",
+        "kda": 7.0,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
       "Karma",
       "Seraphine",
-      "Lux"
+      "Lux",
+      "Lulu"
     ],
-    "avgKDA": 11.72
+    "avgKDA": 10.54
   },
   {
     "ign": "Lakuna#TAU3",
@@ -13256,13 +14322,27 @@
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
+      },
+      {
+        "ign": "Lakuna#TAU3",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "XinZhao",
+        "k": "2",
+        "d": "4",
+        "a": "11",
+        "kda": 3.25,
+        "result": "win",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Volibear",
+      "XinZhao",
       "XinZhao"
     ],
-    "avgKDA": 2.75
+    "avgKDA": 2.92
   },
   {
     "ign": "SunnyD Swag#NA1",
@@ -13315,14 +14395,30 @@
         "winRate": "63%"
       }
     ],
-    "gameStats": [],
-    "champsPlayed": [],
-    "avgKDA": 0.0
+    "gameStats": [
+      {
+        "ign": "SunnyD Swag#NA1",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Orianna",
+        "k": "6",
+        "d": "3",
+        "a": "7",
+        "kda": 4.3333335,
+        "result": "lose",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
+      }
+    ],
+    "champsPlayed": [
+      "Orianna"
+    ],
+    "avgKDA": 4.33
   },
   {
     "ign": "Rifle#1337",
     "puuid": "1uZkpwNhp0pQUNY7yp3anDn2RDwO1XLw2IMNS514IChGGTHjoLAQ00JM502fcZmnXmkeF_QdQf0MZg",
-    "team": "Godzilla Strikes Back",
+    "team": "Slytherin",
     "rank": "Diamond",
     "tier": "3",
     "points": "11",
@@ -13409,14 +14505,28 @@
         "result": "lose",
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
+      },
+      {
+        "ign": "Rifle#1337",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "MonkeyKing",
+        "k": "2",
+        "d": "5",
+        "a": "2",
+        "kda": 0.8,
+        "result": "lose",
+        "vs": "Final Boss Phase X",
+        "vsAbbr": "FBPX"
       }
     ],
     "champsPlayed": [
       "Kaisa",
       "Kaisa",
-      "Kaisa"
+      "Kaisa",
+      "MonkeyKing"
     ],
-    "avgKDA": 8.78
+    "avgKDA": 6.79
   },
   {
     "ign": "Hoppermh#NA1",
@@ -13495,13 +14605,27 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Hoppermh#NA1",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "Xerath",
+        "k": "3",
+        "d": "2",
+        "a": "10",
+        "kda": 6.5,
+        "result": "win",
+        "vs": "Slytherin",
+        "vsAbbr": "SLY"
       }
     ],
     "champsPlayed": [
       "Lulu",
-      "Soraka"
+      "Soraka",
+      "Xerath"
     ],
-    "avgKDA": 3.07
+    "avgKDA": 4.21
   },
   {
     "ign": "MountainRebornX#ASH",
@@ -13790,15 +14914,29 @@
         "result": "win",
         "vs": "The Honored Ones",
         "vsAbbr": "HON"
+      },
+      {
+        "ign": "cloudboys#ca1",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "Varus",
+        "k": "2",
+        "d": "3",
+        "a": "6",
+        "kda": 2.6666667,
+        "result": "win",
+        "vs": "Slytherin",
+        "vsAbbr": "SLY"
       }
     ],
     "champsPlayed": [
       "Corki",
       "Aphelios",
       "Ashe",
+      "Varus",
       "Varus"
     ],
-    "avgKDA": 7.15
+    "avgKDA": 6.25
   },
   {
     "ign": "wormfood#rat",
@@ -13976,13 +15114,27 @@
         "result": "lose",
         "vs": "The Bnuunies",
         "vsAbbr": "BNU"
+      },
+      {
+        "ign": "Veltower#NA1",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Ahri",
+        "k": "4",
+        "d": "1",
+        "a": "11",
+        "kda": 15.0,
+        "result": "win",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
       "Warwick",
-      "Malzahar"
+      "Malzahar",
+      "Ahri"
     ],
-    "avgKDA": 0.33
+    "avgKDA": 5.22
   },
   {
     "ign": "roux#becca",
@@ -14048,12 +15200,26 @@
         "result": "win",
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
+      },
+      {
+        "ign": "roux#becca",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Milio",
+        "k": "2",
+        "d": "2",
+        "a": "20",
+        "kda": 11.0,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
-      "Poppy"
+      "Poppy",
+      "Milio"
     ],
-    "avgKDA": 10.0
+    "avgKDA": 10.5
   },
   {
     "ign": "The Shaqtus#WD40",
@@ -14412,15 +15578,29 @@
         "result": "win",
         "vs": "Honey Pack",
         "vsAbbr": "HP"
+      },
+      {
+        "ign": "M1ckey#1004",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Vladimir",
+        "k": "6",
+        "d": "2",
+        "a": "7",
+        "kda": 6.5,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
       "Shen",
       "Ornn",
       "Rumble",
-      "Rumble"
+      "Rumble",
+      "Vladimir"
     ],
-    "avgKDA": 3.92
+    "avgKDA": 4.43
   },
   {
     "ign": "FiveAutumnLeaf#NA1",
@@ -14499,13 +15679,27 @@
         "result": "lose",
         "vs": "Blockspinners",
         "vsAbbr": "BSP"
+      },
+      {
+        "ign": "FiveAutumnLeaf#NA1",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "MonkeyKing",
+        "k": "9",
+        "d": "3",
+        "a": "5",
+        "kda": 4.6666665,
+        "result": "lose",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
       }
     ],
     "champsPlayed": [
       "Maokai",
-      "JarvanIV"
+      "JarvanIV",
+      "MonkeyKing"
     ],
-    "avgKDA": 1.18
+    "avgKDA": 2.34
   },
   {
     "ign": "DropTheChalupa#NA1",
@@ -14637,7 +15831,7 @@
   {
     "ign": "Fox Patronus#NA1",
     "puuid": "delnDNrBxSYJG2wbIPkNrAIJXkwuy4BupvCY-IxrXKx0ZK1MyooVrKxmmw2-b6VTkJE0fJh7weR81g",
-    "team": "Blockspinners",
+    "team": "Honey Pack",
     "rank": "Diamond",
     "tier": "4",
     "points": "8",
@@ -14724,14 +15918,42 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Fox Patronus#NA1",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Jinx",
+        "k": "0",
+        "d": "3",
+        "a": "0",
+        "kda": 0.0,
+        "result": "lose",
+        "vs": "Sternritter",
+        "vsAbbr": "STRN"
+      },
+      {
+        "ign": "Fox Patronus#NA1",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Varus",
+        "k": "3",
+        "d": "6",
+        "a": "8",
+        "kda": 1.8333334,
+        "result": "lose",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
       "Jhin",
       "Jinx",
-      "Sivir"
+      "Sivir",
+      "Jinx",
+      "Varus"
     ],
-    "avgKDA": 2.9
+    "avgKDA": 2.11
   },
   {
     "ign": "Yoshi#Yushu",
@@ -15049,14 +16271,42 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "BenAss#PGrab",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "Galio",
+        "k": "0",
+        "d": "7",
+        "a": "5",
+        "kda": 0.71428573,
+        "result": "lose",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
+      },
+      {
+        "ign": "BenAss#PGrab",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "Xayah",
+        "k": "6",
+        "d": "0",
+        "a": "4",
+        "kda": 10.0,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Karma",
       "Sivir",
-      "Aurora"
+      "Aurora",
+      "Galio",
+      "Xayah"
     ],
-    "avgKDA": 8.02
+    "avgKDA": 6.96
   },
   {
     "ign": "Ekko#Dev",
@@ -15162,19 +16412,19 @@
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
       },
-        {
-            "ign": "Ekko#Dev",
-            "matchId": "NA1_5311641409",
-            "date": "6/21",
-            "champion": "Sivir",
-            "k": "0",
-            "d": "4",
-            "a": "2",
-            "kda": 0.5,
-            "result": "lose",
-            "vs": "Final Boss Phase X",
-            "vsAbbr": "FBPX"
-        }
+      {
+        "ign": "Ekko#Dev",
+        "matchId": "NA1_5311641409",
+        "date": "6/21",
+        "champion": "Sivir",
+        "k": "0",
+        "d": "4",
+        "a": "2",
+        "kda": 0.5,
+        "result": "lose",
+        "vs": "Final Boss Phase X",
+        "vsAbbr": "FBPX"
+      }
     ],
     "champsPlayed": [
       "Sivir",
@@ -15472,15 +16722,29 @@
         "result": "win",
         "vs": "Sneaky Gitz",
         "vsAbbr": "GITZ"
+      },
+      {
+        "ign": "LegoAlien5679#NA1",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Volibear",
+        "k": "4",
+        "d": "0",
+        "a": "9",
+        "kda": 13.0,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Volibear",
       "Rammus",
       "Belveth",
-      "Viego"
+      "Viego",
+      "Volibear"
     ],
-    "avgKDA": 3.42
+    "avgKDA": 5.33
   },
   {
     "ign": "freaking ema #NA1",
@@ -15672,13 +16936,55 @@
         "result": "lose",
         "vs": "Aura Farmers",
         "vsAbbr": "AF"
+      },
+      {
+        "ign": "KITTLER#XXL",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "Ivern",
+        "k": "0",
+        "d": "7",
+        "a": "11",
+        "kda": 1.5714285,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
+      },
+      {
+        "ign": "KITTLER#XXL",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "Poppy",
+        "k": "1",
+        "d": "8",
+        "a": "1",
+        "kda": 0.25,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
+      },
+      {
+        "ign": "KITTLER#XXL",
+        "matchId": "NA1_5311678417",
+        "date": "6/21",
+        "champion": "Warwick",
+        "k": "12",
+        "d": "4",
+        "a": "11",
+        "kda": 5.75,
+        "result": "win",
+        "vs": "Termina Time Travelers",
+        "vsAbbr": "TTT"
       }
     ],
     "champsPlayed": [
       "Warwick",
-      "JarvanIV"
+      "JarvanIV",
+      "Ivern",
+      "Poppy",
+      "Warwick"
     ],
-    "avgKDA": 1.27
+    "avgKDA": 2.02
   },
   {
     "ign": "AaronOmnI#NA1",
@@ -15770,14 +17076,28 @@
         "result": "lose",
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
+      },
+      {
+        "ign": "AaronOmnI#NA1",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Sett",
+        "k": "0",
+        "d": "5",
+        "a": "0",
+        "kda": 0.0,
+        "result": "lose",
+        "vs": "Oh Good Heavens",
+        "vsAbbr": "OGH"
       }
     ],
     "champsPlayed": [
       "Renekton",
       "Sett",
-      "Aatrox"
+      "Aatrox",
+      "Sett"
     ],
-    "avgKDA": 1.89
+    "avgKDA": 1.42
   },
   {
     "ign": "Tonguey#NA1",
@@ -15996,14 +17316,28 @@
         "result": "lose",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
+      },
+      {
+        "ign": "DriveByPanda#SIMP",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "Nami",
+        "k": "0",
+        "d": "6",
+        "a": "2",
+        "kda": 0.33333334,
+        "result": "lose",
+        "vs": "Final Boss Phase X",
+        "vsAbbr": "FBPX"
       }
     ],
     "champsPlayed": [
       "Rell",
       "Poppy",
-      "Ornn"
+      "Ornn",
+      "Nami"
     ],
-    "avgKDA": 1.94
+    "avgKDA": 1.54
   },
   {
     "ign": "Fangs Out#SDC",
@@ -16266,13 +17600,27 @@
         "result": "win",
         "vs": "Wolhaiksong",
         "vsAbbr": "WOL"
+      },
+      {
+        "ign": "Mahar#Mahar",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "Leona",
+        "k": "0",
+        "d": "2",
+        "a": "15",
+        "kda": 7.5,
+        "result": "win",
+        "vs": "Blockspinners",
+        "vsAbbr": "BSP"
       }
     ],
     "champsPlayed": [
       "Alistar",
-      "Rell"
+      "Rell",
+      "Leona"
     ],
-    "avgKDA": 2.23
+    "avgKDA": 3.99
   },
   {
     "ign": "sepherdoodle#NA1",
@@ -16450,13 +17798,27 @@
         "result": "lose",
         "vs": "FF",
         "vsAbbr": "FF"
+      },
+      {
+        "ign": "BussInPoots#Pham",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Caitlyn",
+        "k": "2",
+        "d": "0",
+        "a": "3",
+        "kda": 5.0,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
       "Jinx",
-      "Aphelios"
+      "Aphelios",
+      "Caitlyn"
     ],
-    "avgKDA": 1.38
+    "avgKDA": 2.59
   },
   {
     "ign": "wardbox#666",
@@ -16660,15 +18022,29 @@
         "result": "win",
         "vs": "The Honored Ones",
         "vsAbbr": "HON"
+      },
+      {
+        "ign": "No Hwei#green",
+        "matchId": "NA1_5311682487",
+        "date": "6/21",
+        "champion": "Mel",
+        "k": "10",
+        "d": "1",
+        "a": "3",
+        "kda": 13.0,
+        "result": "win",
+        "vs": "Slytherin",
+        "vsAbbr": "SLY"
       }
     ],
     "champsPlayed": [
       "Taliyah",
       "Hwei",
       "Mel",
-      "Taliyah"
+      "Taliyah",
+      "Mel"
     ],
-    "avgKDA": 9.0
+    "avgKDA": 9.8
   },
   {
     "ign": "Caba#NA1",
@@ -17037,9 +18413,9 @@
     "avgKDA": 3.06
   },
   {
-    "ign": "Okkotsu Yuta #na1",
+    "ign": "Okkotsu Yuta #NA1",
     "puuid": "B_5q3t5UkhMoToYxht4cqXeqOpKPalfEjhSzN05NjyHHL2_3lqQFvw_-OeCklboCoI0Zcn5S8Fr-CA",
-    "team": "Men-nefer",
+    "team": "Blockspinners",
     "rank": "Emerald",
     "tier": "4",
     "points": "4",
@@ -17126,14 +18502,56 @@
         "result": "win",
         "vs": "Sternritter",
         "vsAbbr": "STRN"
+      },
+      {
+        "ign": "Okkotsu Yuta #NA1",
+        "matchId": "NA1_5311677178",
+        "date": "6/21",
+        "champion": "Braum",
+        "k": "0",
+        "d": "3",
+        "a": "2",
+        "kda": 0.6666667,
+        "result": "lose",
+        "vs": "Oh Good Heavens",
+        "vsAbbr": "OGH"
+      },
+      {
+        "ign": "Okkotsu Yuta #NA1",
+        "matchId": "NA1_5311611318",
+        "date": "6/21",
+        "champion": "Braum",
+        "k": "2",
+        "d": "1",
+        "a": "20",
+        "kda": 22.0,
+        "result": "win",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
+      },
+      {
+        "ign": "Okkotsu Yuta #NA1",
+        "matchId": "NA1_5311649861",
+        "date": "6/21",
+        "champion": "Renata",
+        "k": "1",
+        "d": "3",
+        "a": "3",
+        "kda": 1.3333334,
+        "result": "lose",
+        "vs": "Aura Farmers",
+        "vsAbbr": "AF"
       }
     ],
     "champsPlayed": [
       "Braum",
       "Thresh",
-      "Thresh"
+      "Thresh",
+      "Braum",
+      "Braum",
+      "Renata"
     ],
-    "avgKDA": 3.02
+    "avgKDA": 5.51
   },
   {
     "ign": "Kaiden#0001",
@@ -17212,13 +18630,27 @@
         "result": "lose",
         "vs": "Aura Farmers",
         "vsAbbr": "AF"
+      },
+      {
+        "ign": "Kaiden#0001",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "Orianna",
+        "k": "1",
+        "d": "4",
+        "a": "1",
+        "kda": 0.5,
+        "result": "lose",
+        "vs": "Godzilla Strikes Back",
+        "vsAbbr": "GSB"
       }
     ],
     "champsPlayed": [
       "Mel",
-      "Lux"
+      "Lux",
+      "Orianna"
     ],
-    "avgKDA": 0.9
+    "avgKDA": 0.77
   },
   {
     "ign": "Big Rev#BOSS",
@@ -17608,14 +19040,42 @@
         "result": "win",
         "vs": "FF",
         "vsAbbr": "FF"
+      },
+      {
+        "ign": "InsideTheShadows#NA1",
+        "matchId": "NA1_5311613816",
+        "date": "6/21",
+        "champion": "Sett",
+        "k": "2",
+        "d": "3",
+        "a": "2",
+        "kda": 1.3333334,
+        "result": "lose",
+        "vs": "FF",
+        "vsAbbr": "FF"
+      },
+      {
+        "ign": "InsideTheShadows#NA1",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Shen",
+        "k": "3",
+        "d": "5",
+        "a": "14",
+        "kda": 3.4,
+        "result": "win",
+        "vs": "Honey Pack",
+        "vsAbbr": "HP"
       }
     ],
     "champsPlayed": [
       "Malphite",
       "Chogath",
-      "Chogath"
+      "Chogath",
+      "Sett",
+      "Shen"
     ],
-    "avgKDA": 3.18
+    "avgKDA": 2.86
   },
   {
     "ign": "Blankr#owo",
@@ -17694,13 +19154,27 @@
         "result": "lose",
         "vs": "Revenge Arc",
         "vsAbbr": "REV"
+      },
+      {
+        "ign": "Blankr#owo",
+        "matchId": "NA1_5311680123",
+        "date": "6/21",
+        "champion": "Kennen",
+        "k": "2",
+        "d": "5",
+        "a": "6",
+        "kda": 1.6,
+        "result": "lose",
+        "vs": "The Bnuunies",
+        "vsAbbr": "BNU"
       }
     ],
     "champsPlayed": [
       "Poppy",
-      "Shen"
+      "Shen",
+      "Kennen"
     ],
-    "avgKDA": 5.5
+    "avgKDA": 4.2
   },
   {
     "ign": "snipper#1286",
@@ -17834,11 +19308,25 @@
         "result": "lose",
         "vs": "Sternritter",
         "vsAbbr": "STRN"
+      },
+      {
+        "ign": "Nowhere Man#NAVE",
+        "matchId": "NA1_5311644097",
+        "date": "6/21",
+        "champion": "Karma",
+        "k": "1",
+        "d": "5",
+        "a": "3",
+        "kda": 0.8,
+        "result": "lose",
+        "vs": "Sternritter",
+        "vsAbbr": "STRN"
       }
     ],
     "champsPlayed": [
       "Nautilus",
-      "Leona"
+      "Leona",
+      "Karma"
     ],
     "avgKDA": 0.8
   },
@@ -18089,11 +19577,25 @@
         "result": "lose",
         "vs": "The Bnuunies",
         "vsAbbr": "BNU"
+      },
+      {
+        "ign": "Swamp Works#2501",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "DrMundo",
+        "k": "2",
+        "d": "7",
+        "a": "7",
+        "kda": 1.2857143,
+        "result": "lose",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
       }
     ],
     "champsPlayed": [
       "Pantheon",
-      "Ornn"
+      "Ornn",
+      "DrMundo"
     ],
     "avgKDA": 1.28
   },
@@ -18171,7 +19673,7 @@
   {
     "ign": "Sultan#2002",
     "puuid": "EgkLI6sffo0R4Hrd2GL4Aot6TwwQAl2zUeBCK0EnnJhDIcA9ixvud4Lm-yr1OfHXTekIMW1Cjx8ltQ",
-    "team": "Slytherin",
+    "team": "Godzilla Strikes Back",
     "rank": "Diamond",
     "tier": "4",
     "points": "13",
@@ -18258,13 +19760,55 @@
         "result": "lose",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
+      },
+      {
+        "ign": "Sultan#2002",
+        "matchId": "NA1_5311676092",
+        "date": "6/21",
+        "champion": "Seraphine",
+        "k": "6",
+        "d": "5",
+        "a": "11",
+        "kda": 3.4,
+        "result": "lose",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
+      },
+      {
+        "ign": "Sultan#2002",
+        "matchId": "NA1_5311613104",
+        "date": "6/21",
+        "champion": "Varus",
+        "k": "3",
+        "d": "5",
+        "a": "12",
+        "kda": 3.0,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
+      },
+      {
+        "ign": "Sultan#2002",
+        "matchId": "NA1_5311646444",
+        "date": "6/21",
+        "champion": "Seraphine",
+        "k": "2",
+        "d": "1",
+        "a": "9",
+        "kda": 11.0,
+        "result": "win",
+        "vs": "Wolhaiksong",
+        "vsAbbr": "WOL"
       }
     ],
     "champsPlayed": [
       "Varus",
       "Senna",
-      "Lulu"
+      "Lulu",
+      "Seraphine",
+      "Varus",
+      "Seraphine"
     ],
-    "avgKDA": 3.92
+    "avgKDA": 4.86
   }
 ]

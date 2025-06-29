@@ -108,9 +108,26 @@ namespace SolaCSVParser
                 }
 
                 var uniqueTeams = teamMapping.Values.Distinct().ToList();
+
                 if (uniqueTeams.Count != 2)
                 {
                     Console.WriteLine("Could not determine exactly 2 teams in the match.");
+                    Console.WriteLine($"Found {uniqueTeams.Count} unique team(s):");
+
+                    foreach (var team in uniqueTeams)
+                    {
+                        Console.WriteLine($"- {team}");
+                    }
+
+                    Console.WriteLine("\nFull mapping of participants in this match:");
+                    foreach (var participant in matchDetail.info.participants)
+                    {
+                        var player = players.Find(p => p.puuid == participant.puuid);
+                        string ign = $"{participant.riotIdGameName}#{participant.riotIdTagline}";
+                        string team = player?.team ?? "(no team found)";
+                        Console.WriteLine($"- {ign} -> {team}");
+                    }
+
                     Console.WriteLine();
                     continue;
                 }
