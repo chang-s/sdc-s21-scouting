@@ -399,20 +399,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }[id] || "SummonerFlash");
 
         const getItemIcons = (p) => {
-            const emptyColor = isWinner ? "bg-green-300/40" : "bg-red-300/40";
-
             // Core items (slots 0 to 5)
             const itemSlots = Array.from({ length: 6 }, (_, i) => {
                 const id = p[`item${i}`];
                 return id && id !== 0
-                    ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${id}.png" class="w-6 h-6 md:w-7 md:h-7 rounded-sm" title="Item ${id}" />`
+                    ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${id}.png?image=q_auto:good,f_webp,w_64,h_64&v=1513"
+                class="w-6 h-6 md:w-7 md:h-7 rounded-sm" title="Item ${id}" />`
                     : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-sm inline-block"></div>`;
             });
 
             // Trinket (always item6)
             const trinketId = p.item6;
             const trinket = trinketId && trinketId !== 0
-                ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${trinketId}.png" class="w-6 h-6 md:w-7 md:h-7 rounded-full ring-1 ring-gray-300" title="Trinket ${trinketId}" />`
+                ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${trinketId}.png?image=q_auto:good,f_webp,w_64,h_64&v=1513"
+            class="w-6 h-6 md:w-7 md:h-7 rounded-full ring-1 ring-gray-300" title="Trinket ${trinketId}" />`
                 : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-full inline-block"></div>`;
 
             // Combine item slots + trinket
@@ -441,35 +441,35 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "bg-green-200";
 
                 return `
-                <tr class="text-left align-middle ${isWinner ? 'bg-green-50' : 'bg-red-50'}">
-                    <td class="py-2 px-2 text-sm font-medium align-top whitespace-nowrap">
-                        <div class="mb-1 font-semibold">${p.riotIdGameName}#${p.riotIdTagline}</div>
-                        <div class="flex items-center gap-2 mt-1">
-                            <span class="text-xs font-semibold px-2 py-0.5 rounded ${tierColor}">T${tier || '?'}</span>
-                            ${rankIcon ? `<img src="${rankIcon}" class="w-5 h-5 inline-block" title="${rank}" />` : ''}
-                            <span class="text-xs text-gray-600">${rank || ''}</span>
-                        </div>
-                    </td>
-                    <td class="py-2 px-1 text-sm text-center">
-                        <div class="flex items-center justify-center gap-1 flex-col">
-                            <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${p.championName}.png"
-                                class="w-6 h-6 rounded-sm" alt="${p.championName}" />
-                            <span class="text-gray-500 text-xs">${p.championName}</span>
-                        </div>
-                    </td>
-                    <td class="py-2 px-1 text-sm text-center">${p.kills}/${p.deaths}/${p.assists}</td>
-                    <td class="py-2 px-1 text-center">
-                        <div class="flex justify-center gap-1">
-                            <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5" />
-                            <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5" />
-                        </div>
-                    </td>
-                    <td class="py-2 px-1 text-left">
-                        <div class="flex flex-wrap justify-start gap-[2px]">
-                            ${getItemIcons(p)}
-                        </div>
-                    </td>
-                </tr>`;
+            <tr class="text-left align-middle ${isWinner ? 'bg-green-50' : 'bg-red-50'}">
+                <td class="py-2 px-2 text-sm font-medium align-top whitespace-nowrap">
+                    <div class="mb-1 font-semibold">${p.riotIdGameName}#${p.riotIdTagline}</div>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded ${tierColor}">T${tier || '?'}</span>
+                        ${rankIcon ? `<img src="${rankIcon}" class="w-5 h-5 inline-block" title="${rank}" />` : ''}
+                        <span class="text-xs text-gray-600">${rank || ''}</span>
+                    </div>
+                </td>
+                <td class="py-2 px-1 text-sm text-center">
+                    <div class="flex items-center justify-center gap-1 flex-col">
+                        <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${p.championName}.png"
+                            class="w-6 h-6 rounded-sm" alt="${p.championName}" />
+                        <span class="text-gray-500 text-xs">${p.championName}</span>
+                    </div>
+                </td>
+                <td class="py-2 px-1 text-sm text-center">${p.kills}/${p.deaths}/${p.assists}</td>
+                <td class="py-2 px-1 text-center">
+                    <div class="flex justify-center gap-1">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5" />
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5" />
+                    </div>
+                </td>
+                <td class="py-2 px-1 text-left">
+                    <div class="flex flex-wrap justify-start gap-[2px]">
+                        ${getItemIcons(p)}
+                    </div>
+                </td>
+            </tr>`;
             }).join("");
         };
 
@@ -478,6 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return `
         <div>
+            <h2 class="text-xl font-bold mb-3 text-center w-full">Match Details</h2>
             <div class="flex flex-col gap-6 items-center w-full">
                 ${teams.map(teamId => {
                 const isWinner = teamId === winningTeam;
