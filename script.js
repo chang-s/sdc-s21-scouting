@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </td>
                     <td title="${g.vs}">${g.vsAbbr}</td>
                     <td>
-                        <button type="button" class="view-match-btn text-blue-600 underline" data-matchid="${g.matchId}">
+                        <button class="view-match-btn bg-blue-500 text-white text-xs px-2 py-1 rounded hover:bg-blue-600" data-matchid="${match.matchId}">
                             View
                         </button>
                     </td>
@@ -425,6 +425,7 @@ document.addEventListener("DOMContentLoaded", () => {
             content.innerHTML = "Loading match data...";
 
             try {
+                console.log("Match button clicked:", matchId);
                 const response = await fetch(`matches/${matchId}.json`);
                 const match = await response.json();
                 content.innerHTML = buildMatchModalContent(match);
