@@ -113,10 +113,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="relative">
                     <!-- Name + Tier + op.gg + Roles -->
                     <div class="flex items-center mb-2 gap-2">
-                        <h2 class="text-xl font-bold flex items-center gap-2">
+                        <h2 class="text-xl font-bold flex items-start gap-2 leading-tight">
                             <span class="text-sm font-semibold px-2 py-1 rounded ${tierColor}">T${player.tier}</span>
-                            ${player.ign}
+                            <span>
+                                ${player.ign.split("#")[0].length > 12
+                                            ? `${player.ign.split("#")[0]}<br><span class="text-gray-500 text-sm">#${player.ign.split("#")[1]}</span>`
+                                            : `${player.ign.split("#")[0]}<span class="text-gray-500 text-sm">#${player.ign.split("#")[1]}</span>`
+                                }
+                            </span>
                         </h2>
+
                         <a href="${player.opgg}" target="_blank" title="View op.gg profile">
                             <img src="https://i.imgur.com/y0la7LC.png" alt="op.gg"
                                 class="w-6 h-6 rounded-full opacity-70 hover:opacity-100 hover:scale-110 transition-transform duration-200" />
