@@ -220,19 +220,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateVisibleCards() {
-        const checkedValues = Array.from(checkboxContainer.querySelectorAll("input:checked")).map(cb => cb.value);
         const selectedTeam = teamFilter.value;
+        const selectedPills = Array.from(checkboxContainer.querySelectorAll(".selected-pill"));
+        const selectedIGNs = selectedPills.map(btn => btn.dataset.name);
 
         document.querySelectorAll(".player-card").forEach(card => {
             const name = card.dataset.name;
             const player = playerData.find(p => p.ign === name);
 
             const matchesTeam = selectedTeam === "All" || player.team === selectedTeam;
-            const matchesCheckbox = checkedValues.length === 0 || checkedValues.includes(name);
+            const matchesSelection = selectedIGNs.length === 0 || selectedIGNs.includes(name);
 
-            card.style.display = matchesTeam && matchesCheckbox ? "block" : "none";
+            // Show only selected players from selected team
+            card.style.display = matchesTeam && matchesSelection ? "block" : "none";
         });
     }
+
 
     function updateGenerateBtnState() {
         const selected = Array.from(checkboxContainer.querySelectorAll(".selected-pill"));
