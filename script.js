@@ -399,25 +399,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }[id] || "SummonerFlash");
 
         const getItemIcons = (p) => {
-            let items = [];
-            for (let i = 0; i < 6; i++) {
+            // Core items (slots 0 to 5)
+            const itemSlots = Array.from({ length: 6 }, (_, i) => {
                 const id = p[`item${i}`];
-                if (id && id !== 0) {
-                    items.push(`<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${id}.png"
-                    class="w-6 h-6 md:w-7 md:h-7 rounded-sm" title="Item ${id}" />`);
-                } else {
-                    items.push(`<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-sm inline-block"></div>`);
-                }
-            }
+                return id && id !== 0
+                    ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${id}.png?image=q_auto:good,f_webp,w_64,h_64&v=1513"
+                class="w-6 h-6 md:w-7 md:h-7 rounded-sm" title="Item ${id}" />`
+                    : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-sm inline-block"></div>`;
+            });
 
+            // Trinket (always item6)
             const trinketId = p.item6;
             const trinket = trinketId && trinketId !== 0
-                ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${trinketId}.png"
-                class="w-6 h-6 md:w-7 md:h-7 rounded-full ring-1 ring-gray-300" title="Trinket ${trinketId}" />`
+                ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${trinketId}.png?image=q_auto:good,f_webp,w_64,h_64&v=1513"
+            class="w-6 h-6 md:w-7 md:h-7 rounded-full ring-1 ring-gray-300" title="Trinket ${trinketId}" />`
                 : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-full inline-block"></div>`;
 
-            items.push(trinket);
-            return items.join("");
+            // Combine item slots + trinket
+            return [...itemSlots, trinket].join("");
         };
 
         const getTeamName = (teamId) => {
