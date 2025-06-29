@@ -1749,6 +1749,19 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "NRE HEARTBREAKER#NRE",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Yasuo",
+        "k": "5",
+        "d": "5",
+        "a": "5",
+        "kda": 2.0,
+        "result": "lose",
+        "vs": "The Honored Ones",
+        "vsAbbr": "HON"
       }
     ],
     "champsPlayed": [
@@ -1757,9 +1770,10 @@
       "Vladimir",
       "Vex",
       "Ambessa",
-      "Viego"
+      "Viego",
+      "Yasuo"
     ],
-    "avgKDA": 6.64
+    "avgKDA": 5.98
   },
   {
     "ign": "Frosty#0802",
@@ -2454,6 +2468,19 @@
         "result": "win",
         "vs": "Oh Good Heavens",
         "vsAbbr": "OGH"
+      },
+      {
+        "ign": "LostZeroツ #000",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Jinx",
+        "k": "10",
+        "d": "1",
+        "a": "7",
+        "kda": 17.0,
+        "result": "win",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
       }
     ],
     "champsPlayed": [
@@ -2462,9 +2489,10 @@
       "Jhin",
       "Xayah",
       "Samira",
-      "Kaisa"
+      "Kaisa",
+      "Jinx"
     ],
-    "avgKDA": 11.31
+    "avgKDA": 12.12
   },
   {
     "ign": "Infallible#galio",
@@ -6627,6 +6655,19 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Capanese#na1",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Lucian",
+        "k": "3",
+        "d": "2",
+        "a": "5",
+        "kda": 4.0,
+        "result": "lose",
+        "vs": "The Honored Ones",
+        "vsAbbr": "HON"
       }
     ],
     "champsPlayed": [
@@ -6635,9 +6676,10 @@
       "Lucian",
       "Zeri",
       "Kaisa",
-      "Kaisa"
+      "Kaisa",
+      "Lucian"
     ],
-    "avgKDA": 4.51
+    "avgKDA": 4.44
   },
   {
     "ign": "Razed#cold",
@@ -12734,6 +12776,19 @@
         "result": "win",
         "vs": "Godzilla Strikes Back",
         "vsAbbr": "GSB"
+      },
+      {
+        "ign": "Tøy #UwU",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Milio",
+        "k": "0",
+        "d": "4",
+        "a": "9",
+        "kda": 2.25,
+        "result": "lose",
+        "vs": "The Honored Ones",
+        "vsAbbr": "HON"
       }
     ],
     "champsPlayed": [
@@ -12742,9 +12797,10 @@
       "Nami",
       "Nautilus",
       "Milio",
-      "Alistar"
+      "Alistar",
+      "Milio"
     ],
-    "avgKDA": 7.61
+    "avgKDA": 6.85
   },
   {
     "ign": "Kaloth Kouhai#NA1",
@@ -13047,15 +13103,29 @@
         "result": "win",
         "vs": "Men-nefer",
         "vsAbbr": "MEN"
+      },
+      {
+        "ign": "one last breath#3DX2Y",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Diana",
+        "k": "6",
+        "d": "4",
+        "a": "11",
+        "kda": 4.25,
+        "result": "win",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
       }
     ],
     "champsPlayed": [
       "LeeSin",
       "Gwen",
       "Naafiri",
-      "LeeSin"
+      "LeeSin",
+      "Diana"
     ],
-    "avgKDA": 2.09
+    "avgKDA": 2.52
   },
   {
     "ign": "Norvin#NA2",
@@ -16686,15 +16756,29 @@
         "result": "lose",
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
+      },
+      {
+        "ign": "Tiri#blizz",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Lulu",
+        "k": "0",
+        "d": "1",
+        "a": "18",
+        "kda": 18.0,
+        "result": "win",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
       }
     ],
     "champsPlayed": [
       "Nami",
       "Milio",
       "Karma",
-      "Janna"
+      "Janna",
+      "Lulu"
     ],
-    "avgKDA": 5.75
+    "avgKDA": 8.2
   },
   {
     "ign": "Jewelpet2002#mel",
@@ -18194,6 +18278,19 @@
         "result": "lose",
         "vs": "FF",
         "vsAbbr": "FF"
+      },
+      {
+        "ign": "The Shaqtus#WD40",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Gragas",
+        "k": "1",
+        "d": "3",
+        "a": "3",
+        "kda": 1.3333334,
+        "result": "lose",
+        "vs": "The Honored Ones",
+        "vsAbbr": "HON"
       }
     ],
     "champsPlayed": [
@@ -18202,9 +18299,10 @@
       "DrMundo",
       "Trundle",
       "Gragas",
-      "DrMundo"
+      "DrMundo",
+      "Gragas"
     ],
-    "avgKDA": 3.84
+    "avgKDA": 3.48
   },
   {
     "ign": "KappaGaming#NA1",
@@ -19664,14 +19762,28 @@
         "result": "lose",
         "vs": "FF",
         "vsAbbr": "FF"
+      },
+      {
+        "ign": "Gimpy#NA69",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Vi",
+        "k": "2",
+        "d": "7",
+        "a": "7",
+        "kda": 1.2857143,
+        "result": "lose",
+        "vs": "The Honored Ones",
+        "vsAbbr": "HON"
       }
     ],
     "champsPlayed": [
       "Vi",
       "Orianna",
+      "Vi",
       "Vi"
     ],
-    "avgKDA": 7.5
+    "avgKDA": 5.95
   },
   {
     "ign": "LegoAlien5679#NA1",
@@ -21790,6 +21902,19 @@
         "result": "lose",
         "vs": "Men-nefer",
         "vsAbbr": "MEN"
+      },
+      {
+        "ign": "Zig#1776",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Ornn",
+        "k": "1",
+        "d": "1",
+        "a": "7",
+        "kda": 8.0,
+        "result": "win",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
       }
     ],
     "champsPlayed": [
@@ -21798,9 +21923,10 @@
       "Ornn",
       "Ornn",
       "Ornn",
-      "Chogath"
+      "Chogath",
+      "Ornn"
     ],
-    "avgKDA": 2.33
+    "avgKDA": 3.14
   },
   {
     "ign": "Okkotsu Yuta #NA1",
@@ -23095,12 +23221,26 @@
         "result": "lose",
         "vs": "Final Boss Phase X",
         "vsAbbr": "FBPX"
+      },
+      {
+        "ign": "Baher#snafu",
+        "matchId": "NA1_5315858839",
+        "date": "6/28",
+        "champion": "Galio",
+        "k": "4",
+        "d": "4",
+        "a": "8",
+        "kda": 3.0,
+        "result": "win",
+        "vs": "Revenge Arc",
+        "vsAbbr": "REV"
       }
     ],
     "champsPlayed": [
-      "Ahri"
+      "Ahri",
+      "Galio"
     ],
-    "avgKDA": 0.62
+    "avgKDA": 1.81
   },
   {
     "ign": "Swamp Works#2501",
