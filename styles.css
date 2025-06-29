@@ -16,6 +16,16 @@
     animation: fadeIn 0.8s ease-out forwards;
 }
 
+#matchModalContent table {
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    #matchModalContent table {
+        min-width: 640px;
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

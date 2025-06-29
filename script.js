@@ -494,18 +494,20 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h3 class="text-center font-semibold text-base mb-2 w-full ${isWinner ? 'text-green-600' : 'text-red-600'}">
                             ${isWinner ? '🏆 ' : ''}${name}
                         </h3>
-                        <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
-                            <thead class="${headerColor} text-center">
-                                <tr>
-                                    <th class="p-2 text-left">Player</th>
-                                    <th class="p-2">Champ</th>
-                                    <th class="p-2">KDA</th>
-                                    <th class="p-2">Spells</th>
-                                    <th class="p-2 text-left">Items</th>
-                                </tr>
-                            </thead>
-                            <tbody>${renderTeam(teamId, isWinner)}</tbody>
-                        </table>
+                        <div class="overflow-x-auto w-full">
+                            <table class="min-w-[640px] table-auto text-xs w-full bg-white border rounded overflow-hidden">
+                                <thead class="${headerColor} text-center">
+                                    <tr>
+                                        <th class="p-2 text-left">Player</th>
+                                        <th class="p-2">Champ</th>
+                                        <th class="p-2">KDA</th>
+                                        <th class="p-2">Spells</th>
+                                        <th class="p-2 text-left">Items</th>
+                                    </tr>
+                                </thead>
+                                <tbody>${renderTeam(teamId, isWinner)}</tbody>
+                            </table>
+                        </div>
                     </div>`;
             }).join("")}
             </div>
