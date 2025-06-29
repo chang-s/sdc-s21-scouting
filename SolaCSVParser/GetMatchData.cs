@@ -15,7 +15,7 @@ namespace SolaCSVParser
             { "Aura Farmers", "AF" },
             { "Blockspinners", "BSP" },
             { "FF", "FF" },
-            { "Final Boss Phase IV", "FBP4" },
+            { "Final Boss Phase X", "FBPX" },
             { "Godzilla Strikes Back", "GSB" },
             { "Honey Pack", "HP" },
             { "Men-nefer", "MEN" },
