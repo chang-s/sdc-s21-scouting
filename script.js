@@ -36,6 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
     async function fetchPlayers() {
         const response = await fetch("players.json");
         playerData = await response.json();
+
+        // Sort from highest to lowest by points (parsed as numbers)
+        playerData.sort((a, b) => parseInt(b.points || "0") - parseInt(a.points || "0"));
+
         renderPlayerCards();
         renderPlayerButtons();
         updateGenerateBtnState();
