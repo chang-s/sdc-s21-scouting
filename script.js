@@ -398,22 +398,26 @@ document.addEventListener("DOMContentLoaded", () => {
             32: "SummonerSnowball"
         }[id] || "SummonerFlash");
 
-        const getItemIcons = (p) => {
+        const getItemIcons = (p, isWinner) => {
+            const emptyColor = isWinner ? "bg-green-300/40" : "bg-red-300/40";
+
             // Core items (slots 0 to 5)
             const itemSlots = Array.from({ length: 6 }, (_, i) => {
                 const id = p[`item${i}`];
+                const name = itemNames[id] || `Item ${id}`;
                 return id && id !== 0
-                    ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${id}.png?image=q_auto:good,f_webp,w_64,h_64&v=1513"
-                class="w-6 h-6 md:w-7 md:h-7 rounded-sm" title="Item ${id}" />`
-                    : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-sm inline-block"></div>`;
+                    ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${id}.png"
+                        class="w-6 h-6 md:w-7 md:h-7 rounded-sm" title="${name}" />`
+                    : `<div class="w-6 h-6 md:w-7 md:h-7 ${emptyColor} rounded-sm inline-block" title="Empty Slot"></div>`;
             });
 
             // Trinket (always item6)
             const trinketId = p.item6;
+            const trinketName = itemNames[trinketId] || `Item ${trinketId}`;
             const trinket = trinketId && trinketId !== 0
-                ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${trinketId}.png?image=q_auto:good,f_webp,w_64,h_64&v=1513"
-            class="w-6 h-6 md:w-7 md:h-7 rounded-full ring-1 ring-gray-300" title="Trinket ${trinketId}" />`
-                : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-full inline-block"></div>`;
+                ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${trinketId}.png"
+                    class="w-6 h-6 md:w-7 md:h-7 rounded-full ring-1 ring-gray-300" title="${trinketName}" />`
+                : `<div class="w-6 h-6 md:w-7 md:h-7 ${emptyColor} rounded-full inline-block" title="Empty Trinket"></div>`;
 
             // Combine item slots + trinket
             return [...itemSlots, trinket].join("");
@@ -478,7 +482,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return `
         <div>
-            <h2 class="text-xl font-bold mb-3 text-center w-full">Match Details</h2>
             <div class="flex flex-col gap-6 items-center w-full">
                 ${teams.map(teamId => {
                 const isWinner = teamId === winningTeam;
@@ -487,9 +490,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 return `
                     <div class="w-full max-w-3xl">
-                        <h3 class="text-center font-semibold text-base mb-2 w-full ${isWinner ? 'text-green-600' : 'text-red-600'}">
+                        <h3 class="text-center font-bold text-lg mb-1 w-full ${isWinner ? 'text-green-700' : 'text-red-700'}">
                             ${isWinner ? '🏆 ' : ''}${name}
                         </h3>
+
                         <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
                             <thead class="${headerColor} text-center">
                                 <tr>
