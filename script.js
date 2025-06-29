@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </td>
                     <td title="${g.vs}">${g.vsAbbr}</td>
                     <td>
-                        <button class="view-match-btn bg-blue-500 text-white text-xs px-2 py-1 rounded hover:bg-blue-600" data-matchid="${match.matchId}">
+                        <button type="button" class="view-match-btn text-blue-600 underline" data-matchid="${g.matchId}">
                             View
                         </button>
                     </td>
@@ -361,61 +361,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCheckboxVisibility();
     });
 
-    // Close modal function
-    function closeModal() {
-        document.getElementById("matchModal").classList.add("hidden");
-    }
-
-    // Build modal content
-    function buildMatchModalContent(match) {
-        const team1 = match.team1;
-        const team2 = match.team2;
-
-        const renderTeam = (team) => `
-    <div class="w-1/2 px-4">
-      <h3 class="text-lg font-semibold mb-2 ${team.side === 'red' ? 'text-red-600' : 'text-green-600'}">
-        ${team.name}
-      </h3>
-      <table class="table-auto w-full text-sm">
-        <thead>
-          <tr class="font-bold text-left">
-            <th>Player</th><th>Champ</th><th>KDA</th><th>Spells</th><th>Items</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${team.players.map(p => `
-            <tr class="align-top">
-              <td class="pr-2">
-                <a href="${p.opgg}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">${p.name}</a>
-              </td>
-              <td class="pr-2 text-center">
-                <img src="${p.champIcon}" class="w-8 h-8 mx-auto" alt="${p.champion}">
-                <div class="text-xs">${p.champion}</div>
-              </td>
-              <td class="pr-2">${p.k}/${p.d}/${p.a}</td>
-              <td class="pr-2 text-center">
-                ${p.spells.map(s => `<img src="${s}" class="w-5 h-5 inline-block mx-[1px]" alt="spell">`).join("")}
-              </td>
-              <td class="text-center">
-                ${p.items.map(i => `<img src="${i}" class="w-5 h-5 inline-block mx-[1px]" alt="item">`).join("")}
-              </td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-        return `
-    <h2 class="text-xl font-bold mb-4">Match Details: ${match.id}</h2>
-    <div class="flex flex-wrap">
-      ${renderTeam(team1)}
-      ${renderTeam(team2)}
-    </div>
-  `;
-    }
-
-    // Click listener
     document.body.addEventListener("click", async (e) => {
         if (e.target.classList.contains("view-match-btn")) {
             const matchId = e.target.dataset.matchid;
@@ -425,7 +370,6 @@ document.addEventListener("DOMContentLoaded", () => {
             content.innerHTML = "Loading match data...";
 
             try {
-                console.log("Match button clicked:", matchId);
                 const response = await fetch(`matches/${matchId}.json`);
                 const match = await response.json();
                 content.innerHTML = buildMatchModalContent(match);
@@ -435,6 +379,68 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    document.getElementById("closeModal").addEventListener("click", () => {
+        document.getElementById("matchModal").classList.add("hidden");
+    });
+
+    function buildMatchModalContent(match) {
+        const getSpellName = (id) => ({
+            4: "SummonerFlash",
+            14: "SummonerDot",
+            7: "SummonerHeal",
+            3: "SummonerExhaust",
+            6: "SummonerHaste",
+            11: "SummonerSmite",
+            12: "SummonerTeleport"
+        }[id] || "SummonerFlash");
+
+        const getItemIcons = (p) =>
+            Array.from({ length: 7 }).map((_, i) => {
+                const id = p[`item${i}`];
+                return id && id !== 0
+                    ? `<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${id}.png" class="w-5 inline-block mx-[1px]" />`
+                    : "";
+            }).join("");
+
+        const group = (teamId) =>
+            match.info.participants
+                .filter(p => p.teamId === teamId)
+                .map(p => `
+                <tr>
+                    <td>${p.riotIdGameName}#${p.riotIdTagline}</td>
+                    <td>${p.championName}</td>
+                    <td>${p.kills}/${p.deaths}/${p.assists}</td>
+                    <td>
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5 inline" />
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5 inline" />
+                    </td>
+                    <td>${getItemIcons(p)}</td>
+                </tr>
+            `).join("");
+
+        const team1 = match.info.participants.find(p => p.teamId === 100) ? 100 : 0;
+        const team2 = match.info.participants.find(p => p.teamId === 200) ? 200 : 1;
+
+        return `
+        <h2 class="text-lg font-bold mb-2">Match: ${match.metadata.matchId}</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <h3 class="font-semibold mb-1">Team 1</h3>
+                <table class="text-sm w-full">
+                    <thead><tr><th>Player</th><th>Champ</th><th>KDA</th><th>Spells</th><th>Items</th></tr></thead>
+                    <tbody>${group(team1)}</tbody>
+                </table>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-1">Team 2</h3>
+                <table class="text-sm w-full">
+                    <thead><tr><th>Player</th><th>Champ</th><th>KDA</th><th>Spells</th><th>Items</th></tr></thead>
+                    <tbody>${group(team2)}</tbody>
+                </table>
+            </div>
+        </div>`;
+    }
 
     // Initial setup
     fetchPlayers();

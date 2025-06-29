@@ -83,14 +83,10 @@
     </div>
 
     <!-- PRE-LOAD PLAYER MATCH MODAL -->
-    <div id="matchModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
-        <div class="bg-white rounded-lg shadow-lg w-11/12 max-w-4xl relative p-6 overflow-y-auto max-h-[90vh]">
-            <button onclick="document.getElementById('matchModal').classList.add('hidden')"
-                    class="absolute top-3 right-3 w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center text-sm hover:bg-red-600 transition-transform transform hover:scale-110"
-                    title="Close">
-                ✕
-            </button>
-            <div id="matchModalContent" class="text-sm"></div>
+    <div id="matchModal" class="fixed inset-0 flex items-center justify-center bg-black/70 backdrop-blur-sm z-50 hidden" autocomplete="off">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl max-h-[90vh] overflow-auto">
+            <button id="closeModal" class="float-right text-red-500 font-bold">❌</button>
+            <div id="matchModalContent" class="mt-2"></div>
         </div>
     </div>
 
