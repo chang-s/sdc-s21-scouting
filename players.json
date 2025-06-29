@@ -26506,5 +26506,36 @@
       "Seraphine"
     ],
     "avgKDA": 4.86
+  },
+  {
+    "ign": "Elegance#anya",
+    "puuid": "uCChk149Ni1MysU4yn3CJpJqdxiRwC3Jsv5LwRNOOmOyevLDwnLNgPO1gly_hpAdmlrDqfMO4fsv8Q",
+    "team": "The Bnuunies",
+    "rank": "",
+    "tier": "",
+    "points": "",
+    "roles": [],
+    "opgg": "https://op.gg/lol/summoners/na/elegance-anya",
+    "topChamps": [],
+    "champStats": [],
+    "gameStats": [
+      {
+        "ign": "Elegance#anya",
+        "matchId": "NA1_5315856363",
+        "date": "6/28",
+        "champion": "Hwei",
+        "k": "3",
+        "d": "3",
+        "a": "3",
+        "kda": 2.0,
+        "result": "lose",
+        "vs": "Men-nefer",
+        "vsAbbr": "MEN"
+      }
+    ],
+    "champsPlayed": [
+      "Hwei"
+    ],
+    "avgKDA": 2.0
   }
 ]
