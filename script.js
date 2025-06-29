@@ -420,23 +420,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 const teamName = knownPlayer?.team || "Unknown";
 
                 return `
-            <tr class="border-b">
-                <td class="py-1 pr-2 text-sm font-medium">
-                    <div>${p.riotIdGameName}#${p.riotIdTagline}</div>
-                    <div class="text-gray-500 text-xs">${teamName}</div>
-                </td>
-                <td class="py-1 pr-2 flex items-center gap-1 text-sm">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/${p.championName}.png"
-                        class="w-6 h-6 rounded-sm" alt="${p.championName}" />
-                    ${p.championName}
-                </td>
-                <td class="py-1 text-sm">${p.kills}/${p.deaths}/${p.assists}</td>
-                <td class="py-1">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5 inline" />
-                    <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5 inline" />
-                </td>
-                <td class="py-1">${getItemIcons(p)}</td>
-            </tr>`;
+                <tr class="border-b">
+                    <td class="py-1 pr-2 text-sm font-medium">
+                        <div>${p.riotIdGameName}#${p.riotIdTagline}</div>
+                    </td>
+                    <td class="py-1 pr-2 flex items-center gap-1 text-sm">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/${p.championName}.png"
+                            class="w-6 h-6 rounded-sm" alt="${p.championName}" />
+                        <br />
+                        <div class="text-gray-500 text-xs">${p.championName}</div>
+                    </td>
+                    <td class="py-1 text-sm">${p.kills}/${p.deaths}/${p.assists}</td>
+                    <td class="py-1">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5 inline" />
+                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5 inline" />
+                    </td>
+                    <td class="py-1">${getItemIcons(p)}</td>
+                </tr>`;
             }).join("");
         };
 
@@ -445,7 +445,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return `
         <div>
-            <h2 class="text-xl font-bold mb-3">Match: ${match.metadata.matchId}</h2>
+            <h2 class="text-xl font-bold mb-3">Match Details</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 ${teams.map(teamId => {
             const isWinner = teamId === winningTeam;
