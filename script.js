@@ -398,14 +398,16 @@ document.addEventListener("DOMContentLoaded", () => {
             32: "SummonerSnowball"
         }[id] || "SummonerFlash");
 
-        const getItemIcons = (p) => {
-            // Core items (slots 0 to 5)
+        const getItemIcons = (p, isWinner) => {
+            const emptyColor = isWinner ? "bg-green-300/40" : "bg-red-300/40";
+
+            // Core items (item0 to item5)
             const itemSlots = Array.from({ length: 6 }, (_, i) => {
                 const id = p[`item${i}`];
                 return id && id !== 0
                     ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${id}.png?image=q_auto:good,f_webp,w_64,h_64&v=1513"
                 class="w-6 h-6 md:w-7 md:h-7 rounded-sm" title="Item ${id}" />`
-                    : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-sm inline-block"></div>`;
+                    : `<div class="w-6 h-6 md:w-7 md:h-7 ${emptyColor} rounded-sm inline-block" title="Empty Slot"></div>`;
             });
 
             // Trinket (always item6)
@@ -413,9 +415,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const trinket = trinketId && trinketId !== 0
                 ? `<img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/item/${trinketId}.png?image=q_auto:good,f_webp,w_64,h_64&v=1513"
             class="w-6 h-6 md:w-7 md:h-7 rounded-full ring-1 ring-gray-300" title="Trinket ${trinketId}" />`
-                : `<div class="w-6 h-6 md:w-7 md:h-7 bg-gray-200 rounded-full inline-block"></div>`;
+                : `<div class="w-6 h-6 md:w-7 md:h-7 ${emptyColor} rounded-full inline-block" title="Empty Trinket"></div>`;
 
-            // Combine item slots + trinket
             return [...itemSlots, trinket].join("");
         };
 
