@@ -386,58 +386,89 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function buildMatchModalContent(match) {
         const getSpellName = (id) => ({
-            4: "SummonerFlash",
-            14: "SummonerDot",
-            7: "SummonerHeal",
+            1: "SummonerBoost",
             3: "SummonerExhaust",
+            4: "SummonerFlash",
             6: "SummonerHaste",
+            7: "SummonerHeal",
             11: "SummonerSmite",
-            12: "SummonerTeleport"
+            12: "SummonerTeleport",
+            14: "SummonerDot",
+            21: "SummonerBarrier",
+            32: "SummonerSnowball"
         }[id] || "SummonerFlash");
 
         const getItemIcons = (p) =>
             Array.from({ length: 7 }).map((_, i) => {
                 const id = p[`item${i}`];
                 return id && id !== 0
-                    ? `<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${id}.png" class="w-5 inline-block mx-[1px]" />`
+                    ? `<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${id}.png" class="w-6 h-6 inline-block mx-[1px] rounded" title="Item ${id}" />`
                     : "";
             }).join("");
 
-        const group = (teamId) =>
-            match.info.participants
-                .filter(p => p.teamId === teamId)
-                .map(p => `
-                <tr>
-                    <td>${p.riotIdGameName}#${p.riotIdTagline}</td>
-                    <td>${p.championName}</td>
-                    <td>${p.kills}/${p.deaths}/${p.assists}</td>
-                    <td>
-                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5 inline" />
-                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5 inline" />
-                    </td>
-                    <td>${getItemIcons(p)}</td>
-                </tr>
-            `).join("");
+        const getTeamName = (teamId) => {
+            const puuid = match.info.participants.find(p => p.teamId === teamId)?.puuid;
+            const player = playerData.find(p => p.puuid === puuid);
+            return player?.team || `Team ${teamId}`;
+        };
 
-        const team1 = match.info.participants.find(p => p.teamId === 100) ? 100 : 0;
-        const team2 = match.info.participants.find(p => p.teamId === 200) ? 200 : 1;
+        const renderTeam = (teamId) => {
+            const players = match.info.participants.filter(p => p.teamId === teamId);
+
+            return players.map(p => {
+                const knownPlayer = playerData.find(pl => pl.puuid === p.puuid);
+                const teamName = knownPlayer?.team || "Unknown";
+
+                return `
+            <tr class="border-b">
+                <td class="py-1 pr-2 text-sm font-medium">
+                    <div>${p.riotIdGameName}#${p.riotIdTagline}</div>
+                    <div class="text-gray-500 text-xs">${teamName}</div>
+                </td>
+                <td class="py-1 pr-2 flex items-center gap-1 text-sm">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/${p.championName}.png"
+                        class="w-6 h-6 rounded-sm" alt="${p.championName}" />
+                    ${p.championName}
+                </td>
+                <td class="py-1 text-sm">${p.kills}/${p.deaths}/${p.assists}</td>
+                <td class="py-1">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5 inline" />
+                    <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5 inline" />
+                </td>
+                <td class="py-1">${getItemIcons(p)}</td>
+            </tr>`;
+            }).join("");
+        };
+
+        const teams = [...new Set(match.info.participants.map(p => p.teamId))];
+        const winningTeam = match.info.teams.find(t => t.win === true)?.teamId;
 
         return `
-        <h2 class="text-lg font-bold mb-2">Match: ${match.metadata.matchId}</h2>
-        <div class="grid grid-cols-2 gap-4">
-            <div>
-                <h3 class="font-semibold mb-1">Team 1</h3>
-                <table class="text-sm w-full">
-                    <thead><tr><th>Player</th><th>Champ</th><th>KDA</th><th>Spells</th><th>Items</th></tr></thead>
-                    <tbody>${group(team1)}</tbody>
-                </table>
-            </div>
-            <div>
-                <h3 class="font-semibold mb-1">Team 2</h3>
-                <table class="text-sm w-full">
-                    <thead><tr><th>Player</th><th>Champ</th><th>KDA</th><th>Spells</th><th>Items</th></tr></thead>
-                    <tbody>${group(team2)}</tbody>
-                </table>
+        <div>
+            <h2 class="text-xl font-bold mb-3">Match: ${match.metadata.matchId}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                ${teams.map(teamId => {
+            const isWinner = teamId === winningTeam;
+            const name = getTeamName(teamId);
+            return `
+                    <div>
+                        <h3 class="font-semibold text-base mb-1 ${isWinner ? 'text-green-600' : 'text-red-600'}">
+                            ${isWinner ? '🏆 ' : ''}${name}
+                        </h3>
+                        <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="text-left p-1">Player</th>
+                                    <th class="text-left p-1">Champ</th>
+                                    <th class="text-left p-1">KDA</th>
+                                    <th class="text-left p-1">Spells</th>
+                                    <th class="text-left p-1">Items</th>
+                                </tr>
+                            </thead>
+                            <tbody>${renderTeam(teamId)}</tbody>
+                        </table>
+                    </div>`;
+        }).join("")}
             </div>
         </div>`;
     }
