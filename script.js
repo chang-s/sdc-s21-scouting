@@ -478,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return `
     <div>
-        <h2 class="text-xl font-bold mb-3 text-center w-full">Match Details</h2>
+        // <h2 class="text-xl font-bold mb-3 text-center w-full">Match Details</h2>
         <div class="flex flex-col gap-6 items-center w-full">
             ${teams.map(teamId => {
             const isWinner = teamId === winningTeam;
