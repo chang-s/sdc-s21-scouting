@@ -398,7 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
             32: "SummonerSnowball"
         }[id] || "SummonerFlash");
 
-        const getItemIcons = (p, isWinner) => {
+        const getItemIcons = (p) => {
             let items = [];
             for (let i = 0; i < 6; i++) {
                 const id = p[`item${i}`];
@@ -410,7 +410,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            // Add trinket as circular icon
             const trinketId = p.item6;
             const trinket = trinketId && trinketId !== 0
                 ? `<img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/item/${trinketId}.png"
@@ -436,14 +435,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 const rank = knownPlayer?.rank;
                 const rankIcon = rankIcons?.[rank] || "";
 
+                const tierColor = tier === 1 ? 'bg-red-200' :
+                    tier === 2 ? 'bg-orange-200' :
+                        tier === 3 ? 'bg-blue-200' :
+                            'bg-green-200';
+
                 return `
             <tr class="text-left align-middle ${isWinner ? 'bg-green-50' : 'bg-red-50'}">
                 <td class="py-2 px-2 text-sm font-medium align-top whitespace-nowrap">
-                    <div class="mb-1">${p.riotIdGameName}#${p.riotIdTagline}</div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs font-semibold px-2 py-0.5 rounded ${tier === 1 ? 'bg-red-200' : tier === 2 ? 'bg-orange-200' : tier === 3 ? 'bg-blue-200' : 'bg-green-200'}">T${tier || '?'}</span>
+                    <div class="mb-1 font-semibold">${p.riotIdGameName}#${p.riotIdTagline}</div>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded ${tierColor}">T${tier || '?'}</span>
+                        ${rankIcon ? `<img src="${rankIcon}" class="w-5 h-5 inline-block" title="${rank}" />` : ''}
                         <span class="text-xs text-gray-600">${rank || ''}</span>
-                        ${rankIcon ? `<img src="${rankIcon}" class="w-5 h-5 inline-block ml-1" />` : ''}
                     </div>
                 </td>
                 <td class="py-2 px-1 text-sm text-center">
@@ -460,9 +464,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5" />
                     </div>
                 </td>
-                <td class="py-2 px-1 text-center">
-                    <div class="flex flex-wrap justify-start gap-[2px] pl-1">
-                        ${getItemIcons(p, isWinner)}
+                <td class="py-2 px-1 text-left">
+                    <div class="flex flex-wrap justify-start gap-[2px]">
+                        ${getItemIcons(p)}
                     </div>
                 </td>
             </tr>`;
@@ -474,24 +478,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return `
     <div>
-        <h2 class="text-xl font-bold mb-3 text-center">Match Details</h2>
-        <div class="flex flex-col gap-6 items-center">
+        <h2 class="text-xl font-bold mb-3 text-center w-full">Match Details</h2>
+        <div class="flex flex-col gap-6 items-center w-full">
             ${teams.map(teamId => {
             const isWinner = teamId === winningTeam;
             const name = getTeamName(teamId);
+            const headerColor = isWinner ? 'bg-green-200 text-white' : 'bg-red-200 text-white';
+
             return `
                 <div class="w-full max-w-3xl">
                     <h3 class="text-center font-semibold text-base mb-2 ${isWinner ? 'text-green-600' : 'text-red-600'}">
                         ${isWinner ? '🏆 ' : ''}${name}
                     </h3>
                     <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
-                        <thead class="bg-gray-100 text-center">
+                        <thead class="${headerColor} text-center">
                             <tr>
-                                <th class="p-1 text-left">Player</th>
-                                <th class="p-1">Champ</th>
-                                <th class="p-1">KDA</th>
-                                <th class="p-1">Spells</th>
-                                <th class="p-1 text-left">Items</th>
+                                <th class="p-2 text-left">Player</th>
+                                <th class="p-2">Champ</th>
+                                <th class="p-2">KDA</th>
+                                <th class="p-2">Spells</th>
+                                <th class="p-2 text-left">Items</th>
                             </tr>
                         </thead>
                         <tbody>${renderTeam(teamId, isWinner)}</tbody>
