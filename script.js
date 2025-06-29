@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </td>
                     <td title="${g.vs}">${g.vsAbbr}</td>
                     <td>
-                        <button class="view-match-btn text-blue-600 underline" data-matchid="${g.matchId}">
+                        <button type="button" class="view-match-btn text-blue-600 underline" data-matchid="${g.matchId}">
                             View
                         </button>
                     </td>
