@@ -83,11 +83,13 @@
     </div>
 
     <!-- PRE-LOAD PLAYER MATCH MODAL -->
-    <div id="matchModal" class="fixed inset-0 flex items-center justify-center bg-black/70 backdrop-blur-sm z-50 hidden" autocomplete="off">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl max-h-[90vh] overflow-auto">
-            <button id="closeModal" class="float-right text-red-500 font-bold">❌</button>
-            <div id="matchModalContent" class="mt-2"></div>
+    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl max-h-[90vh] overflow-auto">
+        <div class="sticky top-0 z-40 flex justify-end bg-white pb-2">
+            <button id="closeModal" class="text-red-500 font-bold text-xl p-2 rounded-full hover:bg-red-100 transition">
+                ❌
+            </button>
         </div>
+        <div id="matchModalContent" class="mt-2"></div>
     </div>
 
     <!-- JAVASCRIPT FILE -->
