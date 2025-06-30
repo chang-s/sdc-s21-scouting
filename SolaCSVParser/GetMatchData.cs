@@ -272,7 +272,7 @@ namespace SolaCSVParser
                 // Save full match data to a .json file
                 try
                 {
-                    string outputFolder = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\SolaCSVParser\matches";
+                    string outputFolder = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\matches";
                     if (!Directory.Exists(outputFolder))
                         Directory.CreateDirectory(outputFolder);
 
