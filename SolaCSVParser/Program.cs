@@ -13,12 +13,13 @@ namespace SolaCSVParser
             // createPlayersJsonFile(args);
 
             // Add game data
-            // GetMatchData.Main().GetAwaiter().GetResult();
+             GetMatchData.Main().GetAwaiter().GetResult();
 
             // Update IGNs
             // UpdateIGNsByPuuid.Main().GetAwaiter().GetResult();
 
-            DownloadMatchDetails.Main().GetAwaiter().GetResult();
+            // Download batch match details
+            // DownloadMatchDetails.Main().GetAwaiter().GetResult();
         }
 
         public static void createPlayersJsonFile(string[] args)

@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using SolaCSVParser.Output;
+using DotNetEnv;
 
 namespace SolaCSVParser
 {
@@ -32,7 +33,15 @@ namespace SolaCSVParser
 
         public static async Task Main()
         {
-            string apiKey = "RGAPI-316c67ad-3dce-4bbe-b608-8f557ed7dfb4";
+            DotNetEnv.Env.Load(@"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\.env"); // This reads from .env file in the project root
+            string? apiKey = Environment.GetEnvironmentVariable("RIOT_API_KEY");
+
+            if (string.IsNullOrWhiteSpace(apiKey))
+            {
+                Console.WriteLine("Missing Riot API key in .env file.");
+                return;
+            }
+
             string filePath = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\players.json";
 
             if (!File.Exists(filePath))
@@ -259,6 +268,33 @@ namespace SolaCSVParser
                 File.WriteAllText(filePath, JsonConvert.SerializeObject(players, Formatting.Indented));
                 Console.WriteLine("Match processed and data updated!");
                 Console.WriteLine(); // just for spacing
+
+                // Save full match data to a .json file
+                try
+                {
+                    string outputFolder = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\SolaCSVParser\matches";
+                    if (!Directory.Exists(outputFolder))
+                        Directory.CreateDirectory(outputFolder);
+
+                    string outFile = Path.Combine(outputFolder, $"{matchId}.json");
+
+                    if (!File.Exists(outFile))
+                    {
+                        await File.WriteAllTextAsync(outFile, json);
+                        Console.WriteLine($"Saved full match JSON to: {outFile}");
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Match JSON already exists: {outFile}");
+                        Console.WriteLine();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to save match JSON: {ex.Message}");
+                    Console.WriteLine();
+                }
             }
         }
 

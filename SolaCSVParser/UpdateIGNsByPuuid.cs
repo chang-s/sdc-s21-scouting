@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text.Json;
 using Newtonsoft.Json;
 using SolaCSVParser.Output;
+using DotNetEnv;
 
 namespace SolaCSVParser
 {
@@ -10,7 +11,15 @@ namespace SolaCSVParser
     {
         public static async Task Main()
         {
-            string apiKey = "RGAPI-316c67ad-3dce-4bbe-b608-8f557ed7dfb4";
+            DotNetEnv.Env.Load(); // This reads from .env file in the project root
+            string? apiKey = Environment.GetEnvironmentVariable("RIOT_API_KEY");
+
+            if (string.IsNullOrWhiteSpace(apiKey))
+            {
+                Console.WriteLine("Missing Riot API key in .env file.");
+                return;
+            }
+
             string filePath = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\players.json";
 
             if (!File.Exists(filePath))
