@@ -36661,12 +36661,21 @@
     "ign": "Elegance#anya",
     "puuid": "uCChk149Ni1MysU4yn3CJpJqdxiRwC3Jsv5LwRNOOmOyevLDwnLNgPO1gly_hpAdmlrDqfMO4fsv8Q",
     "team": "The Bnuunies",
-    "rank": "",
-    "tier": "",
-    "points": "",
-    "roles": [],
+    "rank": "Emerald",
+    "tier": "4",
+    "points": "5",
+    "roles": [
+        "MID",
+        "TOP"
+    ],
     "opgg": "https://op.gg/lol/summoners/na/elegance-anya",
-    "topChamps": [],
+    "topChamps": [
+        "Hwei",
+        "Sion",
+        "Vex",
+        "Varus",
+        "Xerath"
+    ],
     "champStats": [],
     "gameStats": [
       {
@@ -36804,12 +36813,18 @@
     "ign": "WTL Coach Yarg#FREAK",
     "puuid": "bBhVOky2wNRxeD35cFNPzePpFT7y7kpBCANOArRcdU8pDV1VWU1UQMZPBb92YqVpxfzQpGQOWoZjEg",
     "team": "Men-nefer",
-    "rank": "",
+    "rank": "Master",
     "tier": "",
     "points": "",
     "roles": [],
     "opgg": "https://op.gg/lol/summoners/na/wtl%20coach%20yarg-freak",
-    "topChamps": [],
+    "topChamps": [
+        "Cho'Gath",
+        "Fiddlesticks",
+        "Rell",
+        "Leona",
+        "Alistar"
+    ],
     "champStats": [],
     "gameStats": [
       {
@@ -36863,12 +36878,21 @@
     "ign": "Shisen#Wenmi",
     "puuid": "HZg4R8NGzwhBwp7emumWEbtwNSUvZHfYg7jvk7DSYPfItiyfhviKtvAeEvTg4asM7b1-EetV1lW68A",
     "team": "The Honored Ones",
-    "rank": "",
-    "tier": "",
-    "points": "",
-    "roles": [],
+    "rank": "Master",
+    "tier": "1",
+    "points": "31",
+    "roles": [
+        "MID",
+        "TOP"
+    ],
     "opgg": "https://op.gg/lol/summoners/na/shisen-wenmi",
-    "topChamps": [],
+    "topChamps": [
+        "Sylas",
+        "Yasuo",
+        "Irelia",
+        "Yone",
+        "Syndra"
+    ],
     "champStats": [],
     "gameStats": [
       {
@@ -36908,12 +36932,18 @@
     "ign": "NoNoLand#NA1",
     "puuid": "P6vdh6XqFL6FMfg9F4AjiquTwHFILMBrKU-kZIbEvze_hizM4JiqHtj3luiLZyvDezwdqi7vCBjIlw",
     "team": "FF",
-    "rank": "",
+    "rank": "Emerald",
     "tier": "",
     "points": "",
     "roles": [],
     "opgg": "https://op.gg/lol/summoners/na/nonoland-na1",
-    "topChamps": [],
+    "topChamps": [
+        "Kha'Zix",
+        "Volibear",
+        "Trundle",
+        "Karthus",
+        "Xin Zhao"
+    ],
     "champStats": [],
     "gameStats": [
       {
