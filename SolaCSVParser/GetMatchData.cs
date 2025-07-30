@@ -33,7 +33,7 @@ namespace SolaCSVParser
 
         public static async Task Main()
         {
-            DotNetEnv.Env.Load(@"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\.env"); // This reads from .env file in the project root
+            DotNetEnv.Env.Load(@"C:\Users\sochang\Documents\GitHub\sdc-s21-scouting\.env");
             string? apiKey = Environment.GetEnvironmentVariable("RIOT_API_KEY");
 
             if (string.IsNullOrWhiteSpace(apiKey))
@@ -42,7 +42,8 @@ namespace SolaCSVParser
                 return;
             }
 
-            string filePath = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\players.json";
+            string filePath = @"C:\Users\sochang\Documents\GitHub\sdc-s21-scouting\players.json";
+
 
             if (!File.Exists(filePath))
             {
@@ -272,7 +273,7 @@ namespace SolaCSVParser
                 // Save full match data to a .json file
                 try
                 {
-                    string outputFolder = @"C:\Users\Sola\Documents\GitHub\sdc-s21-scouting\matches";
+                    string outputFolder = @"C:\Users\sochang\Documents\GitHub\sdc-s21-scouting\matches";
                     if (!Directory.Exists(outputFolder))
                         Directory.CreateDirectory(outputFolder);
 
