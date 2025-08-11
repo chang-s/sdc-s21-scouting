@@ -444,35 +444,35 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "bg-green-200";
 
                 return `
-            <tr class="text-left align-middle ${isWinner ? 'bg-green-50' : 'bg-red-50'}">
-                <td class="py-2 px-2 text-sm font-medium align-top whitespace-nowrap">
-                    <div class="mb-1 font-semibold">${p.riotIdGameName}#${p.riotIdTagline}</div>
-                    <div class="flex items-center gap-2 mt-1">
-                        <span class="text-xs font-semibold px-2 py-0.5 rounded ${tierColor}">T${tier || '?'}</span>
-                        ${rankIcon ? `<img src="${rankIcon}" class="w-5 h-5 inline-block" title="${rank}" />` : ''}
-                        <span class="text-xs text-gray-600">${rank || ''}</span>
-                    </div>
-                </td>
-                <td class="py-2 px-1 text-sm text-center">
-                    <div class="flex items-center justify-center gap-1 flex-col">
-                        <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${p.championName}.png"
-                            class="w-6 h-6 rounded-sm" alt="${p.championName}" />
-                        <span class="text-gray-500 text-xs">${p.championName}</span>
-                    </div>
-                </td>
-                <td class="py-2 px-1 text-sm text-center">${p.kills}/${p.deaths}/${p.assists}</td>
-                <td class="py-2 px-1 text-center">
-                    <div class="flex justify-center gap-1">
-                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5" />
-                        <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5" />
-                    </div>
-                </td>
-                <td class="py-2 px-1 text-left">
-                    <div class="flex flex-wrap justify-start gap-[2px]">
-                        ${getItemIcons(p, isWinner)}
-                    </div>
-                </td>
-            </tr>`;
+                    <tr class="text-left align-middle ${isWinner ? 'bg-green-50' : 'bg-red-50'}">
+                        <td class="py-2 px-2 text-sm font-medium align-top whitespace-nowrap">
+                            <div class="mb-1 font-semibold">${p.riotIdGameName}#${p.riotIdTagline}</div>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-xs font-semibold px-2 py-0.5 rounded ${tierColor}">T${tier || '?'}</span>
+                                ${rankIcon ? `<img src="${rankIcon}" class="w-5 h-5 inline-block" title="${rank}" />` : ''}
+                                <span class="text-xs text-gray-600">${rank || ''}</span>
+                            </div>
+                        </td>
+                        <td class="py-2 px-1 text-sm text-center">
+                            <div class="flex items-center justify-center gap-1 flex-col">
+                                <img src="https://opgg-static.akamaized.net/meta/images/lol/15.13.1/champion/${p.championName}.png"
+                                    class="w-6 h-6 rounded-sm" alt="${p.championName}" />
+                                <span class="text-gray-500 text-xs">${p.championName}</span>
+                            </div>
+                        </td>
+                        <td class="py-2 px-1 text-sm text-center">${p.kills}/${p.deaths}/${p.assists}</td>
+                        <td class="py-2 px-1 text-center">
+                            <div class="flex justify-center gap-1">
+                                <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner1Id)}.png" class="w-5" />
+                                <img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/spell/${getSpellName(p.summoner2Id)}.png" class="w-5" />
+                            </div>
+                        </td>
+                        <td class="py-2 px-1 text-left">
+                            <div class="flex flex-wrap justify-start gap-[2px]">
+                                ${getItemIcons(p, isWinner)}
+                            </div>
+                        </td>
+                    </tr>`;
             }).join("");
         };
 
@@ -480,40 +480,40 @@ document.addEventListener("DOMContentLoaded", () => {
         const winningTeam = match.info.teams.find(t => t.win === true)?.teamId;
 
         return `
-        <div>
-            <div class="flex flex-col gap-6 items-center w-full">
-                ${teams.map(teamId => {
-                const isWinner = teamId === winningTeam;
-                const name = getTeamName(teamId);
-                const headerColor = isWinner ? 'bg-green-200 text-green-900' : 'bg-red-200 text-red-900';
+            <div>
+                <div class="flex flex-col gap-6 items-center w-full">
+                    ${teams.map(teamId => {
+                    const isWinner = teamId === winningTeam;
+                    const name = getTeamName(teamId);
+                    const headerColor = isWinner ? 'bg-green-200 text-green-900' : 'bg-red-200 text-red-900';
 
-                return `
-                    <div class="w-full max-w-3xl">
-                        <h2 class="text-center font-bold text-xl md:text-2xl mb-2 w-full ${isWinner ? 'text-green-600' : 'text-red-600'}">
-                            ${name}
-                        </h2>
-                        <p class="text-sm font-semibold text-center mb-3">
-                          <span class="inline-block px-2 py-0.5 rounded-full text-white text-xs font-bold ${isWinner ? 'bg-green-600' : 'bg-red-500'}">
-                            ${isWinner ? 'WIN' : 'LOSE'}
-                          </span>
-                        </p>
+                    return `
+                        <div class="w-full max-w-3xl">
+                            <h2 class="text-center font-bold text-xl md:text-2xl mb-2 w-full ${isWinner ? 'text-green-600' : 'text-red-600'}">
+                                ${name}
+                            </h2>
+                            <p class="text-sm font-semibold text-center mb-3">
+                              <span class="inline-block px-2 py-0.5 rounded-full text-white text-xs font-bold ${isWinner ? 'bg-green-600' : 'bg-red-500'}">
+                                ${isWinner ? 'WIN' : 'LOSE'}
+                              </span>
+                            </p>
 
-                        <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
-                            <thead class="${headerColor} text-center">
-                                <tr>
-                                    <th class="p-2 text-left">Player</th>
-                                    <th class="p-2">Champ</th>
-                                    <th class="p-2">KDA</th>
-                                    <th class="p-2">Spells</th>
-                                    <th class="p-2 text-left">Items</th>
-                                </tr>
-                            </thead>
-                            <tbody>${renderTeam(teamId, isWinner)}</tbody>
-                        </table>
-                    </div>`;
-            }).join("")}
-            </div>
-        </div>`;
+                            <table class="table-auto text-xs w-full bg-white border rounded overflow-hidden">
+                                <thead class="${headerColor} text-center">
+                                    <tr>
+                                        <th class="p-2 text-left">Player</th>
+                                        <th class="p-2">Champ</th>
+                                        <th class="p-2">KDA</th>
+                                        <th class="p-2">Spells</th>
+                                        <th class="p-2 text-left">Items</th>
+                                    </tr>
+                                </thead>
+                                <tbody>${renderTeam(teamId, isWinner)}</tbody>
+                            </table>
+                        </div>`;
+                }).join("")}
+                </div>
+            </div>`;
     }
 
 
