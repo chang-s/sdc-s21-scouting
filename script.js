@@ -93,8 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, {});
 
             // Sort champ entries by count descending
-            const sortedChamps = Object.entries(champCounts)
-                .sort((a, b) => b[1] - a[1]);
+            const sortedChamps = Object.entries(champCounts).sort((a, b) => b[1] - a[1]);
 
             const champsPlayedSummary = sortedChamps
                 .map(([champ, count]) => {

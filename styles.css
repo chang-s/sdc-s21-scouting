@@ -2,14 +2,10 @@
     transition: all 0.2s ease-in-out;
 }
 
-    .player-pill.selected-pill {
-        background-color: #a78bfa; /* Tailwind purple-400 */
-        color: white;
-        border-color: #7c3aed;
-    }
-
-.player-card.selected-card {
-    border: 3px solid #7c3aed; /* Tailwind purple-600 */
+.player-pill.selected-pill {
+    background-color: #a78bfa; /* Tailwind purple-400 */
+    color: white;
+    border-color: #7c3aed;
 }
 
 .fade-in {
